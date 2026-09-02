@@ -1,0 +1,1613 @@
+I researched this with a bias toward **official documentation, university material, open textbooks, practitioner-recommended books, hands-on labs, and resources that working engineers actually keep using after the tutorial phase**. I also cross-checked current Reddit discussions rather than relying entirely on SEO “top 10 courses” articles. A recurring practitioner recommendation was to learn the underlying systems, build real things, and use documentation/books to solve problems rather than accumulating courses. ([Reddit][1])
+
+**Legend:** `CORE` = I would actually work through it; `HANDS-ON` = do the exercises; `REFERENCE` = consult when needed; `BOOK` = worth owning/reading selectively; `DEEP OPTIONAL` = only if time permits. I have deliberately **not made YouTube part of the curriculum**. There is enough excellent text-based material to complete the entire roadmap without it.
+
+---
+
+# 0. Foundation Reset — 3–4 weeks
+
+This phase should make Python, Git, SQL, HTTP, operating systems, debugging, testing, basic algorithms, and terminal work feel routine.
+
+### 0.1 Python — `CORE · FREE`
+
+**The Python Tutorial — official Python documentation**
+
+[Python 3.14 Tutorial](https://docs.python.org/3/tutorial/?utm_source=chatgpt.com)
+
+Because you're already a professional developer, don't read it like a beginner course. Concentrate on:
+
+* functions and argument semantics
+* data structures
+* modules/packages
+* exceptions
+* classes and Python's object model
+* iterators/generators
+* context managers
+* standard library
+* virtual environments
+* logging
+* threading
+
+The current official tutorial is specifically written for programmers who already understand programming. ([Python documentation][2])
+
+Also bookmark:
+
+[Python asyncio documentation](https://docs.python.org/3/library/asyncio.html?utm_source=chatgpt.com)
+
+Learn enough to clearly explain:
+
+`asyncio` vs threads vs processes vs true parallelism.
+
+---
+
+### 0.2 Developer tooling / shell — `CORE · FREE TEXT`
+
+**MIT — The Missing Semester of Your CS Education**
+
+[MIT Missing Semester 2026](https://missing.csail.mit.edu/2026/?utm_source=chatgpt.com)
+
+This is unusually well aligned with your goal. The 2026 course covers the shell, command-line environment, development tools, debugging/profiling, Git, packaging/shipping and code quality. You can use the written materials and ignore the YouTube recordings. ([Missing Semester][3])
+
+**Do:** Shell → Command-line Environment → Development Tools → Debugging & Profiling → Git → Packaging/Shipping → Code Quality.
+
+---
+
+### 0.3 Git — `CORE · FREE BOOK`
+
+**Pro Git — Scott Chacon & Ben Straub**
+
+[Read Pro Git free](https://git-scm.com/book/en/v2?utm_source=chatgpt.com)
+
+The full book is legally available free online. ([Git scm][4])
+
+Don't read all of it. Study:
+
+* Ch. 2 — Git Basics
+* Ch. 3 — Git Branching
+* 7.3 — Stashing/Cleaning
+* 7.6 — Rewriting History
+* 7.7 — Reset Demystified
+* 7.8 — Advanced Merging
+* 7.10 — Debugging with Git
+* selected parts of Ch. 10 — Git Internals
+
+You should become comfortable with:
+
+`rebase`, `reflog`, `reset`, `revert`, `bisect`, cherry-picking and conflict resolution.
+
+---
+
+### 0.4 Operating systems — `CORE · FREE BOOK`
+
+**Operating Systems: Three Easy Pieces — Arpaci-Dusseau & Arpaci-Dusseau**
+
+[OSTEP free online book](https://pages.cs.wisc.edu/~remzi/OSTEP/?utm_source=chatgpt.com)
+
+One of the strongest free CS books available. It focuses on the three major OS areas: virtualization, concurrency and persistence. ([UW Computer Sciences][5])
+
+Do **not** read the entire textbook now.
+
+Read selectively:
+
+* Processes
+* Process API
+* CPU scheduling overview
+* Address spaces
+* Memory API
+* Paging basics
+* Concurrency and threads
+* Locks
+* Condition variables
+* Files and directories
+* I/O devices
+
+This pays off later when Docker, Kubernetes and production debugging stop looking magical.
+
+---
+
+### 0.5 Data structures & algorithms — `REFRESH · FREE BOOK`
+
+**Open Data Structures**
+
+[Open Data Structures](https://opendatastructures.org/?utm_source=chatgpt.com)
+
+Use it to revise:
+
+* arrays / dynamic arrays
+* linked structures
+* stacks / queues
+* hash tables
+* binary trees
+* heaps
+* graphs
+* BFS / DFS
+* complexity analysis
+
+([Open Data Structures][6])
+
+You do **not** need six months of LeetCode for this transition.
+
+---
+
+### 0.6 SQL / PostgreSQL — `CORE · FREE`
+
+**PostgreSQL official tutorial**
+
+[PostgreSQL Tutorial](https://www.postgresql.org/docs/current/tutorial.html?utm_source=chatgpt.com)
+
+Then:
+
+**PostgreSQL Exercises**
+
+[PostgreSQL Exercises](https://www.pgexercises.com/?utm_source=chatgpt.com)
+
+PGExercises goes from basic queries through joins, aggregation, window functions and recursive queries. ([PG Exercises][7])
+
+Pay special attention to:
+
+* indexes
+* transactions
+* isolation
+* joins
+* query plans
+* constraints
+* window functions
+
+Later, system design will require understanding databases beyond `SELECT`.
+
+---
+
+### 0.7 HTTP / Web architecture — `CORE · FREE`
+
+**MDN HTTP Guides**
+
+[MDN HTTP overview](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview?utm_source=chatgpt.com)
+
+Then use:
+
+[MDN HTTP guides](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides?utm_source=chatgpt.com)
+
+Specifically:
+
+* request/response lifecycle
+* methods
+* status codes
+* headers
+* authentication
+* caching
+* cookies
+* CORS
+* HTTP/1.1 vs HTTP/2 vs HTTP/3
+* HTTPS/TLS relationship
+
+MDN's overview explicitly walks through the client → connection → request → response flow. ([MDN Web Docs][8])
+
+---
+
+### 0.8 Testing — `CORE · FREE`
+
+**pytest documentation**
+
+[pytest documentation](https://docs.pytest.org/en/stable/?utm_source=chatgpt.com)
+
+Focus on:
+
+* fixtures
+* parametrization
+* mocking
+* exception testing
+* temporary resources
+* unit vs integration tests
+
+You should be able to test FastAPI/database code without treating testing as a separate chore.
+
+### Foundation study order
+
+**Python → Missing Semester → Git → OSTEP → HTTP → SQL/Postgres → pytest → DSA refresh.**
+
+---
+
+# Month 1 — Linux + Networking
+
+## Linux
+
+### 1.1 The Linux Command Line — `CORE · FREE BOOK/PDF`
+
+**William Shotts — The Linux Command Line**
+
+[The Linux Command Line](https://linuxcommand.org/tlcl.php?utm_source=chatgpt.com)
+
+This is one of the best text-first Linux introductions and is legally available from the author's site. ([LinuxCommand][9])
+
+Read selectively around:
+
+* filesystem
+* permissions
+* processes
+* shell expansion
+* redirection
+* pipes
+* grep
+* regular expressions
+* process management
+* shell scripting
+* environment
+* networking commands
+
+---
+
+### 1.2 Linux Journey — `HANDS-ON · FREE`
+
+[Linux Journey](https://linuxjourney.com/?utm_source=chatgpt.com)
+
+Use it as the shorter structured companion to TLCL.
+
+---
+
+### 1.3 OverTheWire Bandit — `HANDS-ON · FREE`
+
+[OverTheWire Bandit](https://overthewire.org/wargames/bandit/?utm_source=chatgpt.com)
+
+Do roughly the first 20–25 levels.
+
+It forces you to actually use SSH, `find`, permissions, pipes, redirection and shell utilities rather than merely recognize the commands. ([OverTheWire][10])
+
+---
+
+## Networking
+
+### 1.4 Beej's Guide to Network Concepts — `CORE · FREE BOOK/PDF`
+
+[Beej's Guide to Network Concepts](https://beej.us/guide/bgnet0/?utm_source=chatgpt.com)
+
+Excellent fit because it assumes Python familiarity and teaches the networking concepts underneath applications. HTML and downloadable PDFs are provided. ([Beej][11])
+
+Cover:
+
+* network layers
+* IP addressing
+* subnets
+* routing
+* TCP
+* UDP
+* ports
+* DNS
+* NAT
+* sockets
+
+---
+
+### 1.5 Computer Networking: Principles, Protocols and Practice — `DEEP REFERENCE · FREE BOOK`
+
+[Computer Networking: Principles, Protocols and Practice](https://www.computer-networking.info/?utm_source=chatgpt.com)
+
+Use for deeper explanations of:
+
+* TCP
+* routing
+* DNS
+* HTTP
+* transport/network layers
+
+Don't read cover-to-cover.
+
+---
+
+### 1.6 Beej's Guide to Network Programming — `OPTIONAL DEEP PRACTICE · FREE`
+
+[Beej's Guide to Network Programming](https://beej.us/guide/bgnet/?utm_source=chatgpt.com)
+
+Write one tiny TCP server/client yourself.
+
+That single exercise makes a surprising amount of networking terminology concrete.
+
+### Month 1 study order
+
+**TLCL + daily Linux use → Bandit → Beej Network Concepts → manually deploy FastAPI/Nginx → deeper networking only when something breaks.**
+
+---
+
+# Month 2 — Docker
+
+### 2.1 University of Helsinki — DevOps with Docker — `CORE + HANDS-ON · FREE`
+
+[DevOps with Docker 2026](https://devopswithdocker.com/?utm_source=chatgpt.com)
+
+This is an actual University of Helsinki MOOC and remains part of its current computer-science offering. ([University of Helsinki][12])
+
+This would be my **main Month 2 curriculum**.
+
+---
+
+### 2.2 Docker official build best practices — `CORE · FREE`
+
+[Docker build best practices](https://docs.docker.com/build/building/best-practices/?utm_source=chatgpt.com)
+
+Covers exactly the production details tutorials often omit:
+
+* multi-stage builds
+* base-image selection
+* build cache
+* `.dockerignore`
+* ephemeral containers
+* pinning versions
+* CI builds
+
+([Docker Documentation][13])
+
+---
+
+### 2.3 Docker Compose docs — `REFERENCE · FREE`
+
+[Docker Compose documentation](https://docs.docker.com/compose/?utm_source=chatgpt.com)
+
+Also specifically:
+
+[Docker Compose networking](https://docs.docker.com/reference/compose-file/networks/?utm_source=chatgpt.com)
+
+Containers on a Compose network can resolve one another by service name; understanding this is important before Kubernetes service discovery. ([Docker Documentation][14])
+
+---
+
+### 2.4 Docker storage / volumes — `REFERENCE · FREE`
+
+[Docker volumes documentation](https://docs.docker.com/engine/storage/volumes/?utm_source=chatgpt.com)
+
+Make sure you actually understand:
+
+**image vs container writable layer vs bind mount vs named volume.**
+
+---
+
+### 2.5 Docker Deep Dive — Nigel Poulton — `OPTIONAL PAID BOOK`
+
+Useful if you prefer a coherent book after the MOOC.
+
+I would **not** replace your hands-on work with it. Current practitioner discussion also strongly favors learning Docker by running and breaking actual containerized systems. ([Reddit][15])
+
+### Month 2 study order
+
+**Helsinki course → official Docker docs alongside it → containerize your own stack → intentionally break volumes/network/config → book only for gaps.**
+
+---
+
+# Month 3 — AWS Cloud Engineering
+
+### 3.1 AWS Skill Builder — `CORE · MOSTLY FREE`
+
+[AWS Skill Builder](https://aws.amazon.com/training/digital/?utm_source=chatgpt.com)
+
+AWS currently offers **1,000+ free learning resources**, including hundreds of free self-paced courses. ([Amazon Web Services, Inc.][16])
+
+Use Skill Builder for:
+
+* cloud fundamentals
+* IAM
+* EC2
+* networking/VPC
+* S3
+* databases
+* monitoring
+
+Do not turn the month into certification preparation.
+
+---
+
+### 3.2 AWS Well-Architected Framework — `CORE · FREE`
+
+[AWS Well-Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html?utm_source=chatgpt.com)
+
+Extremely important because it teaches you to judge architecture using:
+
+* operational excellence
+* security
+* reliability
+* performance efficiency
+* cost optimization
+* sustainability
+
+([AWS Documentation][17])
+
+Read the **general design principles**, then Security, Reliability and Operational Excellence first.
+
+---
+
+### 3.3 AWS Architecture Center — `CORE REFERENCE · FREE`
+
+[AWS Architecture Center](https://aws.amazon.com/architecture/?utm_source=chatgpt.com)
+
+Use this to study real reference architectures and compare them against your own diagrams. ([Amazon Web Services, Inc.][18])
+
+Especially useful:
+
+[AWS Reference Architecture Diagrams](https://aws.amazon.com/architecture/reference-architecture-diagrams/?utm_source=chatgpt.com)
+
+---
+
+### 3.4 Amazon Builders' Library — `CORE DEEP READING · FREE`
+
+[Amazon Builders' Library](https://aws.amazon.com/builders-library/?utm_source=chatgpt.com)
+
+This is one of the highest-value resources in the entire roadmap.
+
+It consists of articles written by Amazon senior engineers/technical leaders explaining how Amazon architects, releases and operates systems. It is free and grounded in real-world systems. ([Amazon Web Services, Inc.][19])
+
+Start with topics around:
+
+* timeouts
+* retries
+* backoff and jitter
+* overload
+* availability
+* deployment safety
+* caching
+* idempotency
+
+Don't read the whole library in Month 3. Keep using it throughout the year.
+
+---
+
+### 3.5 AWS official service docs — `REFERENCE`
+
+For this month bookmark rather than “study”:
+
+* IAM
+* VPC
+* EC2
+* S3
+* RDS
+* ECR
+* ALB
+* Route 53
+* CloudWatch
+* Secrets Manager
+
+Look things up while implementing them.
+
+### Month 3 study order
+
+**Skill Builder fundamentals → manually build architecture → Well-Architected → Architecture Center → Builders' Library alongside problems.**
+
+---
+
+# Month 4 — CI/CD + DevOps
+
+### 4.1 GitHub Actions — `CORE + HANDS-ON · FREE`
+
+[GitHub Actions documentation](https://docs.github.com/en/actions/get-started?utm_source=chatgpt.com)
+
+Start with:
+
+[GitHub Actions Quickstart](https://docs.github.com/en/actions/get-started/quickstart?utm_source=chatgpt.com)
+
+GitHub's documentation covers CI/testing/deployment workflows directly. ([GitHub Docs][20])
+
+Build your real pipeline while reading.
+
+---
+
+### 4.2 The Twelve-Factor App — `CORE · FREE`
+
+[The Twelve-Factor App](https://www.12factor.net/?utm_source=chatgpt.com)
+
+Still worth knowing as a vocabulary/framework for deployable services:
+
+* configuration
+* backing services
+* processes
+* dev/prod parity
+* logs
+* disposability
+
+([12factor.net][21])
+
+Don't treat all 12 factors as unquestionable laws; understand the motivation.
+
+---
+
+### 4.3 OWASP CI/CD Security Cheat Sheet — `CORE · FREE`
+
+[OWASP CI/CD Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/CI_CD_Security_Cheat_Sheet.html?utm_source=chatgpt.com)
+
+Read it when your pipeline is operational.
+
+It covers:
+
+* pipeline permissions
+* secret management
+* dependency risks
+* third-party integrations
+* artifact integrity
+* logging
+
+([OWASP Cheat Sheet Series][22])
+
+---
+
+### 4.4 Google SRE Books — `CORE REFERENCE · FREE BOOKS`
+
+[Google SRE Books](https://sre.google/books/?utm_source=chatgpt.com)
+
+The books are available online from Google. ([Google SRE][23])
+
+For Month 4, read selected chapters from:
+
+**Site Reliability Engineering**
+
+* automation
+* release engineering
+* monitoring
+* handling overload
+
+**The Site Reliability Workbook**
+
+* SLOs
+* monitoring
+* incident response
+
+Do not read both books linearly.
+
+---
+
+### 4.5 Accelerate — Forsgren, Humble, Kim — `RECOMMENDED PAID BOOK`
+
+**Accelerate: The Science of Lean Software and DevOps**
+
+This is less about writing YAML and more about understanding what high-performing software delivery actually looks like.
+
+---
+
+### 4.6 Continuous Delivery — Jez Humble & David Farley — `DEEP OPTIONAL BOOK`
+
+Excellent foundational book, but large. Use selectively for:
+
+* deployment pipeline principles
+* testing
+* environments
+* deployment strategies
+
+### Month 4 study order
+
+**Build GitHub Actions pipeline → Twelve-Factor → OWASP → selected Google SRE chapters → Accelerate.**
+
+---
+
+# Month 5 — Terraform / Infrastructure as Code
+
+### 5.1 HashiCorp AWS Get Started — `CORE + HANDS-ON · FREE`
+
+[Terraform AWS Get Started](https://developer.hashicorp.com/terraform/tutorials/aws-get-started?utm_source=chatgpt.com)
+
+Official step-by-step exercises covering create/manage/destroy infrastructure. ([HashiCorp Developer][24])
+
+Start here.
+
+---
+
+### 5.2 Terraform State — `CORE · FREE`
+
+[Terraform State tutorials](https://developer.hashicorp.com/terraform/tutorials/state?utm_source=chatgpt.com)
+
+This is **mandatory**, not an advanced extra.
+
+Terraform state maps your configuration to actual infrastructure and is central to how Terraform plans changes. ([HashiCorp Developer][25])
+
+Understand:
+
+* local state
+* remote state
+* locking
+* import
+* drift
+* moves
+* state recovery implications
+
+---
+
+### 5.3 Terraform Modules — `CORE · FREE`
+
+[Terraform Modules tutorials](https://developer.hashicorp.com/terraform/tutorials/modules?utm_source=chatgpt.com)
+
+Learn both consuming and creating modules. ([HashiCorp Developer][26])
+
+---
+
+### 5.4 Terraform testing — `HANDS-ON · FREE`
+
+[Terraform Tests tutorial](https://developer.hashicorp.com/terraform/tutorials/configuration-language/test?utm_source=chatgpt.com)
+
+Modern Terraform has native testing support, including ephemeral test infrastructure and mocks. ([HashiCorp Developer][27])
+
+---
+
+### 5.5 Terraform AWS-service tutorials — `REFERENCE · FREE`
+
+[Terraform AWS service tutorials](https://developer.hashicorp.com/terraform/tutorials/aws?utm_source=chatgpt.com)
+
+Use when implementing ALBs, RDS, Auto Scaling, IAM, etc. ([HashiCorp Developer][28])
+
+---
+
+### 5.6 Terraform: Up & Running, 3rd Edition — Yevgeniy Brikman — `OPTIONAL PAID BOOK`
+
+Good for deeper architectural patterns.
+
+But keep the official docs authoritative because Terraform evolves. Recent practitioner recommendations similarly emphasize building real infrastructure plus official docs over memorizing commands. ([Reddit][1])
+
+### Month 5 study order
+
+**AWS Get Started → reproduce your AWS architecture → State → Modules → drift/import → testing → book selectively.**
+
+---
+
+# Month 6 — Machine Learning Fundamentals
+
+This month deserves high-quality theory rather than ten random tutorials.
+
+### 6.1 Introduction to Statistical Learning with Applications in Python — `CORE · FREE BOOK`
+
+**Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani, Jonathan Taylor**
+
+[An Introduction to Statistical Learning](https://www.statlearning.com/?utm_source=chatgpt.com)
+
+This should be your **main ML fundamentals book**.
+
+Recommended chapters:
+
+* Ch. 2 — Statistical Learning
+* Ch. 3 — Linear Regression
+* Ch. 4 — Classification
+* Ch. 5 — Resampling Methods
+* Ch. 6 — Linear Model Selection / Regularization
+* Ch. 8 — Tree-Based Methods
+* Ch. 9 — Support Vector Machines
+* Ch. 12 — Unsupervised Learning
+
+Do the Python labs.
+
+Recent ML community discussions continue to recommend ISLP very strongly for fundamentals. ([Reddit][29])
+
+---
+
+### 6.2 Google Machine Learning Crash Course — `CORE REFRESH · FREE`
+
+[Google ML Crash Course](https://developers.google.com/machine-learning/crash-course/?utm_source=chatgpt.com)
+
+It includes text, interactive visualizations and exercises, so you can simply skip its videos. ([Google for Developers][30])
+
+Focus on:
+
+* linear regression
+* logistic regression
+* classification
+* numerical/categorical data
+* overfitting/generalization
+* neural-net basics
+* production ML systems
+
+---
+
+### 6.3 scikit-learn MOOC — `HANDS-ON · FREE`
+
+[scikit-learn MOOC](https://inria.github.io/scikit-learn-mooc/?utm_source=chatgpt.com)
+
+Excellent practical complement to ISLP.
+
+Use it for:
+
+* preprocessing
+* pipelines
+* cross-validation
+* hyperparameter tuning
+* evaluation
+* model selection
+
+---
+
+### 6.4 Mathematics for Machine Learning — `REFERENCE · FREE BOOK`
+
+**Marc Peter Deisenroth, A. Aldo Faisal, Cheng Soon Ong**
+
+[Mathematics for Machine Learning](https://mml-book.github.io/?utm_source=chatgpt.com)
+
+Do **not** delay ML for two months while reading math.
+
+Use selectively for:
+
+* linear algebra
+* vector calculus
+* probability
+* optimization
+
+Treat it as a gap-filler.
+
+---
+
+### 6.5 Hands-On Machine Learning with Scikit-Learn and PyTorch — Aurélien Géron — `RECOMMENDED PAID BOOK`
+
+The recent edition uses PyTorch.
+
+Very useful as your **implementation-oriented reference** alongside ISLP.
+
+Don't try to read both books cover-to-cover simultaneously.
+
+### Month 6 study order
+
+**Google MLCC fast pass → ISLP + labs as main curriculum → scikit-learn MOOC → build project → Mathematics for ML only when theory gaps appear.**
+
+---
+
+# Month 7 — PyTorch + Deep Learning
+
+### 7.1 Official PyTorch: Learn the Basics — `CORE + HANDS-ON · FREE`
+
+[PyTorch Learn the Basics](https://docs.pytorch.org/tutorials/beginner/basics/intro.html?utm_source=chatgpt.com)
+
+The current sequence covers:
+
+* tensors
+* datasets / DataLoaders
+* transforms
+* network construction
+* autograd
+* optimization
+* saving/loading
+
+([PyTorch Documentation][31])
+
+Do all of it.
+
+---
+
+### 7.2 Understanding Deep Learning — Simon J.D. Prince — `CORE THEORY`
+
+[Understanding Deep Learning author site](https://udlbook.github.io/udlbook/?utm_source=chatgpt.com)
+
+The published MIT Press edition is an excellent modern deep-learning book; the author has also published draft material and notebooks online. The book deliberately aims for a pragmatic middle ground between theory and practice. ([MIT Press][32])
+
+Use it for:
+
+* supervised learning
+* neural networks
+* loss functions
+* training
+* gradients
+* optimization
+* regularization
+* CNNs
+* transformers
+
+This is the deep-learning book I'd prioritize for you.
+
+---
+
+### 7.3 Dive into Deep Learning — `HANDS-ON REFERENCE · FREE`
+
+[Dive into Deep Learning](https://d2l.ai/?utm_source=chatgpt.com)
+
+Interactive textbook with mathematics and implementations.
+
+Use the **PyTorch** sections.
+
+Particularly good when you want another implementation of something you just studied theoretically.
+
+---
+
+### 7.4 Stanford CS231n notes — `REFERENCE · FREE`
+
+[Stanford CS231n notes](https://cs231n.github.io/?utm_source=chatgpt.com)
+
+Even if you don't specialize exclusively in CV, the notes on:
+
+* backprop
+* optimization
+* training neural networks
+* CNNs
+
+are very useful.
+
+---
+
+### 7.5 Hugging Face LLM Course — `OPTIONAL / TRANSFORMERS · FREE`
+
+[Hugging Face LLM Course](https://huggingface.co/learn/llm-course/en/chapter1/1?utm_source=chatgpt.com)
+
+Completely free and covers Transformers, Datasets, Tokenizers, Accelerate and modern NLP/LLM workflows. ([Hugging Face][33])
+
+Use this **after** you understand PyTorch training.
+
+Don't start Month 7 by hiding behind high-level Transformers APIs.
+
+### Month 7 study order
+
+**PyTorch official tutorial → train basic networks yourself → Understanding Deep Learning → D2L exercises → specialize into CV/transformers.**
+
+---
+
+# Month 8 — ML Engineering + MLflow
+
+This month is where you stop thinking only about model accuracy.
+
+### 8.1 Google's Rules of Machine Learning — `CORE · FREE`
+
+[Rules of Machine Learning](https://developers.google.com/machine-learning/guides/rules-of-ml?utm_source=chatgpt.com)
+
+Read all 43 rules.
+
+It explicitly emphasizes robust pipelines, simple models first, metrics, iteration and avoiding training-serving skew. ([Google for Developers][34])
+
+Extremely relevant to your transition.
+
+---
+
+### 8.2 Hidden Technical Debt in Machine Learning Systems — `MANDATORY PAPER · FREE PDF`
+
+**Sculley et al., Google**
+
+[Read the paper PDF](https://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf?utm_source=chatgpt.com)
+
+Only a paper, so read the whole thing.
+
+It covers problems such as:
+
+* data dependencies
+* entanglement
+* glue code
+* feedback loops
+* configuration debt
+* undeclared consumers
+* changing external environments
+
+([NeurIPS Papers][35])
+
+This is one of the most valuable items in the whole roadmap.
+
+---
+
+### 8.3 Made With ML — `CORE · FREE TEXT COURSE`
+
+[Made With ML MLOps Course](https://madewithml.com/courses/mlops/?utm_source=chatgpt.com)
+
+It covers design, data, training, tracking, serving, testing, reproducibility, production, CI/CD and monitoring. ([Made With ML][36])
+
+For Month 8 prioritize:
+
+* Design
+* Training
+* Tracking
+* Serving
+* Testing
+* Reproducibility
+
+---
+
+### 8.4 MLflow Tracking — `CORE + HANDS-ON · FREE`
+
+[MLflow Tracking documentation](https://mlflow.org/docs/latest/ml/tracking/?utm_source=chatgpt.com)
+
+MLflow Tracking records parameters, code versions, metrics, artifacts and dataset information across runs. ([MLflow AI Platform][37])
+
+Start with:
+
+[MLflow Tracking Quickstart](https://mlflow.org/docs/latest/ml/tracking/quickstart/?utm_source=chatgpt.com)
+
+Then deploy your own tracking server.
+
+---
+
+### 8.5 MLflow Model Registry — `CORE + HANDS-ON · FREE`
+
+[MLflow Model Registry](https://mlflow.org/docs/latest/ml/model-registry/?utm_source=chatgpt.com)
+
+Learn:
+
+* model versions
+* lineage
+* aliases
+* tagging
+* registry lifecycle
+
+([MLflow AI Platform][38])
+
+Then:
+
+[Model Registry tutorial](https://mlflow.org/docs/latest/ml/model-registry/tutorial?utm_source=chatgpt.com)
+
+---
+
+### 8.6 Full Stack Deep Learning — `SELECTED MATERIAL · FREE`
+
+[Full Stack Deep Learning 2022](https://fullstackdeeplearning.com/course/2022/?utm_source=chatgpt.com)
+
+Although videos exist, the pages contain notes, slides and labs. The material is free. ([Full Stack Deep Learning][39])
+
+Use:
+
+* Development Infrastructure & Tooling
+* Experiment Management
+* Troubleshooting & Testing
+* Data Management
+
+Ignore the rest for now.
+
+---
+
+### 8.7 Designing Machine Learning Systems — Chip Huyen — `RECOMMENDED PAID BOOK`
+
+One of the better books for the bridge from ML modelling into production systems.
+
+Read selectively beginning Month 8 and continue through Month 11.
+
+### Month 8 study order
+
+**Rules of ML → Hidden Technical Debt → Made With ML → MLflow → refactor your existing model into a reproducible ML system → Chip Huyen.**
+
+---
+
+# Month 9 — MLOps Lifecycle
+
+### 9.1 Google's MLOps: Continuous Delivery and Automation Pipelines — `CORE · FREE`
+
+[Google MLOps architecture guide](https://docs.cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning?utm_source=chatgpt.com)
+
+Even though it uses Google Cloud terminology, the **CI/CD/CT architecture is vendor-independent conceptually**.
+
+It specifically covers continuous integration, continuous delivery and continuous training for ML systems. ([Google Cloud Documentation][40])
+
+Read this before reaching for orchestration tools.
+
+---
+
+### 9.2 MLOps Principles — ml-ops.org — `CORE · FREE`
+
+[MLOps Principles](https://ml-ops.org/content/mlops-principles?utm_source=chatgpt.com)
+
+Covers:
+
+* versioning
+* testing
+* automation
+* reproducibility
+* deployment
+* monitoring
+* CI/CD/CT
+
+The material is published under Creative Commons. ([ML Ops][41])
+
+---
+
+### 9.3 DataTalksClub MLOps Zoomcamp — `CORE HANDS-ON · FREE`
+
+[MLOps Zoomcamp](https://datatalks.club/docs/courses/mlops-zoomcamp/?utm_source=chatgpt.com)
+
+It is currently available self-paced and covers the complete production ML lifecycle. ([DataTalks.Club][42])
+
+Because you don't want YouTube, use:
+
+* course documentation
+* repository
+* homework
+* code
+* project instructions
+
+Focus on modules around:
+
+* experiment tracking
+* orchestration
+* deployment
+* monitoring
+* best practices
+
+Don't blindly copy its exact technology choices.
+
+---
+
+### 9.4 Made With ML — production portions — `CORE REFERENCE`
+
+Return to:
+
+[Made With ML](https://madewithml.com/courses/mlops/?utm_source=chatgpt.com)
+
+Now study:
+
+* Production
+* Jobs & Services
+* CI/CD
+* Monitoring
+* Data engineering
+
+---
+
+### 9.5 Full Stack Deep Learning — `SELECTED FREE`
+
+Return for:
+
+* Deployment
+* Continual Learning
+* Model Monitoring
+
+[FSDL 2022](https://fullstackdeeplearning.com/course/2022/?utm_source=chatgpt.com)
+
+### Month 9 study order
+
+**Google MLOps architecture → MLOps Principles → Zoomcamp exercises → apply the patterns to your own system → Made With ML/FSDL for gaps.**
+
+---
+
+# Month 10 — Kubernetes + Helm + EKS
+
+Now—and only now—Kubernetes.
+
+### 10.1 Kubernetes official tutorials — `CORE · FREE`
+
+[Kubernetes Tutorials](https://kubernetes.io/docs/tutorials/?utm_source=chatgpt.com)
+
+Start with **Kubernetes Basics**, which the official documentation describes as its in-depth interactive introduction. ([Kubernetes][43])
+
+Then cover:
+
+* Pods
+* Deployments
+* Services
+* ConfigMaps
+* Secrets
+* volumes
+* probes
+* requests/limits
+* namespaces
+
+---
+
+### 10.2 University of Helsinki — DevOps with Kubernetes — `CORE + HANDS-ON · FREE`
+
+[DevOps with Kubernetes 2026](https://devopswithkubernetes.com/?utm_source=chatgpt.com)
+
+The link currently redirects to Helsinki's current 2026 MOOC. ([DevOps with Kubernetes][44])
+
+This should be your **main Kubernetes practice curriculum**.
+
+---
+
+### 10.3 Killercoda Kubernetes scenarios — `HANDS-ON · FREE`
+
+[Killercoda Kubernetes scenarios](https://killercoda.com/kubernetes?utm_source=chatgpt.com)
+
+Useful for disposable clusters where you're allowed to break things.
+
+---
+
+### 10.4 Helm official docs — `CORE · FREE`
+
+Prefer Helm 3 concepts first unless your environment explicitly uses Helm 4.
+
+[Helm 3 documentation](https://helm.sh/docs/v3/?utm_source=chatgpt.com)
+
+The docs are organized with tutorials, conceptual guides and how-to material. ([Helm][45])
+
+Then:
+
+[Helm Chart Template Guide](https://helm.sh/docs/chart_template_guide/?utm_source=chatgpt.com)
+
+Learn:
+
+* `Chart.yaml`
+* `values.yaml`
+* templates
+* functions/pipelines
+* conditionals
+* loops
+* named templates
+* debugging
+
+---
+
+### 10.5 Amazon EKS Workshop — `CORE AWS PRACTICE · FREE MATERIAL`
+
+[Amazon EKS Workshop](https://www.eksworkshop.com/?utm_source=chatgpt.com)
+
+Its current labs cover:
+
+* fundamentals
+* autoscaling
+* observability
+* security
+* networking
+* automation
+
+([EKS Workshop][46])
+
+Use this **after** local Kubernetes makes sense.
+
+---
+
+### 10.6 Kubernetes: Up & Running, 3rd Edition — `OPTIONAL PAID BOOK`
+
+**Kelsey Hightower, Brendan Burns, Joe Beda**
+
+Worth having as a structured reference.
+
+### Month 10 study order
+
+**Official Kubernetes Basics → Helsinki course → run your own local cluster → debug failures → Helm → EKS Workshop.**
+
+Avoid spending this month on:
+
+* service meshes
+* operators
+* obscure CRDs
+* certification question banks
+
+unless the project actually needs them.
+
+---
+
+# Month 11 — Observability + Production Engineering
+
+### 11.1 OpenTelemetry Observability Primer — `CORE · FREE`
+
+[OpenTelemetry Observability Primer](https://opentelemetry.io/docs/concepts/observability-primer/?utm_source=chatgpt.com)
+
+Learn the distinction between:
+
+* logs
+* metrics
+* traces
+* spans
+* distributed tracing
+* reliability signals
+
+([OpenTelemetry][47])
+
+Start here before installing ten monitoring products.
+
+---
+
+### 11.2 Prometheus Getting Started — `CORE + HANDS-ON · FREE`
+
+[Prometheus Getting Started](https://prometheus.io/docs/prometheus/latest/getting_started/?utm_source=chatgpt.com)
+
+You'll configure scraping, metrics, queries and rules yourself. ([Prometheus][48])
+
+Instrument your own FastAPI/model server.
+
+---
+
+### 11.3 Grafana Learning Journeys — `HANDS-ON · FREE MATERIAL`
+
+[Grafana Learning Journeys](https://grafana.com/docs/learning-journeys/?utm_source=chatgpt.com)
+
+The current journeys are structured, guided sequences and many include hands-on practice. ([Grafana Labs][49])
+
+Learn dashboards and alerts **after** understanding the metrics themselves.
+
+---
+
+### 11.4 Google SRE books — `CORE`
+
+Return to:
+
+[Google SRE Books](https://sre.google/books/?utm_source=chatgpt.com)
+
+Now specifically study:
+
+* monitoring distributed systems
+* SLI/SLO design
+* alerting
+* incident management
+* postmortems
+* overload
+* capacity
+
+---
+
+### 11.5 Evidently Open-Source ML Observability Course — `CORE ML MONITORING · FREE`
+
+[Evidently ML Observability Course](https://learn.evidentlyai.com/?utm_source=chatgpt.com)
+
+It provides all 40 lessons with notes and code examples, so videos aren't required. ([Evidently AI][50])
+
+Covers:
+
+* monitoring strategy
+* data quality
+* real-time/batch monitoring
+* model quality
+* prediction/data drift
+
+---
+
+### 11.6 NannyML monitoring material — `DEEP ML MONITORING · FREE`
+
+Start with:
+
+[NannyML monitoring workflow](https://www.nannyml.com/blog/machine-learning-monitoring-workflow?utm_source=chatgpt.com)
+
+Then read:
+
+[Why data drift does not necessarily mean performance degradation](https://www.nannyml.com/blog/when-data-drift-does-not-affect-performance-machine-learning-models?utm_source=chatgpt.com)
+
+This is an important conceptual correction: **don't build a system where any distribution drift automatically becomes “model broken.”** ([NannyML][51])
+
+---
+
+### 11.7 Systems Performance — Brendan Gregg — `RECOMMENDED PAID BOOK`
+
+The serious reference for:
+
+* CPU
+* memory
+* disk
+* networking
+* profiling
+* performance diagnosis
+
+Do not read it linearly. Keep it as a production-engineering reference.
+
+---
+
+### 11.8 Implementing Service Level Objectives — Alex Hidalgo — `OPTIONAL PAID BOOK`
+
+Excellent if you want deeper SLO competence.
+
+---
+
+### 11.9 Observability Engineering — Charity Majors, Liz Fong-Jones, George Miranda — `OPTIONAL PAID BOOK`
+
+Worth reading once basic telemetry makes sense.
+
+### Month 11 study order
+
+**OpenTelemetry concepts → Prometheus → instrument your application → Grafana → SRE SLO chapters → Evidently/NannyML → induce an incident → investigate → write postmortem.**
+
+---
+
+# Month 12 — Capstone / Hardening
+
+**No new major technology this month.**
+
+The resources now become review checklists.
+
+### 12.1 AWS Well-Architected Framework — `MANDATORY REVIEW`
+
+[AWS Well-Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html?utm_source=chatgpt.com)
+
+Run your finished platform through:
+
+* Operational Excellence
+* Security
+* Reliability
+* Performance Efficiency
+* Cost Optimization
+
+([AWS Documentation][17])
+
+---
+
+### 12.2 AWS Well-Architected Machine Learning Lens — `MANDATORY ML REVIEW · FREE`
+
+[AWS Machine Learning Lens](https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html?utm_source=chatgpt.com)
+
+The updated lens was published in November 2025 and provides a structured way to review ML workloads across the ML lifecycle. ([AWS Documentation][52])
+
+This is exceptionally well aligned with your capstone.
+
+---
+
+### 12.3 C4 Model — `CORE ARCHITECTURE DOCUMENTATION · FREE`
+
+[C4 Model](https://c4model.com/?utm_source=chatgpt.com)
+
+Use it to document your architecture.
+
+At minimum make:
+
+1. System Context diagram
+2. Container diagram
+3. Deployment diagram
+
+You usually do **not** need every C4 level; the official documentation notes that Context and Container diagrams are enough for many teams. ([C4 model][53])
+
+---
+
+### 12.4 OWASP ASVS — `SECURITY REVIEW · FREE`
+
+[OWASP Application Security Verification Standard](https://owasp.org/www-project-application-security-verification-standard/?utm_source=chatgpt.com)
+
+Do not “study ASVS”.
+
+Use it as a checklist against the finished application.
+
+---
+
+### 12.5 Amazon Builders' Library — `RELIABILITY REVIEW`
+
+Return to:
+
+[Amazon Builders' Library](https://aws.amazon.com/builders-library/?utm_source=chatgpt.com)
+
+Especially read material around:
+
+* retries
+* timeouts
+* jitter
+* idempotency
+* overload
+* deployment safety
+
+The library specifically exposes real Amazon/AWS architecture and operational practices. ([Amazon Web Services, Inc.][19])
+
+---
+
+### Month 12 final resource checklist
+
+Your capstone should end with:
+
+* architecture/design document
+* C4 diagrams
+* Terraform architecture
+* CI/CD explanation
+* ML experiment lineage
+* model-deployment strategy
+* observability dashboards
+* SLOs
+* runbook
+* rollback procedure
+* security review
+* load/capacity testing
+* cost estimate
+* incident postmortem
+* AWS Well-Architected review
+* AWS ML Lens review
+
+---
+
+# System Design — Parallel Track for the Entire Year
+
+I would **not** assign “Month 13: System Design.”
+
+Run this alongside the roadmap.
+
+## S1. System Design Primer — `START HERE · FREE`
+
+[System Design Primer](https://github.com/donnemartin/system-design-primer?utm_source=chatgpt.com)
+
+It's organized around:
+
+* scalability
+* latency / throughput
+* availability
+* consistency
+* caching
+* load balancing
+* CDNs
+* queues
+* databases
+* distributed systems
+
+([GitHub][54])
+
+It is somewhat interview-oriented, so use it primarily to **build vocabulary and structure your thinking**, not as your final source of truth.
+
+Current system-design discussions still recommend it as an accessible free starting point. ([Reddit][55])
+
+---
+
+## S2. Designing Data-Intensive Applications, 2nd Edition — `CORE BOOK`
+
+**Martin Kleppmann & Chris Riccomini**
+
+This is the book I would actually buy.
+
+[DDIA, 2nd Edition](https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/?utm_source=chatgpt.com)
+
+The **second edition was released in February 2026**, so get that edition rather than the first. ([O'Reilly Media][56])
+
+Read gradually.
+
+### Months 1–3
+
+Read topics around:
+
+* reliability
+* scalability
+* maintainability
+* data-system architecture
+* data models
+* storage/retrieval
+
+### Months 4–6
+
+Move to:
+
+* encoding/evolution
+* replication
+* partitioning
+
+### Months 7–9
+
+Then:
+
+* transactions
+* distributed-system faults
+* consistency
+* consensus
+
+Don't speed-read DDIA. Think about the trade-offs.
+
+Recent system-design discussions specifically point experienced developers toward the new DDIA edition for deeper study. ([Reddit][57])
+
+---
+
+## S3. Microsoft Cloud Design Patterns — `CORE · FREE`
+
+This is useful even though your cloud is AWS because the architectural patterns are technology-agnostic.
+
+[Microsoft Cloud Design Patterns](https://learn.microsoft.com/en-us/azure/architecture/patterns/?utm_source=chatgpt.com)
+
+The catalog includes:
+
+* Cache-Aside
+* Bulkhead
+* Circuit Breaker
+* Retry
+* Publisher/Subscriber
+* Queue-Based Load Leveling
+* Rate Limiting
+* Saga
+* Sharding
+* Sidecar
+* Competing Consumers
+
+Microsoft explicitly describes these as technology-agnostic patterns applicable to distributed systems. ([Microsoft Learn][58])
+
+This resource is much more useful professionally than memorizing “design Twitter” diagrams.
+
+---
+
+## S4. Amazon Builders' Library — `CORE · FREE`
+
+Again:
+
+[Amazon Builders' Library](https://aws.amazon.com/builders-library/?utm_source=chatgpt.com)
+
+Use it as the **real-world companion to DDIA**.
+
+DDIA explains distributed data-system theory.
+
+Builders' Library shows what operational constraints do to those designs.
+
+---
+
+## S5. AWS Architecture Center — `PRACTICAL DESIGN REVIEW · FREE`
+
+[AWS Architecture Center](https://aws.amazon.com/architecture/?utm_source=chatgpt.com)
+
+Before implementing something, design it yourself.
+
+Then compare your solution against official reference architectures.
+
+([Amazon Web Services, Inc.][18])
+
+---
+
+## S6. C4 Model — `DOCUMENTATION HABIT · FREE`
+
+[C4 Model](https://c4model.com/?utm_source=chatgpt.com)
+
+Every serious project you build this year should at least have:
+
+**System Context → Container → Deployment architecture.**
+
+---
+
+## S7. MIT 6.5840 Distributed Systems — `DEEP OPTIONAL · FREE`
+
+This is **not necessary to get employed as an MLOps/cloud engineer**.
+
+But if around Months 7–12 you become genuinely interested in distributed systems, this is exceptional.
+
+[MIT 6.5840 Spring 2026](https://pdos.csail.mit.edu/6.824/schedule.html?utm_source=chatgpt.com)
+
+The current 2026 syllabus includes:
+
+* MapReduce
+* RPC
+* GFS
+* Paxos
+* Raft
+* ZooKeeper
+* distributed transactions
+* Spanner
+* replication
+* Memcached
+* sharded KV systems
+* Ray
+* Byzantine fault tolerance
+
+([MIT CSAIL PDOS][59])
+
+Don't try to complete the entire MIT graduate course while working full-time.
+
+Instead, perhaps read **one important paper every 1–2 weeks** once your fundamentals are strong.
+
+---
+
+# The resource stack I would actually prioritize
+
+If the massive list above feels like too much, these are the resources I'd consider your **non-negotiable backbone**:
+
+1. **Foundation:** MIT Missing Semester + OSTEP + Pro Git + MDN HTTP.
+2. **Linux/networking:** The Linux Command Line + Beej Network Concepts.
+3. **Docker:** University of Helsinki DevOps with Docker + official Docker docs.
+4. **AWS:** Skill Builder + Well-Architected + Builders' Library.
+5. **DevOps:** GitHub Actions + Google SRE books.
+6. **Terraform:** HashiCorp tutorials + your actual AWS environment.
+7. **ML:** ISLP + Google MLCC + scikit-learn MOOC.
+8. **Deep learning:** official PyTorch tutorials + Understanding Deep Learning.
+9. **ML engineering:** Rules of ML + Hidden Technical Debt + Made With ML + MLflow.
+10. **MLOps:** Google MLOps paper/guide + MLOps Zoomcamp.
+11. **Kubernetes:** official docs + Helsinki DevOps with Kubernetes + EKS Workshop.
+12. **Observability:** OpenTelemetry + Prometheus + Google SRE + Evidently.
+13. **System Design all year:** **DDIA 2nd Edition + Microsoft Cloud Design Patterns + Builders' Library + C4.**
+
+Most importantly: **you do not need YouTube for this roadmap.** I found no area where the available video material is sufficiently superior that I'd tell you to unblock YouTube. The combination of books, documentation, labs, papers, MOOCs and your own production project is stronger for the learning style you're trying to build.
+
+[1]: https://www.reddit.com/r/Terraform/comments/1tsjjap/what_is_the_best_way_for_me_to_learn_terraform/?utm_source=chatgpt.com "What is the best way for me to learn Terraform?"
+[2]: https://docs.python.org/3/tutorial/ "The Python Tutorial — Python 3.14.7 documentation"
+[3]: https://missing.csail.mit.edu/2026/?utm_source=chatgpt.com "2026 Lectures · Missing Semester"
+[4]: https://git-scm.com/book/en/v2 "Git"
+[5]: https://pages.cs.wisc.edu/~remzi/OSTEP/ "Operating Systems: Three Easy Pieces"
+[6]: https://opendatastructures.org/ "Open Data Structures"
+[7]: https://www.pgexercises.com/?utm_source=chatgpt.com "PostgreSQL Exercises"
+[8]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview?utm_source=chatgpt.com "Overview of HTTP - HTTP | MDN"
+[9]: https://linuxcommand.org/tlcl.php "Linux Command Line Books by William Shotts"
+[10]: https://overthewire.org/wargames/bandit/?utm_source=chatgpt.com "OverTheWire: Bandit"
+[11]: https://beej.us/guide/bgnet0/html/?utm_source=chatgpt.com "Beej's Guide to Network Concepts"
+[12]: https://www.helsinki.fi/en/admissions-and-education/open-university/open-university-studies-degree-programme/computer-science?utm_source=chatgpt.com "Open uni: Computer Science and Data Science | University of Helsinki"
+[13]: https://docs.docker.com/build/building/best-practices/?utm_source=chatgpt.com "Building best practices | Docker Docs"
+[14]: https://docs.docker.com/reference/compose-file/networks/?utm_source=chatgpt.com "Define and manage networks in Docker Compose | Docker Docs"
+[15]: https://www.reddit.com/r/devops/comments/1s7phdh/what_are_your_thought_on_docker_deep_dive_vs/?utm_source=chatgpt.com "What are your thought on Docker Deep Dive vs  Learn Docker in  a Month Worth of Lunches"
+[16]: https://aws.amazon.com/training/digital/?utm_source=chatgpt.com "Learn AWS online with AWS Skill Builder | Digital Training | AWS"
+[17]: https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html?utm_source=chatgpt.com "AWS Well-Architected Framework - AWS Well-Architected Framework"
+[18]: https://aws.amazon.com/architecture/?utm_source=chatgpt.com "Reference Architecture Examples and Best Practices"
+[19]: https://aws.amazon.com/builders-library/faqs/?utm_source=chatgpt.com "The Amazon Builders’ Library FAQs"
+[20]: https://docs.github.com/en/actions/get-started/quickstart?utm_source=chatgpt.com "Quickstart for GitHub Actions - GitHub Docs"
+[21]: https://www.12factor.net/?utm_source=chatgpt.com "The Twelve-Factor App"
+[22]: https://cheatsheetseries.owasp.org/cheatsheets/CI_CD_Security_Cheat_Sheet.html?utm_source=chatgpt.com "CI CD Security - OWASP Cheat Sheet Series"
+[23]: https://sre.google/books/ "Google SRE book- Comprehensive guide to site reliability"
+[24]: https://developer.hashicorp.com/terraform/tutorials/aws-get-started?utm_source=chatgpt.com "AWS | Terraform | HashiCorp Developer"
+[25]: https://developer.hashicorp.com/terraform/tutorials/state/state-cli?utm_source=chatgpt.com "Manage resources in Terraform state | Terraform | HashiCorp Developer"
+[26]: https://developer.hashicorp.com/terraform/tutorials/modules?utm_source=chatgpt.com "Modules | Terraform | HashiCorp Developer"
+[27]: https://developer.hashicorp.com/terraform/tutorials/configuration-language/test?utm_source=chatgpt.com "Write Terraform Tests | Terraform | HashiCorp Developer"
+[28]: https://developer.hashicorp.com/terraform/tutorials/aws?utm_source=chatgpt.com "AWS Services | Terraform | HashiCorp Developer"
+[29]: https://www.reddit.com/r/learnmachinelearning/comments/1tcszl5/ml_course_in_2026/?utm_source=chatgpt.com "ML course in 2026"
+[30]: https://developers.google.com/machine-learning/crash-course/?utm_source=chatgpt.com "Machine Learning  |  Google for Developers"
+[31]: https://docs.pytorch.org/tutorials/beginner/basics/intro?utm_source=chatgpt.com "Learn the Basics — PyTorch Tutorials 2.13.0+cu130 documentation"
+[32]: https://mitpress.ublish.com/book/understanding-deep-learning?utm_source=chatgpt.com "Understanding Deep Learning | The MIT Press"
+[33]: https://huggingface.co/learn/llm-course/en/chapter1/1?utm_source=chatgpt.com "Introduction · Hugging Face"
+[34]: https://developers.google.com/machine-learning/guides/rules-of-ml?utm_source=chatgpt.com "Rules of Machine Learning:  |  Google for Developers"
+[35]: https://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf?utm_source=chatgpt.com "Hidden Technical Debt in Machine Learning Systems"
+[36]: https://madewithml.com/courses/mlops/?utm_source=chatgpt.com "MLOps Course - Made With ML by Anyscale"
+[37]: https://mlflow.org/docs/latest/tracking?utm_source=chatgpt.com "ML Experiment Tracking | MLflow AI Platform"
+[38]: https://mlflow.org/docs/latest/ml/model-registry/?utm_source=chatgpt.com "ML Model Registry | MLflow AI Platform"
+[39]: https://fullstackdeeplearning.com/course/2022/?utm_source=chatgpt.com "FSDL 2022 - The Full Stack"
+[40]: https://docs.cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning?utm_source=chatgpt.com "MLOps: Continuous delivery and automation pipelines in machine learning  |  Cloud Architecture Center  |  Google Cloud Documentation"
+[41]: https://ml-ops.org/content/mlops-principles?utm_source=chatgpt.com "MLOps Principles"
+[42]: https://datatalks.club/docs/courses/mlops-zoomcamp/?utm_source=chatgpt.com "MLOps Zoomcamp | DataTalks.Club Documentation"
+[43]: https://kubernetes.io/docs/tutorials/?utm_source=chatgpt.com "Tutorials | Kubernetes"
+[44]: https://devopswithkubernetes.com/ "MOOC.fi courses"
+[45]: https://helm.sh/docs/v3/?utm_source=chatgpt.com "Docs Home | Helm"
+[46]: https://www.eksworkshop.com/docs/introduction?utm_source=chatgpt.com "Introduction | Amazon EKS Workshop"
+[47]: https://opentelemetry.io/docs/concepts/observability-primer/?utm_source=chatgpt.com "Observability primer | OpenTelemetry"
+[48]: https://prometheus.io/docs/prometheus/latest/getting_started/?utm_source=chatgpt.com "Getting started | Prometheus"
+[49]: https://grafana.com/docs/learning-journeys/?utm_source=chatgpt.com "Journeys | Grafana Labs"
+[50]: https://learn.evidentlyai.com/?utm_source=chatgpt.com "Welcome! | Evidently AI - Open-source ML observability course"
+[51]: https://www.nannyml.com/blog/when-data-drift-does-not-affect-performance-machine-learning-models?utm_source=chatgpt.com "Don’t let yourself be fooled by data drift - NannyML"
+[52]: https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html?utm_source=chatgpt.com "Machine Learning Lens - AWS Well-Architected Framework - Machine Learning Lens"
+[53]: https://c4model.com/?utm_source=chatgpt.com "Home | C4 model"
+[54]: https://github.com/donnemartin/system-design-primer?utm_source=chatgpt.com "GitHub - donnemartin/system-design-primer: Learn how to design large-scale systems. Prep for the system design interview. Includes Anki flashcards. · GitHub"
+[55]: https://www.reddit.com/r/PlacementsPrep/comments/1vo2g3m/what_is_the_best_and_free_resources_to_start/?utm_source=chatgpt.com "what is the best and free resources to start system design?"
+[56]: https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/?utm_source=chatgpt.com "Designing Data-Intensive Applications, 2nd Edition [Book]"
+[57]: https://www.reddit.com/r/softwarearchitecture/comments/1t8xcsk/suggest_some_system_design_resources_please/?utm_source=chatgpt.com "Suggest some system design resources please."
+[58]: https://learn.microsoft.com/en-us/azure/architecture/patterns/?utm_source=chatgpt.com "Cloud Design Patterns - Azure Architecture Center | Microsoft Learn"
+[59]: https://pdos.csail.mit.edu/6.824/schedule.html?utm_source=chatgpt.com "6.5840 Schedule: Spring 2026"

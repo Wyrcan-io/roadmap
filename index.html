@@ -1,0 +1,3332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI/ML + Cloud + DevOps + MLOps — Complete 12-Month Roadmap & Resource Stack</title>
+  <meta name="description" content="A comprehensive, practitioner-verified one-year curriculum with deep curated resources, official docs, books, and hands-on labs to become an AI/ML, Cloud, DevOps, and MLOps professional." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --bg: #f7f0e5;
+  --paper: #fffaf2;
+  --paper-2: #f1e5d3;
+  --paper-3: #eae0cf;
+  --ink: #2c241f;
+  --ink-light: #4a3e35;
+  --muted: #74665b;
+  --line: #d8c7b0;
+  --line-strong: #c4b097;
+  --rust: #a64b2a;
+  --rust-dark: #7e351f;
+  --rust-light: #fbeee8;
+  --amber: #d58d35;
+  --amber-light: #fef5e7;
+  --olive: #606d44;
+  --olive-light: #f1f4eb;
+  --plum: #76515a;
+  --plum-light: #f8eff2;
+  --blue: #2a5a78;
+  --blue-light: #edf5fa;
+  --shadow-sm: 0 4px 12px rgba(72, 47, 31, 0.05);
+  --shadow: 0 18px 50px rgba(72, 47, 31, 0.08);
+  --shadow-lg: 0 24px 60px rgba(72, 47, 31, 0.12);
+  --radius-sm: 10px;
+  --radius: 18px;
+  --radius-lg: 24px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(213,141,53,.12), transparent 32rem),
+    radial-gradient(circle at 90% 15%, rgba(166,75,42,.08), transparent 36rem),
+    linear-gradient(180deg, #fdfaf4 0%, var(--bg) 100%);
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+code, pre, .mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+button, input { font: inherit; }
+
+button:focus-visible, input:focus-visible, a:focus-visible {
+  outline: 3px solid rgba(166, 75, 42, .4);
+  outline-offset: 3px;
+}
+
+a {
+  color: var(--rust);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color .15s ease, border-color .15s ease;
+  border-bottom: 1px solid rgba(166,75,42,0.3);
+}
+
+a:hover {
+  color: var(--rust-dark);
+  border-bottom-color: var(--rust-dark);
+}
+
+.page-shell {
+  width: min(1200px, calc(100% - 36px));
+  margin: 0 auto;
+  padding: 48px 0 100px;
+}
+
+/* HERO */
+.hero {
+  padding: 24px 0 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow, .kicker {
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 12px;
+  color: var(--rust);
+}
+
+h1 {
+  max-width: 950px;
+  margin: 14px 0 16px;
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: clamp(38px, 6.5vw, 76px);
+  line-height: 1.02;
+  letter-spacing: -.035em;
+  font-weight: 700;
+}
+
+.lede {
+  max-width: 820px;
+  margin: 0;
+  font-size: clamp(17px, 2.3vw, 21px);
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+.primary, .secondary, .ghost, .filter {
+  min-height: 42px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.primary {
+  background: var(--rust);
+  color: #fffaf3;
+  box-shadow: 0 4px 14px rgba(166,75,42,0.25);
+}
+.primary:hover { background: var(--rust-dark); transform: translateY(-1px); }
+
+.secondary {
+  background: var(--paper-2);
+  color: var(--ink);
+  border: 1px solid var(--line-strong);
+}
+.secondary:hover { background: #e5d5be; }
+
+.ghost {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid transparent;
+}
+.ghost:hover { color: var(--rust); border-color: var(--line); }
+
+/* PROGRESS PANEL */
+.progress-panel {
+  display: grid;
+  grid-template-columns: auto minmax(140px, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  margin-top: 24px;
+  max-width: 760px;
+  background: rgba(255, 250, 242, 0.7);
+  padding: 14px 20px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+}
+
+.progress-label {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+.progress-track {
+  height: 10px;
+  background: #e4d4c0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--rust), var(--amber), var(--olive));
+  transition: width .3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-percent {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--rust);
+}
+
+/* PHILOSOPHY & LEGEND BANNER */
+.philosophy-banner {
+  margin: 32px 0 10px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--rust);
+  border-radius: 16px;
+  padding: 24px 26px;
+  box-shadow: var(--shadow-sm);
+}
+
+.philosophy-banner h3 {
+  margin: 0 0 10px;
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 24px;
+  color: var(--ink);
+}
+
+.philosophy-banner p {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.legend-tags-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  padding-top: 14px;
+  border-top: 1px dashed var(--line);
+}
+
+.legend-tags-title {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-right: 4px;
+}
+
+/* TAG BADGES */
+.tag-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.tag-badge.core {
+  background: #a64b2a;
+  color: #fffaf3;
+}
+
+.tag-badge.handson {
+  background: var(--olive);
+  color: #fffaf3;
+}
+
+.tag-badge.book {
+  background: #bb721a;
+  color: #fffaf3;
+}
+
+.tag-badge.ref {
+  background: #5a5160;
+  color: #fffaf3;
+}
+
+.tag-badge.free {
+  background: #e8dcc8;
+  color: #4a3e35;
+  border: 1px solid #d4c3ab;
+}
+
+.tag-badge.optional {
+  background: #ede6da;
+  color: #6a5e54;
+  border: 1px dashed #c0b09d;
+}
+
+.tag-badge.paper {
+  background: var(--plum);
+  color: #fffaf3;
+}
+
+.tag-badge.review {
+  background: var(--blue);
+  color: #fffaf3;
+}
+
+/* PRINCIPLES */
+.principles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  margin: 32px 0 36px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.principles article {
+  background: rgba(255,250,242,.88);
+  padding: 22px;
+}
+
+.principles span {
+  display: inline-block;
+  color: var(--rust);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 900;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.principles h2 {
+  font-family: 'Newsreader', Georgia, serif;
+  margin: 0 0 8px;
+  font-size: 26px;
+  line-height: 1.15;
+}
+
+.principles p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+
+/* CONTROLS & SEARCH BAR */
+.controls-container {
+  margin: 36px 0 24px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px 22px;
+  box-shadow: var(--shadow-sm);
+}
+
+.search-and-view-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.search-input-wrapper {
+  position: relative;
+  flex: 1;
+  min-width: 260px;
+  max-width: 480px;
+}
+
+.search-input-wrapper input {
+  width: 100%;
+  height: 40px;
+  padding: 0 36px 0 38px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: var(--paper-2);
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.search-input-wrapper input:focus {
+  background: #fff;
+  border-color: var(--rust);
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.search-clear {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  font-size: 16px;
+  cursor: pointer;
+  display: none;
+  padding: 0 4px;
+}
+
+.search-clear.visible { display: block; }
+
+.view-mode-toggle {
+  display: flex;
+  gap: 6px;
+  background: var(--paper-2);
+  padding: 4px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+}
+
+.view-mode-btn {
+  background: transparent;
+  border: 0;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.view-mode-btn.active {
+  background: var(--ink);
+  color: #fff;
+}
+
+.filter-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  padding-top: 14px;
+}
+
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.filter-group > span {
+  margin-right: 4px;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.filter {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+  height: 36px;
+  padding: 0 14px;
+}
+
+.filter:hover {
+  background: var(--paper-2);
+  color: var(--ink);
+}
+
+.filter.active {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+/* SECTION CARDS (GATE, SYSTEM THREAD, MONTH CARDS) */
+.gate, .system-thread, .backbone-section {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: clamp(22px, 4vw, 36px);
+  box-shadow: var(--shadow);
+  margin-bottom: 42px;
+}
+
+.gate-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: start;
+}
+
+.gate h2, .weekly h2, .roles h2, .backbone-section h2 {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: clamp(28px, 4.5vw, 44px);
+  letter-spacing: -.03em;
+  margin: 6px 0 0;
+  line-height: 1.1;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 14px;
+  background: #f2d5bf;
+  color: var(--rust-dark);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.gate-copy {
+  max-width: 800px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 14px 0 0;
+}
+
+/* CHECKBOX STYLES */
+label {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 10px;
+  align-items: start;
+  padding: 6px 0;
+  line-height: 1.45;
+  color: var(--ink-light);
+  font-size: 14px;
+}
+
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--rust);
+  cursor: pointer;
+}
+
+label:has(input:checked) {
+  color: #9a8c7f;
+  text-decoration: line-through;
+}
+
+.checkpoint {
+  margin-top: 24px;
+  padding: 16px 20px;
+  border-left: 4px solid var(--rust);
+  background: #f8eadc;
+  border-radius: 8px 14px 14px 8px;
+}
+
+.checkpoint strong { color: var(--rust-dark); font-size: 14px; text-transform: uppercase; letter-spacing: .06em; }
+.checkpoint p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+
+/* STUDY ORDER BANNER */
+.study-order-banner {
+  margin: 22px 0 12px;
+  background: #efe4d2;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  padding: 14px 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.study-order-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--rust-dark);
+  background: #e2d1ba;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.study-order-flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.study-order-flow span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.study-order-flow .arrow {
+  color: var(--rust);
+  font-weight: 900;
+  margin: 0 4px;
+}
+
+/* SECTION TABS INSIDE CARDS */
+.card-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+}
+
+.card-tab-btn {
+  background: transparent;
+  border: 0;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-tab-btn:hover {
+  background: var(--paper-2);
+  color: var(--ink);
+}
+
+.card-tab-btn.active {
+  background: var(--paper-2);
+  color: var(--rust);
+  font-weight: 800;
+}
+
+.card-tab-btn .badge-count {
+  background: #e4d5bf;
+  color: var(--ink);
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* RESOURCE GRID & CARDS */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.resource-card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px 20px;
+  transition: all .2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.resource-card:hover {
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-sm);
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+.resource-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.resource-title {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 4px;
+  color: var(--ink);
+}
+
+.resource-title a {
+  color: inherit;
+  border-bottom: 1px solid rgba(44, 36, 31, 0.3);
+}
+
+.resource-title a:hover {
+  color: var(--rust);
+  border-bottom-color: var(--rust);
+}
+
+.resource-author {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.resource-meta-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.resource-desc {
+  font-size: 13.5px;
+  color: var(--ink-light);
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.resource-bullets {
+  margin: 0 0 12px;
+  padding-left: 18px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.resource-bullets li {
+  margin-bottom: 3px;
+}
+
+.resource-quote {
+  font-size: 12.5px;
+  color: var(--rust-dark);
+  background: var(--rust-light);
+  padding: 8px 12px;
+  border-radius: 8px;
+  border-left: 3px solid var(--rust);
+  margin-top: auto;
+}
+
+.resource-quote.olive-quote {
+  color: #3b4526;
+  background: var(--olive-light);
+  border-left-color: var(--olive);
+}
+
+.resource-quote.amber-quote {
+  color: #6a440e;
+  background: var(--amber-light);
+  border-left-color: var(--amber);
+}
+
+/* ROADMAP LIST */
+.roadmap {
+  position: relative;
+  display: grid;
+  gap: 20px;
+  padding-left: 56px;
+}
+
+.roadmap-line {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: linear-gradient(var(--olive), #c8a65e, var(--plum));
+}
+
+.month-card {
+  position: relative;
+  background: rgba(255, 250, 242, .92);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: visible;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.month-card::before {
+  content: "";
+  position: absolute;
+  left: -43px;
+  top: 26px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 4px solid var(--bg);
+  background: var(--olive);
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+.month-card.ml::before { background: var(--plum); }
+
+.month-card.focused {
+  border-color: var(--rust);
+  box-shadow: 0 0 0 4px rgba(166,75,42,.15);
+}
+
+.month-card.hidden-track, .gate.hidden-track, .system-thread.hidden-track { display: none; }
+
+.month-head {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr) 32px;
+  gap: 16px;
+  align-items: center;
+  text-align: left;
+  background: transparent;
+  padding: 20px 22px;
+  color: inherit;
+  border-radius: var(--radius);
+}
+
+.month-head:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.month-index {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #ebe3d3;
+  color: var(--ink);
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 22px;
+  font-weight: 700;
+  border: 1px solid var(--line);
+}
+
+.month-main { min-width: 0; }
+
+.month-main strong {
+  display: block;
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: clamp(21px, 2.6vw, 29px);
+  letter-spacing: -.02em;
+  line-height: 1.2;
+}
+
+.month-main small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.chevron {
+  font-size: 20px;
+  color: var(--muted);
+  transition: transform .25s ease;
+}
+
+.month-head[aria-expanded="true"] .chevron { transform: rotate(180deg); }
+
+.month-body {
+  border-top: 1px solid var(--line);
+  padding: 22px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.foundation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.foundation-card {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fffdf8;
+}
+
+.foundation-card h3, .columns h3 {
+  margin: 0 0 14px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-weight: 800;
+  color: var(--rust-dark);
+}
+
+.deliverable {
+  background: #f4ecdf;
+  border-radius: 14px;
+  padding: 20px;
+  border: 1px solid #dfd0bb;
+}
+
+.deliverable p {
+  margin: 0 0 12px;
+  line-height: 1.55;
+  font-size: 14.5px;
+}
+
+.deliverable span {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.capstone {
+  border-color: #cbb4a9;
+  background: #fff9f4;
+}
+
+/* SYSTEM DESIGN THREAD */
+.system-thread {
+  border: 1px solid #d2b47e;
+  background: linear-gradient(145deg, #fff9ee, #f5ead6);
+}
+
+.system-thread-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: end;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #d9c6a4;
+}
+
+.system-thread-head p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15.5px;
+  line-height: 1.65;
+}
+
+.system-phases {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.system-phases article {
+  padding: 20px;
+  border: 1px solid #dac7a6;
+  border-radius: 16px;
+  background: rgba(255, 253, 247, .85);
+}
+
+.system-phases h3 {
+  margin: 8px 0 12px;
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 22px;
+}
+
+.phase-no {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #e8c98f;
+  color: #4d3820;
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.design-loop {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: #ead8b8;
+  font-size: 14px;
+  line-height: 1.55;
+  border: 1px solid #dcbe92;
+}
+
+.design-loop span {
+  color: #4a3e35;
+}
+
+.arch-flow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  gap: 10px;
+  align-items: center;
+  margin: 24px 0 10px;
+}
+
+.arch-node {
+  min-width: 0;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid #d6bf97;
+  background: rgba(255, 253, 247, .9);
+}
+
+.arch-node span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--rust);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .1em;
+}
+
+.arch-node strong {
+  display: block;
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 18px;
+}
+
+.arch-node small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.4;
+}
+
+.arch-arrow {
+  color: #9f8052;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+/* BACKBONE SECTION */
+.backbone-section {
+  background: #fffdf8;
+  border: 2px solid var(--rust);
+  position: relative;
+}
+
+.backbone-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 20px;
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.backbone-item {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  padding: 10px 14px;
+  background: #fbf5eb;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.backbone-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--rust);
+  background: #edd8c5;
+  padding: 2px 6px;
+  border-radius: 6px;
+  min-width: 22px;
+  text-align: center;
+}
+
+.backbone-text strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* WEEKLY & ROLES */
+.weekly, .roles {
+  margin-top: 50px;
+  padding: 34px 0;
+  border-top: 1px solid var(--line);
+}
+
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.week-grid article {
+  padding: 20px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.week-grid strong, .week-grid span, .week-grid small { display: block; }
+.week-grid span { margin-top: 12px; font-size: 20px; font-weight: 900; color: var(--rust-dark); }
+.week-grid small { margin-top: 4px; color: var(--muted); font-size: 13px; }
+
+.role-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.role-tags span {
+  padding: 10px 16px;
+  background: #eadcca;
+  border: 1px solid #d6c1a7;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 13.5px;
+}
+
+/* CITATIONS ACCORDION */
+.citations-wrapper {
+  margin-top: 48px;
+  border-top: 1px dashed var(--line-strong);
+  padding-top: 28px;
+}
+
+.citations-details summary {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--muted);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.citations-details summary::-webkit-details-marker { display: none; }
+
+.citations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 10px;
+  margin-top: 18px;
+  padding: 16px;
+  background: var(--paper-2);
+  border-radius: 14px;
+  font-size: 12px;
+}
+
+.citation-item {
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.citation-item a {
+  font-weight: 500;
+  color: var(--ink-light);
+  word-break: break-all;
+}
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .principles, .system-phases, .backbone-list { grid-template-columns: 1fr 1fr; }
+  .arch-flow { grid-template-columns: 1fr 1fr; }
+  .arch-arrow { display: none; }
+}
+
+@media (max-width: 768px) {
+  .page-shell { width: min(100% - 24px, 1200px); padding-top: 24px; }
+  h1 { font-size: clamp(34px, 10vw, 54px); }
+  .principles, .foundation-grid, .week-grid, .columns, .system-thread-head, .system-phases, .design-loop, .backbone-list { grid-template-columns: 1fr; }
+  .controls-container, .gate-title { align-items: stretch; }
+  .search-and-view-row, .filter-row { flex-direction: column; align-items: stretch; }
+  .search-input-wrapper { max-width: 100%; }
+  .roadmap { padding-left: 32px; }
+  .roadmap-line { left: 10px; }
+  .month-card::before { left: -29px; }
+  .month-head { grid-template-columns: 46px minmax(0,1fr) 24px; padding: 16px; }
+  .month-index { width: 42px; height: 42px; font-size: 18px; }
+  .progress-panel { grid-template-columns: 1fr auto; }
+  .progress-track { grid-column: 1 / -1; grid-row: 2; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; transition: none !important; }
+}
+  </style>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="hero">
+      <div class="eyebrow">PROFESSIONAL TRANSITION CURRICULUM · 12 MONTHS</div>
+      <h1>AI/ML × Cloud × DevOps × MLOps</h1>
+      <p class="lede">
+        Build systems from first principles until they feel routine, then layer production cloud, continuous delivery, deep learning, and MLOps platforms on top. Text-first curriculum with 100% official documentation, university courses, practitioner books, and real code.
+      </p>
+
+      <div class="hero-actions">
+        <button class="primary" id="focusBtn" type="button">Focus next unfinished</button>
+        <button class="secondary" id="expandBtn" type="button">Expand all</button>
+        <button class="ghost" id="resetBtn" type="button">Reset progress</button>
+      </div>
+
+      <section class="progress-panel" aria-label="Roadmap progress">
+        <div>
+          <span class="progress-label">Total Progress</span>
+          <strong id="progressText">0 / 74</strong>
+        </div>
+        <div class="progress-track" aria-hidden="true">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <span class="progress-percent" id="progressPercent">0%</span>
+      </section>
+    </header>
+
+    <!-- PHILOSOPHY & RESOURCE LEGEND -->
+    <section class="philosophy-banner">
+      <h3>The Practitioner Resource Standard</h3>
+      <p>
+        This curriculum is deliberately built with a bias toward <strong>official documentation, university material, open textbooks, practitioner-recommended books, hands-on labs, and resources that working engineers actually use after the tutorial phase</strong>. You will not find superficial tutorial-hell videos here: there is enough deep, high-fidelity text and lab material to complete the entire transformation without YouTube.
+      </p>
+      <div class="legend-tags-grid">
+        <span class="legend-tags-title">Resource Guide:</span>
+        <span class="tag-badge core">CORE</span> Work through thoroughly
+        <span class="tag-badge handson">HANDS-ON</span> Complete the labs & exercises
+        <span class="tag-badge book">BOOK</span> Worth owning & studying selectively
+        <span class="tag-badge ref">REFERENCE</span> Consult as needed
+        <span class="tag-badge free">FREE</span> Legally free open material
+        <span class="tag-badge optional">DEEP OPTIONAL</span> Advanced deep-dive
+      </div>
+    </section>
+
+    <!-- CORE PRINCIPLES -->
+    <section class="principles">
+      <article>
+        <span>01</span>
+        <h2>70% build</h2>
+        <p>Use books and docs to unblock real implementations. Projects are your actual curriculum.</p>
+      </article>
+      <article>
+        <span>02</span>
+        <h2>One system</h2>
+        <p>Evolve one production-grade AI/ML platform over 12 months rather than hoarding disconnected toy repos.</p>
+      </article>
+      <article>
+        <span>03</span>
+        <h2>Break things</h2>
+        <p>Deploy, break configuration, observe failures, debug with telemetry, and write the incident postmortem.</p>
+      </article>
+      <article>
+        <span>04</span>
+        <h2>Design first</h2>
+        <p>Reason methodically about traffic, state, consistency, latency, cost, and failure modes before writing code.</p>
+      </article>
+    </section>
+
+    <!-- CONTROLS, SEARCH & FILTERS -->
+    <section class="controls-container" aria-label="Roadmap filters and resource search">
+      <div class="search-and-view-row">
+        <div class="search-input-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="resourceSearch" placeholder="Search resources, books, topics, or authors..." aria-label="Search resources">
+          <button class="search-clear" id="searchClear" type="button" aria-label="Clear search">✕</button>
+        </div>
+        <div class="view-mode-toggle">
+          <button class="view-mode-btn active" data-view="both" type="button">All Views</button>
+          <button class="view-mode-btn" data-view="tasks" type="button">Tasks & Deliverables</button>
+          <button class="view-mode-btn" data-view="resources" type="button">Resource Library</button>
+        </div>
+      </div>
+
+      <div class="filter-row">
+        <div class="filter-group">
+          <span>Track</span>
+          <button class="filter active" data-track="all" type="button">All</button>
+          <button class="filter" data-track="foundation" type="button">Foundation</button>
+          <button class="filter" data-track="platform" type="button">Cloud / DevOps</button>
+          <button class="filter" data-track="ml" type="button">ML / MLOps</button>
+          <button class="filter" data-track="system" type="button">System Design</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHASE 0: FOUNDATION RESET -->
+    <section class="gate" data-track="foundation" id="foundation-gate">
+      <div class="gate-title">
+        <div>
+          <div class="kicker">BEFORE MONTH 1 · 3–4 WEEKS</div>
+          <h2>0. Foundation Reset</h2>
+        </div>
+        <span class="status-pill">Do not rush this</span>
+      </div>
+      <p class="gate-copy">
+        The goal is not to “finish basics.” It is to eliminate hidden weak spots in Python, Git, SQL, HTTP, operating systems, debugging, and testing before infrastructure and distributed ML make debugging punishing.
+      </p>
+
+      <div class="study-order-banner">
+        <span class="study-order-label">Study Order</span>
+        <div class="study-order-flow">
+          <span>Python</span><span class="arrow">→</span>
+          <span>Missing Semester</span><span class="arrow">→</span>
+          <span>Git</span><span class="arrow">→</span>
+          <span>OSTEP</span><span class="arrow">→</span>
+          <span>HTTP</span><span class="arrow">→</span>
+          <span>SQL/Postgres</span><span class="arrow">→</span>
+          <span>pytest</span><span class="arrow">→</span>
+          <span>DSA refresh</span>
+        </div>
+      </div>
+
+      <div class="card-tabs">
+        <button class="card-tab-btn active" data-target="foundation-tasks" type="button">Action Checklists</button>
+        <button class="card-tab-btn" data-target="foundation-resources" type="button">Curated Resources <span class="badge-count">8</span></button>
+      </div>
+
+      <!-- Foundation Tasks Tab -->
+      <div class="tab-content" id="foundation-tasks">
+        <div class="foundation-grid">
+          <article class="foundation-card">
+            <h3>Programming</h3>
+            <label><input type="checkbox" data-id="f-python"> Python fluency: data model, iterators, context managers, exceptions</label>
+            <label><input type="checkbox" data-id="f-oop"> OOP + composition + interfaces</label>
+            <label><input type="checkbox" data-id="f-async"> Async / await, concurrency vs parallelism</label>
+            <label><input type="checkbox" data-id="f-dsa"> DSA revision: arrays, maps, stacks, queues, trees, graphs, complexity</label>
+          </article>
+          <article class="foundation-card">
+            <h3>Web & data</h3>
+            <label><input type="checkbox" data-id="f-http"> HTTP lifecycle, methods, status codes, headers, cookies, CORS</label>
+            <label><input type="checkbox" data-id="f-rest"> REST/API design, JSON, authentication basics</label>
+            <label><input type="checkbox" data-id="f-sql"> SQL: joins, indexes, transactions, isolation, query plans</label>
+            <label><input type="checkbox" data-id="f-db"> PostgreSQL basics + schema design</label>
+          </article>
+          <article class="foundation-card">
+            <h3>Systems</h3>
+            <label><input type="checkbox" data-id="f-os"> Processes, threads, memory, files, sockets</label>
+            <label><input type="checkbox" data-id="f-cli"> Bash / terminal fluency</label>
+            <label><input type="checkbox" data-id="f-net"> TCP/IP, DNS, ports, NAT, TLS</label>
+            <label><input type="checkbox" data-id="f-git"> Git: rebase, reset, bisect, conflict resolution</label>
+          </article>
+          <article class="foundation-card">
+            <h3>Engineering discipline</h3>
+            <label><input type="checkbox" data-id="f-test"> Unit, integration and end-to-end testing</label>
+            <label><input type="checkbox" data-id="f-debug"> Debuggers, logs, profiling, root-cause analysis</label>
+            <label><input type="checkbox" data-id="f-sec"> Secrets, permissions, least privilege, common web risks</label>
+            <label><input type="checkbox" data-id="f-arch"> Explain browser → DNS → server → API → DB → response</label>
+            <label><input type="checkbox" data-id="f-sd-basics"> Latency vs throughput, vertical vs horizontal scaling, stateless vs stateful</label>
+            <label><input type="checkbox" data-id="f-sd-data"> Consistency, replication, partitioning, caching, queues</label>
+          </article>
+        </div>
+      </div>
+
+      <!-- Foundation Resources Tab -->
+      <div class="tab-content" id="foundation-resources" style="display: none;">
+        <div class="resource-grid">
+          <!-- 0.1 Python -->
+          <div class="resource-card" data-resource-name="Python 3.14 Tutorial asyncio">
+            <div>
+              <div class="resource-card-header">
+                <h4 class="resource-title"><a href="https://docs.python.org/3/tutorial/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">The Python Tutorial</a></h4>
+              </div>
+              <div class="resource-author">Official Python Documentation</div>
+              <div class="resource-meta-tags">
+                <span class="tag-badge core">CORE</span>
+                <span class="tag-badge free">FREE</span>
+              </div>
+              <p class="resource-desc">Specifically written for programmers who already understand programming. Focus on:</p>
+              <ul class="resource-bullets">
+                <li>Functions and argument semantics, data structures, modules/packages, exceptions</li>
+                <li>Classes, object model, iterators/generators, context managers</li>
+                <li>Standard library, virtual environments, logging, threading</li>
+              </ul>
+              <p class="resource-desc">Bookmark & study: <a href="https://docs.python.org/3/library/asyncio.html?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Python asyncio documentation</a>.</p>
+            </div>
+            <div class="resource-quote">Key test: Clearly explain <code>asyncio</code> vs threads vs processes vs true parallelism.</div>
+          </div>
+
+          <!-- 0.2 Tooling -->
+          <div class="resource-card" data-resource-name="MIT Missing Semester CS Education Shell CLI Git">
+            <div>
+              <div class="resource-card-header">
+                <h4 class="resource-title"><a href="https://missing.csail.mit.edu/2026/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">The Missing Semester of CS Education</a></h4>
+              </div>
+              <div class="resource-author">MIT CSAIL (2026)</div>
+              <div class="resource-meta-tags">
+                <span class="tag-badge core">CORE</span>
+                <span class="tag-badge free">FREE TEXT</span>
+              </div>
+              <p class="resource-desc">Unusually well aligned with cloud & system operations. You can use the written notes directly:</p>
+              <ul class="resource-bullets">
+                <li><strong>Do:</strong> Shell → Command-line Environment → Development Tools</li>
+                <li>Debugging & Profiling → Git → Packaging/Shipping → Code Quality</li>
+              </ul>
+            </div>
+            <div class="resource-quote olive-quote">Covers the command-line, profiling, packaging, and code quality without tutorial fluff.</div>
+          </div>
+
+          <!-- 0.3 Git -->
+          <div class="resource-card" data-resource-name="Pro Git Scott Chacon Ben Straub Rebase Reset Bisect">
+            <div>
+              <div class="resource-card-header">
+                <h4 class="resource-title"><a href="https://git-scm.com/book/en/v2?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Pro Git</a></h4>
+              </div>
+              <div class="resource-author">Scott Chacon & Ben Straub</div>
+              <div class="resource-meta-tags">
+                <span class="tag-badge core">CORE</span>
+                <span class="tag-badge book">FREE BOOK</span>
+              </div>
+              <p class="resource-desc">The full book is legally free online. Read selectively:</p>
+              <ul class="resource-bullets">
+                <li>Ch. 2 (Basics) & Ch. 3 (Branching)</li>
+                <li>7.3 (Stashing), 7.6 (Rewriting History), 7.7 (Reset Demystified)</li>
+                <li>7.8 (Advanced Merging), 7.10 (Debugging with Git), Ch. 10 (Internals)</li>
+              </ul>
+            </div>
+            <div class="resource-quote">Master: <code>rebase</code>, <code>reflog</code>, <code>reset</code>, <code>revert</code>, <code>bisect</code>, cherry-picking, and conflict resolution.</div>
+          </div>
+
+          <!-- 0.4 OS -->
+          <div class="resource-card" data-resource-name="Operating Systems Three Easy Pieces OSTEP Concurrency Virtualization Persistence">
+            <div>
+              <div class="resource-card-header">
+                <h4 class="resource-title"><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Operating Systems: Three Easy Pieces (OSTEP)</a></h4>
+              </div>
+              <div class="resource-author">Remzi & Andrea Arpaci-Dusseau</div>
+              <div class="resource-meta-tags">
+                <span class="tag-badge core">CORE</span>
+                <span class="tag-badge book">FREE BOOK</span>
+              </div>
+              <p class="resource-desc">Focuses on virtualization, concurrency, and persistence. Read selectively:</p>
+              <ul class="resource-bullets">
+                <li>Processes, Process API, CPU scheduling overview</li>
+                <li>Address spaces, Memory API, Paging basics</li>
+                <li>Concurrency, threads, locks, condition variables, files & I/O</li>
+              </ul>
+            </div>
+            <div class="resource-quote amber-quote">Pays massive dividends when Docker, Kubernetes, and OS debugging stop looking magical.</div>
+          </div>
+
+          <!-- 0.5 DSA -->
+          <div class="resource-card" data-resource-name="Open Data Structures Algorithms">
+            <div>
+              <div class="resource-card-header">
+                <h4 class="resource-title"><a href="https://opendatastructures.org/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Open Data Structures</a></h4>
+              </div>
+              <div class="resource-author">Pat Morin</div>
+              <div class="resource-meta-tags">
+                <span class="tag-badge ref">REFRESH</span>
+                <span class="tag-badge book">FREE BOOK</span>
+              </div>
+              <p class="resource-desc">Revise core structures without getting trapped in endless competitive programming:</p>
+              <ul class="resource-bullets">
+                <li>Arrays, dynamic arrays, linked structures, stacks, queues</li>
+                <li>Hash tables, binary trees, heaps, graphs, BFS/DFS, complexity analysis</li>
+              </ul>
+            </div>
+            <div class="resource-quote">You do not need six months of LeetCode for this engineering transition.</div>
+          </div>
+
+          <!-- 0.6 SQL -->
+          <div class="resource-card" data-resource-name="PostgreSQL Tutorial PGExercises SQL Queries">
+            <div>
+              <div class="resource-card-header">
+                <h4 class="resource-title"><a href="https://www.postgresql.org/docs/current/tutorial.html?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">PostgreSQL Tutorial</a> & <a href="https://www.pgexercises.com/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">PGExercises</a></h4>
+              </div>
+              <div class="resource-author">Official Postgres Docs & PGExercises</div>
+              <div class="resource-meta-tags">
+                <span class="tag-badge core">CORE</span>
+                <span class="tag-badge handson">HANDS-ON</span>
+                <span class="tag-badge free">FREE</span>
+              </div>
+              <p class="resource-desc">Goes from basic queries to joins, aggregation, window functions, and recursive queries:</p>
+              <ul class="resource-bullets">
+                <li>Indexes, transactions, isolation levels, joins</li>
+                <li>Query plans (<code>EXPLAIN ANALYZE</code>), constraints, schema design</li>
+              </ul>
+            </div>
+            <div class="resource-quote olive-quote">System design requires understanding database internals and query engines beyond simple SELECTs.</div>
+          </div>
+
+          <!-- 0.7 HTTP -->
+          <div class="resource-card" data-resource-name="MDN HTTP Guides Overview Web Architecture TLS">
+            <div>
+              <div class="resource-card-header">
+                <h4 class="resource-title"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">MDN HTTP Guides & Overview</a></h4>
+              </div>
+              <div class="resource-author">MDN Web Docs</div>
+              <div class="resource-meta-tags">
+                <span class="tag-badge core">CORE</span>
+                <span class="tag-badge free">FREE</span>
+              </div>
+              <p class="resource-desc">Walks through the client → connection → request → response flow:</p>
+              <ul class="resource-bullets">
+                <li>Request/response lifecycle, methods, status codes, headers</li>
+                <li>Authentication, caching, cookies, CORS, HTTP/1.1 vs HTTP/2 vs HTTP/3, TLS</li>
+              </ul>
+            </div>
+            <div class="resource-quote">Essential foundation for debugging reverse proxies, API gateways, and web services.</div>
+          </div>
+
+          <!-- 0.8 Testing -->
+          <div class="resource-card" data-resource-name="pytest documentation testing python">
+            <div>
+              <div class="resource-card-header">
+                <h4 class="resource-title"><a href="https://docs.pytest.org/en/stable/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">pytest Documentation</a></h4>
+              </div>
+              <div class="resource-author">pytest Dev Team</div>
+              <div class="resource-meta-tags">
+                <span class="tag-badge core">CORE</span>
+                <span class="tag-badge free">FREE</span>
+              </div>
+              <p class="resource-desc">Testing must not be an afterthought. Focus on:</p>
+              <ul class="resource-bullets">
+                <li>Fixtures, parametrization, mocking, exception testing</li>
+                <li>Temporary resources, unit vs integration testing in FastAPI/DB apps</li>
+              </ul>
+            </div>
+            <div class="resource-quote">You should test services routinely without treating it as a separate chore.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="checkpoint">
+        <strong>Foundation Gate Criterion</strong>
+        <p>If you cannot explain a web request end-to-end (browser → DNS → socket → proxy → app → SQL → response) or debug a failing backend without guessing, stay in Foundation longer.</p>
+      </div>
+    </section>
+
+    <!-- SYSTEM DESIGN PARALLEL TRACK -->
+    <section class="system-thread" data-track="system" id="system-design-track">
+      <div class="system-thread-head">
+        <div>
+          <div class="kicker">PARALLEL TRACK · ALL 12 MONTHS</div>
+          <h2>System design is not a separate subject.</h2>
+        </div>
+        <p>
+          It is the reasoning layer connecting backend engineering, cloud infrastructure, DevOps pipelines, and production MLOps. Every month, design your system before deploying, then compare assumptions against real telemetry and failure data.
+        </p>
+      </div>
+
+      <div class="arch-flow" aria-label="System design progression">
+        <div class="arch-node">
+          <span>01</span><strong>Requirements</strong><small>Traffic · latency · availability</small>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-node">
+          <span>02</span><strong>Data + APIs</strong><small>Contracts · storage · consistency</small>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-node">
+          <span>03</span><strong>Scale</strong><small>Cache · queues · partitioning</small>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-node">
+          <span>04</span><strong>Operate</strong><small>Failure · security · observability</small>
+        </div>
+      </div>
+
+      <div class="card-tabs" style="margin-top: 24px;">
+        <button class="card-tab-btn active" data-target="system-checklists" type="button">Pillars & Architecture Checklists</button>
+        <button class="card-tab-btn" data-target="system-resources" type="button">System Design Library (S1–S7) <span class="badge-count">7</span></button>
+      </div>
+
+      <!-- System Checklists Tab -->
+      <div class="tab-content" id="system-checklists">
+        <div class="system-phases">
+          <article>
+            <span class="phase-no">A</span>
+            <h3>Core architecture</h3>
+            <label><input type="checkbox" data-id="sd-client"> Client/server, APIs, reverse proxies, load balancers</label>
+            <label><input type="checkbox" data-id="sd-scale"> Latency, throughput, bottlenecks, horizontal scaling</label>
+            <label><input type="checkbox" data-id="sd-cache"> Caching, CDNs, cache invalidation, TTLs</label>
+            <label><input type="checkbox" data-id="sd-queues"> Queues, pub/sub, async processing, backpressure</label>
+          </article>
+
+          <article>
+            <span class="phase-no">B</span>
+            <h3>Data systems</h3>
+            <label><input type="checkbox" data-id="sd-db"> SQL vs NoSQL, indexes, transactions, isolation</label>
+            <label><input type="checkbox" data-id="sd-replication"> Replication, read replicas, failover</label>
+            <label><input type="checkbox" data-id="sd-partition"> Partitioning / sharding and hot partitions</label>
+            <label><input type="checkbox" data-id="sd-consistency"> Strong vs eventual consistency and CAP trade-offs</label>
+          </article>
+
+          <article>
+            <span class="phase-no">C</span>
+            <h3>Reliability</h3>
+            <label><input type="checkbox" data-id="sd-ha"> High availability, redundancy, graceful degradation</label>
+            <label><input type="checkbox" data-id="sd-retry"> Retries, timeouts, idempotency, circuit breakers</label>
+            <label><input type="checkbox" data-id="sd-slo"> SLIs/SLOs, capacity planning, failure domains</label>
+            <label><input type="checkbox" data-id="sd-security"> AuthN/AuthZ, secrets, rate limiting, abuse boundaries</label>
+          </article>
+
+          <article>
+            <span class="phase-no">D</span>
+            <h3>ML systems</h3>
+            <label><input type="checkbox" data-id="sd-ml-batch"> Batch vs online inference architecture</label>
+            <label><input type="checkbox" data-id="sd-feature"> Feature pipelines, training-serving skew, lineage</label>
+            <label><input type="checkbox" data-id="sd-gpu"> GPU scheduling, autoscaling, latency/cost trade-offs</label>
+            <label><input type="checkbox" data-id="sd-model-rollout"> Canary / shadow model rollout, rollback, monitoring</label>
+          </article>
+        </div>
+      </div>
+
+      <!-- System Resources Tab -->
+      <div class="tab-content" id="system-resources" style="display: none;">
+        <div class="resource-grid">
+          <!-- S1 System Design Primer -->
+          <div class="resource-card" data-resource-name="System Design Primer Donne Martin Scalability Caching Queues">
+            <div>
+              <div class="resource-card-header">
+                <h4 class="resource-title"><a href="https://github.com/donnemartin/system-design-primer?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">System Design Primer</a></h4>
+              </div>
+              <div class="resource-author">Donne Martin</div>
+              <div class="resource-meta-tags">
+                <span class="tag-badge core">START HERE</span>
+                <span class="tag-badge free">FREE</span>
+              </div>
+              <p class="resource-desc">Accessible overview of scalability, latency, throughput, availability, consistency, caching, load balancing, CDNs, queues, and distributed databases.</p>
+            </div>
+            <div class="resource-quote">Use primarily to build structured vocabulary, not as your sole source of truth.</div>
+          </div>
+
+          <!-- S2 DDIA 2nd Edition -->
+          <div class="resource-card" data-resource-name="Designing Data-Intensive Applications DDIA Martin Kleppmann Chris Riccomini">
+            <div>
+              <div class="resource-card-header">
+                <h4 class="resource-title"><a href="https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Designing Data-Intensive Applications (2nd Ed)</a></h4>
+              </div>
+              <div class="resource-author">Martin Kleppmann & Chris Riccomini (Feb 2026)</div>
+              <div class="resource-meta-tags">
+                <span class="tag-badge core">CORE BOOK</span>
+                <span class="tag-badge book">MUST OWN</span>
+              </div>
+              <p class="resource-desc">The definitive distributed systems guide. Read gradually across the year:</p>
+              <ul class="resource-bullets">
+                <li><strong>Months 1–3:</strong> Reliability, scalability, maintainability, data models, storage & retrieval</li>
+                <li><strong>Months 4–6:</strong> Encoding/evolution, replication, partitioning</li>
+                <li><strong>Months 7–9:</strong> Transactions, distributed faults, consistency & consensus</li>
+              </ul>
+            </div>
+            <div class="resource-quote amber-quote">Don't speed-read DDIA. Grapple deeply with the engineering trade-offs.</div>
+          </div>
+
+          <!-- S3 Microsoft Cloud Design Patterns -->
+          <div class="resource-card" data-resource-name="Microsoft Cloud Design Patterns Circuit Breaker Retry Sidecar Saga Bulkhead">
+            <div>
+              <div class="resource-card-header">
+                <h4 class="resource-title"><a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Microsoft Cloud Design Patterns</a></h4>
+              </div>
+              <div class="resource-author">Microsoft Azure Architecture Center</div>
+              <div class="resource-meta-tags">
+                <span class="tag-badge core">CORE</span>
+                <span class="tag-badge free">FREE</span>
+              </div>
+              <p class="resource-desc">Technology-agnostic patterns applicable across AWS, GCP, and any distributed cloud:</p>
+              <ul class="resource-bullets">
+                <li>Cache-Aside, Bulkhead, Circuit Breaker, Retry, Pub/Sub</li>
+                <li>Queue-Based Load Leveling, Rate Limiting, Saga, Sharding, Sidecar, Competing Consumers</li>
+              </ul>
+            </div>
+            <div class="resource-quote olive-quote">Much more useful professionally than memorizing generic interview diagrams.</div>
+          </div>
+
+          <!-- S4 Amazon Builders' Library -->
+          <div class="resource-card" data-resource-name="Amazon Builders Library Timeouts Retries Jitter Idempotency Availability">
+            <div>
+              <div class="resource-card-header">
+                <h4 class="resource-title"><a href="https://aws.amazon.com/builders-library/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Amazon Builders' Library</a></h4>
+              </div>
+              <div class="resource-author">Amazon Senior Principals & Leaders</div>
+              <div class="resource-meta-tags">
+                <span class="tag-badge core">CORE</span>
+                <span class="tag-badge free">FREE</span>
+              </div>
+              <p class="resource-desc">Articles explaining how Amazon actually operates at massive scale:</p>
+              <ul class="resource-bullets">
+                <li>Timeouts, retries, backoff with jitter, overload handling</li>
+                <li>High availability, deployment safety, caching strategies, idempotency</li>
+              </ul>
+            </div>
+            <div class="resource-quote">The real-world operational companion to DDIA's distributed theory.</div>
+          </div>
+
+          <!-- S5 AWS Architecture Center -->
+          <div class="resource-card" data-resource-name="AWS Architecture Center Reference Diagrams Best Practices">
+            <div>
+              <div class="resource-card-header">
+                <h4 class="resource-title"><a href="https://aws.amazon.com/architecture/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">AWS Architecture Center</a></h4>
+              </div>
+              <div class="resource-author">AWS Solutions Architects</div>
+              <div class="resource-meta-tags">
+                <span class="tag-badge ref">PRACTICAL REVIEW</span>
+                <span class="tag-badge free">FREE</span>
+              </div>
+              <p class="resource-desc">Examine verified <a href="https://aws.amazon.com/architecture/reference-architecture-diagrams/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">AWS Reference Architecture Diagrams</a>. Design your project first, then compare against official diagrams.</p>
+            </div>
+            <div class="resource-quote">Validates your real-world architecture choices against enterprise standards.</div>
+          </div>
+
+          <!-- S6 C4 Model -->
+          <div class="resource-card" data-resource-name="C4 Model Simon Brown Architecture Context Container Deployment">
+            <div>
+              <div class="resource-card-header">
+                <h4 class="resource-title"><a href="https://c4model.com/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">C4 Model</a></h4>
+              </div>
+              <div class="resource-author">Simon Brown</div>
+              <div class="resource-meta-tags">
+                <span class="tag-badge core">CORE ARCH</span>
+                <span class="tag-badge free">FREE</span>
+              </div>
+              <p class="resource-desc">Standardized visual communication. Document every major project with:</p>
+              <ul class="resource-bullets">
+                <li>1. System Context diagram</li>
+                <li>2. Container diagram</li>
+                <li>3. Deployment diagram</li>
+              </ul>
+            </div>
+            <div class="resource-quote olive-quote">Context and Container diagrams are standard across high-performing engineering teams.</div>
+          </div>
+
+          <!-- S7 MIT 6.5840 -->
+          <div class="resource-card" data-resource-name="MIT 6.5840 Distributed Systems Raft Paxos Spanner Ray">
+            <div>
+              <div class="resource-card-header">
+                <h4 class="resource-title"><a href="https://pdos.csail.mit.edu/6.824/schedule.html?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">MIT 6.5840 Distributed Systems (2026)</a></h4>
+              </div>
+              <div class="resource-author">MIT CSAIL PDOS</div>
+              <div class="resource-meta-tags">
+                <span class="tag-badge optional">DEEP OPTIONAL</span>
+                <span class="tag-badge free">FREE</span>
+              </div>
+              <p class="resource-desc">Not mandatory for getting hired, but exceptional for senior distributed mastery:</p>
+              <ul class="resource-bullets">
+                <li>MapReduce, RPC, GFS, Paxos, Raft, ZooKeeper</li>
+                <li>Distributed transactions, Spanner, Memcached, Sharded KV, Ray, Byzantine fault tolerance</li>
+              </ul>
+            </div>
+            <div class="resource-quote">Read 1 important paper every 1–2 weeks once fundamentals are strong.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="design-loop">
+        <strong>The Mandatory Design Loop:</strong>
+        <span>Requirements → estimates → API/data model → architecture → bottlenecks → failure modes → security → cost → observability → trade-offs.</span>
+      </div>
+    </section>
+
+    <!-- 12-MONTH ROADMAP -->
+    <section class="roadmap" id="roadmap">
+      <div class="roadmap-line" aria-hidden="true"></div>
+
+      <!-- MONTH 1 -->
+      <article class="month-card platform" data-track="platform" data-month="1">
+        <button class="month-head" type="button" aria-expanded="true">
+          <span class="month-index">01</span>
+          <span class="month-main">
+            <span class="kicker">MONTH 1</span>
+            <strong>Linux + networking</strong>
+            <small>Operate a server before abstracting it away.</small>
+          </span>
+          <span class="chevron">⌄</span>
+        </button>
+        <div class="month-body">
+          <div class="study-order-banner">
+            <span class="study-order-label">Study Order</span>
+            <div class="study-order-flow">
+              <span>TLCL + daily Linux</span><span class="arrow">→</span>
+              <span>Bandit</span><span class="arrow">→</span>
+              <span>Beej Network Concepts</span><span class="arrow">→</span>
+              <span>Manually deploy FastAPI/Nginx</span><span class="arrow">→</span>
+              <span>Deeper networking on breakages</span>
+            </div>
+          </div>
+
+          <div class="card-tabs">
+            <button class="card-tab-btn active" data-target="m1-tasks" type="button">Tasks & Deliverable</button>
+            <button class="card-tab-btn" data-target="m1-resources" type="button">Curated Resources <span class="badge-count">6</span></button>
+          </div>
+
+          <div class="tab-content" id="m1-tasks">
+            <div class="columns">
+              <div>
+                <h3>Learn</h3>
+                <label><input type="checkbox" data-id="m1-linux"> Filesystem, users, permissions, processes, signals</label>
+                <label><input type="checkbox" data-id="m1-systemd"> systemd, services, journalctl, logs</label>
+                <label><input type="checkbox" data-id="m1-ssh"> SSH, SCP, keys, basic hardening</label>
+                <label><input type="checkbox" data-id="m1-net"> DNS, TCP/UDP, ports, TLS, firewalls, reverse proxies</label>
+              </div>
+              <div class="deliverable">
+                <h3>Ship</h3>
+                <p>Deploy a FastAPI service manually to a Linux VM behind Nginx + HTTPS. Create a runbook for “API is down.”</p>
+                <span>Exit test: diagnose service, DNS, port, and process failures without reinstalling everything.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="m1-resources" style="display: none;">
+            <div class="resource-grid">
+              <div class="resource-card" data-resource-name="The Linux Command Line William Shotts TLCL Shell">
+                <div>
+                  <h4 class="resource-title"><a href="https://linuxcommand.org/tlcl.php?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">The Linux Command Line</a></h4>
+                  <div class="resource-author">William Shotts</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE</span><span class="tag-badge book">FREE BOOK/PDF</span></div>
+                  <p class="resource-desc">One of the best text-first Linux introductions. Study: filesystem, permissions, processes, redirection, pipes, grep, regex, process management, shell scripting, environment, networking commands.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Linux Journey Interactive">
+                <div>
+                  <h4 class="resource-title"><a href="https://linuxjourney.com/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Linux Journey</a></h4>
+                  <div class="resource-author">Linux Journey</div>
+                  <div class="resource-meta-tags"><span class="tag-badge handson">HANDS-ON</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Shorter structured visual companion to TLCL. Perfect for quick lookups and daily command drills.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="OverTheWire Bandit Wargame SSH Permissions">
+                <div>
+                  <h4 class="resource-title"><a href="https://overthewire.org/wargames/bandit/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">OverTheWire Bandit</a></h4>
+                  <div class="resource-author">OverTheWire</div>
+                  <div class="resource-meta-tags"><span class="tag-badge handson">HANDS-ON</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Do levels 1 to 25. Forces you to actually use SSH, <code>find</code>, file permissions, pipes, and shell utilities rather than merely reading about them.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Beej Guide to Network Concepts Sockets TCP UDP DNS">
+                <div>
+                  <h4 class="resource-title"><a href="https://beej.us/guide/bgnet0/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Beej's Guide to Network Concepts</a></h4>
+                  <div class="resource-author">Beej Jorgensen</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE</span><span class="tag-badge book">FREE BOOK/PDF</span></div>
+                  <p class="resource-desc">Teaches networking underneath applications. Covers: network layers, IP addressing, subnets, routing, TCP, UDP, ports, DNS, NAT, sockets.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Computer Networking Principles Protocols Practice Bonaventure">
+                <div>
+                  <h4 class="resource-title"><a href="https://www.computer-networking.info/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Computer Networking: Principles, Protocols & Practice</a></h4>
+                  <div class="resource-author">Olivier Bonaventure</div>
+                  <div class="resource-meta-tags"><span class="tag-badge ref">DEEP REFERENCE</span><span class="tag-badge book">FREE BOOK</span></div>
+                  <p class="resource-desc">Deeper reference on TCP handshake/congestion, DNS hierarchy, and transport layer mechanics. Consult selectively.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Beej Guide to Network Programming C Python TCP client server">
+                <div>
+                  <h4 class="resource-title"><a href="https://beej.us/guide/bgnet/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Beej's Guide to Network Programming</a></h4>
+                  <div class="resource-author">Beej Jorgensen</div>
+                  <div class="resource-meta-tags"><span class="tag-badge optional">OPTIONAL PRACTICE</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Write one tiny TCP server/client yourself. That single exercise makes networking terminology instantly concrete.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- MONTH 2 -->
+      <article class="month-card platform" data-track="platform" data-month="2">
+        <button class="month-head" type="button" aria-expanded="false">
+          <span class="month-index">02</span>
+          <span class="month-main">
+            <span class="kicker">MONTH 2</span>
+            <strong>Docker deeply</strong>
+            <small>Understand what the container is hiding.</small>
+          </span>
+          <span class="chevron">⌄</span>
+        </button>
+        <div class="month-body" hidden>
+          <div class="study-order-banner">
+            <span class="study-order-label">Study Order</span>
+            <div class="study-order-flow">
+              <span>Helsinki MOOC</span><span class="arrow">→</span>
+              <span>Official Docker docs</span><span class="arrow">→</span>
+              <span>Containerize stack</span><span class="arrow">→</span>
+              <span>Intentionally break volumes/network</span><span class="arrow">→</span>
+              <span>Book for gaps</span>
+            </div>
+          </div>
+
+          <div class="card-tabs">
+            <button class="card-tab-btn active" data-target="m2-tasks" type="button">Tasks & Deliverable</button>
+            <button class="card-tab-btn" data-target="m2-resources" type="button">Curated Resources <span class="badge-count">5</span></button>
+          </div>
+
+          <div class="tab-content" id="m2-tasks">
+            <div class="columns">
+              <div>
+                <h3>Learn</h3>
+                <label><input type="checkbox" data-id="m2-images"> Images, layers, build context, caching</label>
+                <label><input type="checkbox" data-id="m2-dockerfile"> Dockerfiles + multi-stage builds</label>
+                <label><input type="checkbox" data-id="m2-network"> Volumes, networks, Compose</label>
+                <label><input type="checkbox" data-id="m2-prod"> Health checks, resource limits, registries, security</label>
+              </div>
+              <div class="deliverable">
+                <h3>Ship</h3>
+                <p>Containerize Next.js + FastAPI + PostgreSQL + Redis with a production-oriented Compose setup.</p>
+                <span>Exit test: intentionally break networking, persistence, and config, then recover cleanly.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="m2-resources" style="display: none;">
+            <div class="resource-grid">
+              <div class="resource-card" data-resource-name="DevOps with Docker University of Helsinki MOOC 2026">
+                <div>
+                  <h4 class="resource-title"><a href="https://devopswithdocker.com/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">DevOps with Docker (2026)</a></h4>
+                  <div class="resource-author">University of Helsinki</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE</span><span class="tag-badge handson">HANDS-ON</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Main Month 2 curriculum. Hands-on MOOC covering container lifecycle, Dockerfiles, Compose networks, volume mounting, and security.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Docker build best practices multi-stage cache dockerignore">
+                <div>
+                  <h4 class="resource-title"><a href="https://docs.docker.com/build/building/best-practices/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Docker Build Best Practices</a></h4>
+                  <div class="resource-author">Docker Official Documentation</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Covers production details: multi-stage builds, base-image selection, build cache optimization, <code>.dockerignore</code>, ephemeral containers, pinning versions.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Docker Compose documentation networks service discovery">
+                <div>
+                  <h4 class="resource-title"><a href="https://docs.docker.com/compose/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Docker Compose Docs</a> & <a href="https://docs.docker.com/reference/compose-file/networks/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Compose Networks</a></h4>
+                  <div class="resource-author">Docker Official Documentation</div>
+                  <div class="resource-meta-tags"><span class="tag-badge ref">REFERENCE</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Understand how services resolve each other by name via DNS before moving to Kubernetes service discovery.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Docker storage volumes bind mount writable layer">
+                <div>
+                  <h4 class="resource-title"><a href="https://docs.docker.com/engine/storage/volumes/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Docker Storage & Volumes Docs</a></h4>
+                  <div class="resource-author">Docker Official Documentation</div>
+                  <div class="resource-meta-tags"><span class="tag-badge ref">REFERENCE</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Understand the exact differences: <strong>image vs container writable layer vs bind mount vs named volume</strong>.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Docker Deep Dive Nigel Poulton">
+                <div>
+                  <h4 class="resource-title"><a href="https://www.reddit.com/r/devops/comments/1s7phdh/what_are_your_thought_on_docker_deep_dive_vs/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Docker Deep Dive</a></h4>
+                  <div class="resource-author">Nigel Poulton</div>
+                  <div class="resource-meta-tags"><span class="tag-badge optional">OPTIONAL BOOK</span></div>
+                  <p class="resource-desc">Structured book reference. Do not replace hands-on building with it; use for conceptual gaps after the Helsinki MOOC.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- MONTH 3 -->
+      <article class="month-card platform" data-track="platform" data-month="3">
+        <button class="month-head" type="button" aria-expanded="false">
+          <span class="month-index">03</span>
+          <span class="month-main">
+            <span class="kicker">MONTH 3</span>
+            <strong>AWS cloud engineering</strong>
+            <small>Learn architecture, not a catalog of services.</small>
+          </span>
+          <span class="chevron">⌄</span>
+        </button>
+        <div class="month-body" hidden>
+          <div class="study-order-banner">
+            <span class="study-order-label">Study Order</span>
+            <div class="study-order-flow">
+              <span>Skill Builder fundamentals</span><span class="arrow">→</span>
+              <span>Manually build architecture</span><span class="arrow">→</span>
+              <span>Well-Architected</span><span class="arrow">→</span>
+              <span>Architecture Center</span><span class="arrow">→</span>
+              <span>Builders' Library</span>
+            </div>
+          </div>
+
+          <div class="card-tabs">
+            <button class="card-tab-btn active" data-target="m3-tasks" type="button">Tasks & Deliverable</button>
+            <button class="card-tab-btn" data-target="m3-resources" type="button">Curated Resources <span class="badge-count">5</span></button>
+          </div>
+
+          <div class="tab-content" id="m3-tasks">
+            <div class="columns">
+              <div>
+                <h3>Learn</h3>
+                <label><input type="checkbox" data-id="m3-iam"> IAM + least privilege</label>
+                <label><input type="checkbox" data-id="m3-vpc"> VPC, public/private subnets, routing, security groups</label>
+                <label><input type="checkbox" data-id="m3-core"> EC2, S3, RDS, ECR</label>
+                <label><input type="checkbox" data-id="m3-edge"> ALB, Route 53, CloudWatch, Secrets Manager</label>
+              </div>
+              <div class="deliverable">
+                <h3>Ship</h3>
+                <p>Manually deploy the Month 2 system on AWS. Write a short system-design doc: traffic path, data flow, scaling assumptions, failure domains, and justify every public/private subnet boundary.</p>
+                <span>Exit test: explain where traffic, secrets, logs, and persistent data live.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="m3-resources" style="display: none;">
+            <div class="resource-grid">
+              <div class="resource-card" data-resource-name="AWS Skill Builder Digital Training Fundamentals IAM VPC">
+                <div>
+                  <h4 class="resource-title"><a href="https://aws.amazon.com/training/digital/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">AWS Skill Builder</a></h4>
+                  <div class="resource-author">AWS Training & Certification</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE</span><span class="tag-badge free">MOSTLY FREE</span></div>
+                  <p class="resource-desc">Over 1,000+ free digital courses. Use for cloud fundamentals, IAM, EC2, VPC networking, S3, databases, and monitoring. Don't turn this into cert chasing.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="AWS Well-Architected Framework Security Reliability Operational Excellence">
+                <div>
+                  <h4 class="resource-title"><a href="https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">AWS Well-Architected Framework</a></h4>
+                  <div class="resource-author">AWS Official Documentation</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Judge architecture through 6 pillars: Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization, Sustainability.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="AWS Architecture Center Reference Diagrams">
+                <div>
+                  <h4 class="resource-title"><a href="https://aws.amazon.com/architecture/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">AWS Architecture Center</a></h4>
+                  <div class="resource-author">AWS Solutions Library</div>
+                  <div class="resource-meta-tags"><span class="tag-badge ref">CORE REF</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Study real reference architectures and compare them against your own designs. Study <a href="https://aws.amazon.com/architecture/reference-architecture-diagrams/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Reference Architecture Diagrams</a>.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Amazon Builders Library Architecture Operations">
+                <div>
+                  <h4 class="resource-title"><a href="https://aws.amazon.com/builders-library/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Amazon Builders' Library</a></h4>
+                  <div class="resource-author">Amazon Senior Principals</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE READING</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">High-value real-world system architecture articles: timeouts, retries, jitter, backoff, overload, availability, and safe deployments.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="AWS official service docs IAM VPC EC2 S3 RDS ECR ALB Route 53 CloudWatch Secrets Manager">
+                <div>
+                  <h4 class="resource-title">AWS Official Service Docs</h4>
+                  <div class="resource-author">AWS Documentation</div>
+                  <div class="resource-meta-tags"><span class="tag-badge ref">REFERENCE</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Bookmark and look up during builds: IAM, VPC, EC2, S3, RDS, ECR, ALB, Route 53, CloudWatch, and Secrets Manager.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- MONTH 4 -->
+      <article class="month-card platform" data-track="platform" data-month="4">
+        <button class="month-head" type="button" aria-expanded="false">
+          <span class="month-index">04</span>
+          <span class="month-main">
+            <span class="kicker">MONTH 4</span>
+            <strong>CI/CD + DevOps</strong>
+            <small>Turn deployment into a repeatable system.</small>
+          </span>
+          <span class="chevron">⌄</span>
+        </button>
+        <div class="month-body" hidden>
+          <div class="study-order-banner">
+            <span class="study-order-label">Study Order</span>
+            <div class="study-order-flow">
+              <span>GitHub Actions pipeline</span><span class="arrow">→</span>
+              <span>Twelve-Factor</span><span class="arrow">→</span>
+              <span>OWASP CI/CD</span><span class="arrow">→</span>
+              <span>Google SRE chapters</span><span class="arrow">→</span>
+              <span>Accelerate</span>
+            </div>
+          </div>
+
+          <div class="card-tabs">
+            <button class="card-tab-btn active" data-target="m4-tasks" type="button">Tasks & Deliverable</button>
+            <button class="card-tab-btn" data-target="m4-resources" type="button">Curated Resources <span class="badge-count">6</span></button>
+          </div>
+
+          <div class="tab-content" id="m4-tasks">
+            <div class="columns">
+              <div>
+                <h3>Learn</h3>
+                <label><input type="checkbox" data-id="m4-ci"> GitHub Actions, CI stages, caching, artifacts</label>
+                <label><input type="checkbox" data-id="m4-quality"> Tests, linting, type checks, security scans</label>
+                <label><input type="checkbox" data-id="m4-cd"> Deployments, environments, secrets, approvals</label>
+                <label><input type="checkbox" data-id="m4-roll"> Rollback and failure handling</label>
+              </div>
+              <div class="deliverable">
+                <h3>Ship</h3>
+                <p>Push → test → build → scan → ECR → deploy → health check. Add rollback, idempotency, and deployment-failure reasoning to your design doc.</p>
+                <span>Exit test: a bad build or failing migration must fail safely before production.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="m4-resources" style="display: none;">
+            <div class="resource-grid">
+              <div class="resource-card" data-resource-name="GitHub Actions Quickstart Documentation CI CD">
+                <div>
+                  <h4 class="resource-title"><a href="https://docs.github.com/en/actions/get-started?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">GitHub Actions Docs</a> & <a href="https://docs.github.com/en/actions/get-started/quickstart?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Quickstart</a></h4>
+                  <div class="resource-author">GitHub Docs</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE</span><span class="tag-badge handson">HANDS-ON</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Build your live pipeline while reading. Covers workflow triggers, jobs, steps, action runners, secrets, caching, and matrix builds.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="The Twelve-Factor App Adam Wiggins Microservices">
+                <div>
+                  <h4 class="resource-title"><a href="https://www.12factor.net/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">The Twelve-Factor App</a></h4>
+                  <div class="resource-author">Adam Wiggins / Heroku</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Essential vocabulary for deployable services: config in env, backing services, stateless processes, concurrency, disposability, dev/prod parity.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="OWASP CI CD Security Cheat Sheet Secrets Permissions">
+                <div>
+                  <h4 class="resource-title"><a href="https://cheatsheetseries.owasp.org/cheatsheets/CI_CD_Security_Cheat_Sheet.html?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">OWASP CI/CD Security Cheat Sheet</a></h4>
+                  <div class="resource-author">OWASP Foundation</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Read when your pipeline works: pipeline permissions, secret management, supply-chain dependency risks, third-party actions, artifact integrity.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Google SRE Books Site Reliability Engineering Workbook">
+                <div>
+                  <h4 class="resource-title"><a href="https://sre.google/books/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Google SRE Books</a></h4>
+                  <div class="resource-author">Google SRE Team</div>
+                  <div class="resource-meta-tags"><span class="tag-badge ref">CORE REF</span><span class="tag-badge book">FREE BOOKS</span></div>
+                  <p class="resource-desc">Read selected chapters on automation, release engineering, monitoring, handling overload, SLOs, and incident response.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Accelerate Nicole Forsgren Jez Humble Gene Kim DORA">
+                <div>
+                  <h4 class="resource-title">Accelerate</h4>
+                  <div class="resource-author">Forsgren, Humble, Kim</div>
+                  <div class="resource-meta-tags"><span class="tag-badge book">RECOMMENDED BOOK</span></div>
+                  <p class="resource-desc">Less about writing YAML and more about understanding what high-performing software delivery, DORA metrics, and lean engineering look like.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Continuous Delivery Jez Humble David Farley">
+                <div>
+                  <h4 class="resource-title">Continuous Delivery</h4>
+                  <div class="resource-author">Jez Humble & David Farley</div>
+                  <div class="resource-meta-tags"><span class="tag-badge optional">DEEP OPTIONAL</span></div>
+                  <p class="resource-desc">Foundational classic on deployment pipelines, automated acceptance testing, release strategies (blue/green, canary), and environment management.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- MONTH 5 -->
+      <article class="month-card platform" data-track="platform" data-month="5">
+        <button class="month-head" type="button" aria-expanded="false">
+          <span class="month-index">05</span>
+          <span class="month-main">
+            <span class="kicker">MONTH 5</span>
+            <strong>Terraform + IaC</strong>
+            <small>Infrastructure becomes reviewed, versioned code.</small>
+          </span>
+          <span class="chevron">⌄</span>
+        </button>
+        <div class="month-body" hidden>
+          <div class="study-order-banner">
+            <span class="study-order-label">Study Order</span>
+            <div class="study-order-flow">
+              <span>AWS Get Started</span><span class="arrow">→</span>
+              <span>Reproduce AWS architecture</span><span class="arrow">→</span>
+              <span>State & Locking</span><span class="arrow">→</span>
+              <span>Modules</span><span class="arrow">→</span>
+              <span>Drift/Import</span><span class="arrow">→</span>
+              <span>Testing</span>
+            </div>
+          </div>
+
+          <div class="card-tabs">
+            <button class="card-tab-btn active" data-target="m5-tasks" type="button">Tasks & Deliverable</button>
+            <button class="card-tab-btn" data-target="m5-resources" type="button">Curated Resources <span class="badge-count">6</span></button>
+          </div>
+
+          <div class="tab-content" id="m5-tasks">
+            <div class="columns">
+              <div>
+                <h3>Learn</h3>
+                <label><input type="checkbox" data-id="m5-core"> Providers, resources, variables, outputs</label>
+                <label><input type="checkbox" data-id="m5-state"> State, remote state, locking, drift</label>
+                <label><input type="checkbox" data-id="m5-modules"> Modules, data sources, environments</label>
+                <label><input type="checkbox" data-id="m5-workflow"> plan / apply / import / destroy workflows</label>
+              </div>
+              <div class="deliverable">
+                <h3>Ship</h3>
+                <p>Recreate your AWS stack completely from code. Destroy and rebuild a non-production environment from scratch. Add capacity and cost estimates.</p>
+                <span>Exit test: explain state corruption, drift, locking, and why manual console edits are dangerous.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="m5-resources" style="display: none;">
+            <div class="resource-grid">
+              <div class="resource-card" data-resource-name="Terraform AWS Get Started HashiCorp Developer">
+                <div>
+                  <h4 class="resource-title"><a href="https://developer.hashicorp.com/terraform/tutorials/aws-get-started?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Terraform AWS Get Started</a></h4>
+                  <div class="resource-author">HashiCorp Developer</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE</span><span class="tag-badge handson">HANDS-ON</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Official step-by-step tutorial covering create, manage, update, and destroy workflows for AWS resources.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Terraform State Tutorials Remote State Locking S3 DynamoDB Drift">
+                <div>
+                  <h4 class="resource-title"><a href="https://developer.hashicorp.com/terraform/tutorials/state?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Terraform State Tutorials</a></h4>
+                  <div class="resource-author">HashiCorp Developer</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">MANDATORY</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Mandatory core. Master local vs remote state (S3 + DynamoDB locking), <code>import</code>, <code>state rm/mv</code>, and managing infrastructure drift.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Terraform Modules Tutorials Reusability">
+                <div>
+                  <h4 class="resource-title"><a href="https://developer.hashicorp.com/terraform/tutorials/modules?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Terraform Modules Tutorials</a></h4>
+                  <div class="resource-author">HashiCorp Developer</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Learn how to consume community modules and build clean, parameterized reusable modules for VPCs, databases, and microservices.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Terraform Tests Tutorial Ephemeral Testing Mocks">
+                <div>
+                  <h4 class="resource-title"><a href="https://developer.hashicorp.com/terraform/tutorials/configuration-language/test?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Terraform Tests Tutorial</a></h4>
+                  <div class="resource-author">HashiCorp Developer</div>
+                  <div class="resource-meta-tags"><span class="tag-badge handson">HANDS-ON</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Modern native Terraform testing support, including unit tests, command assertions, ephemeral test infrastructure, and mocks.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Terraform AWS Service Tutorials ALB RDS Auto Scaling IAM">
+                <div>
+                  <h4 class="resource-title"><a href="https://developer.hashicorp.com/terraform/tutorials/aws?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Terraform AWS Service Tutorials</a></h4>
+                  <div class="resource-author">HashiCorp Developer</div>
+                  <div class="resource-meta-tags"><span class="tag-badge ref">REFERENCE</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Specific guide collection for provisioning ALBs, RDS Postgres, Auto Scaling Groups, IAM roles, and security policies.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Terraform Up and Running Yevgeniy Brikman">
+                <div>
+                  <h4 class="resource-title"><a href="https://www.reddit.com/r/Terraform/comments/1tsjjap/what_is_the_best_way_for_me_to_learn_terraform/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Terraform: Up & Running (3rd Ed)</a></h4>
+                  <div class="resource-author">Yevgeniy Brikman</div>
+                  <div class="resource-meta-tags"><span class="tag-badge optional">OPTIONAL BOOK</span></div>
+                  <p class="resource-desc">Great architectural guide for production patterns, directory layouts, and multi-account setups.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- MONTH 6 -->
+      <article class="month-card ml" data-track="ml" data-month="6">
+        <button class="month-head" type="button" aria-expanded="false">
+          <span class="month-index">06</span>
+          <span class="month-main">
+            <span class="kicker">MONTH 6</span>
+            <strong>ML fundamentals</strong>
+            <small>Move beyond calling model APIs.</small>
+          </span>
+          <span class="chevron">⌄</span>
+        </button>
+        <div class="month-body" hidden>
+          <div class="study-order-banner">
+            <span class="study-order-label">Study Order</span>
+            <div class="study-order-flow">
+              <span>Google MLCC fast pass</span><span class="arrow">→</span>
+              <span>ISLP + Python labs</span><span class="arrow">→</span>
+              <span>scikit-learn MOOC</span><span class="arrow">→</span>
+              <span>Build project</span><span class="arrow">→</span>
+              <span>Math for ML for gaps</span>
+            </div>
+          </div>
+
+          <div class="card-tabs">
+            <button class="card-tab-btn active" data-target="m6-tasks" type="button">Tasks & Deliverable</button>
+            <button class="card-tab-btn" data-target="m6-resources" type="button">Curated Resources <span class="badge-count">5</span></button>
+          </div>
+
+          <div class="tab-content" id="m6-tasks">
+            <div class="columns">
+              <div>
+                <h3>Learn</h3>
+                <label><input type="checkbox" data-id="m6-math"> Probability/statistics essentials + linear algebra refresh</label>
+                <label><input type="checkbox" data-id="m6-sklearn"> NumPy, Pandas, scikit-learn</label>
+                <label><input type="checkbox" data-id="m6-models"> Regression, trees, ensembles, clustering</label>
+                <label><input type="checkbox" data-id="m6-eval"> Splits, CV, leakage, overfitting, precision/recall/F1/AUC</label>
+              </div>
+              <div class="deliverable">
+                <h3>Ship</h3>
+                <p>Build an end-to-end classical ML service from raw dataset to evaluated model to FastAPI deployment. Compare batch vs online serving designs.</p>
+                <span>Career checkpoint: begin targeted applications and tracking job descriptions.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="m6-resources" style="display: none;">
+            <div class="resource-grid">
+              <div class="resource-card" data-resource-name="Introduction to Statistical Learning ISLP Gareth James Daniela Witten Trevor Hastie Robert Tibshirani">
+                <div>
+                  <h4 class="resource-title"><a href="https://www.statlearning.com/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">An Introduction to Statistical Learning (ISLP)</a></h4>
+                  <div class="resource-author">James, Witten, Hastie, Tibshirani, Taylor</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE BOOK</span><span class="tag-badge book">FREE BOOK</span></div>
+                  <p class="resource-desc">Main ML textbook. Recommended chapters: Ch. 2 (Statistical Learning), Ch. 3 (Linear Regression), Ch. 4 (Classification), Ch. 5 (Resampling), Ch. 6 (Regularization), Ch. 8 (Tree-Based), Ch. 9 (SVMs), Ch. 12 (Unsupervised). Do the Python labs!</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Google Machine Learning Crash Course MLCC Overfitting Generalization">
+                <div>
+                  <h4 class="resource-title"><a href="https://developers.google.com/machine-learning/crash-course/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Google ML Crash Course</a></h4>
+                  <div class="resource-author">Google for Developers</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE REFRESH</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Text, interactive visualizations, and exercises (skip videos). Focus on regression, classification, categorical data, overfitting/generalization, neural net basics, and production ML systems.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="scikit-learn MOOC Inria Preprocessing Pipelines Cross-Validation">
+                <div>
+                  <h4 class="resource-title"><a href="https://inria.github.io/scikit-learn-mooc/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">scikit-learn MOOC</a></h4>
+                  <div class="resource-author">Inria & scikit-learn core dev team</div>
+                  <div class="resource-meta-tags"><span class="tag-badge handson">HANDS-ON</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Practical complement to ISLP: tabular preprocessing, feature pipelines, column transformers, cross-validation, hyperparameter tuning, model evaluation.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Mathematics for Machine Learning Deisenroth Linear Algebra Calculus">
+                <div>
+                  <h4 class="resource-title"><a href="https://mml-book.github.io/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Mathematics for Machine Learning</a></h4>
+                  <div class="resource-author">Deisenroth, Faisal, Ong</div>
+                  <div class="resource-meta-tags"><span class="tag-badge ref">REFERENCE</span><span class="tag-badge book">FREE BOOK</span></div>
+                  <p class="resource-desc">Do not pause ML for 2 months to study math. Use selectively as a gap-filler for linear algebra, vector calculus, probability, and optimization.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Hands-On Machine Learning Scikit-Learn PyTorch Aurelien Geron">
+                <div>
+                  <h4 class="resource-title">Hands-On ML with Scikit-Learn & PyTorch</h4>
+                  <div class="resource-author">Aurélien Géron</div>
+                  <div class="resource-meta-tags"><span class="tag-badge book">RECOMMENDED BOOK</span></div>
+                  <p class="resource-desc">Implementation-oriented industry standard. Use alongside ISLP to build concrete intuition and practical pipelines.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- MONTH 7 -->
+      <article class="month-card ml" data-track="ml" data-month="7">
+        <button class="month-head" type="button" aria-expanded="false">
+          <span class="month-index">07</span>
+          <span class="month-main">
+            <span class="kicker">MONTH 7</span>
+            <strong>PyTorch + deep learning</strong>
+            <small>Train, profile and serve a model yourself.</small>
+          </span>
+          <span class="chevron">⌄</span>
+        </button>
+        <div class="month-body" hidden>
+          <div class="study-order-banner">
+            <span class="study-order-label">Study Order</span>
+            <div class="study-order-flow">
+              <span>PyTorch official basics</span><span class="arrow">→</span>
+              <span>Train custom network</span><span class="arrow">→</span>
+              <span>Understanding Deep Learning</span><span class="arrow">→</span>
+              <span>D2L exercises</span><span class="arrow">→</span>
+              <span>Specialize CV/Transformers</span>
+            </div>
+          </div>
+
+          <div class="card-tabs">
+            <button class="card-tab-btn active" data-target="m7-tasks" type="button">Tasks & Deliverable</button>
+            <button class="card-tab-btn" data-target="m7-resources" type="button">Curated Resources <span class="badge-count">5</span></button>
+          </div>
+
+          <div class="tab-content" id="m7-tasks">
+            <div class="columns">
+              <div>
+                <h3>Learn</h3>
+                <label><input type="checkbox" data-id="m7-tensors"> Tensors, datasets, dataloaders</label>
+                <label><input type="checkbox" data-id="m7-train"> Training loops, losses, optimizers, backprop</label>
+                <label><input type="checkbox" data-id="m7-gpu"> GPU basics, profiling, checkpointing</label>
+                <label><input type="checkbox" data-id="m7-arch"> CNNs, embeddings, transformers, transfer learning</label>
+              </div>
+              <div class="deliverable">
+                <h3>Ship</h3>
+                <p>Train a real model, evaluate it properly, persist checkpoints, and expose inference through an API.</p>
+                <span>Prefer a domain where you already have context so infrastructure remains the hard part.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="m7-resources" style="display: none;">
+            <div class="resource-grid">
+              <div class="resource-card" data-resource-name="PyTorch Learn the Basics Tensors DataLoaders Autograd">
+                <div>
+                  <h4 class="resource-title"><a href="https://docs.pytorch.org/tutorials/beginner/basics/intro.html?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">PyTorch: Learn the Basics</a></h4>
+                  <div class="resource-author">PyTorch Documentation</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE</span><span class="tag-badge handson">HANDS-ON</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Complete the entire tutorial track: Tensors, Datasets & DataLoaders, Transforms, Neural Network construction, Autograd, Optimization loops, and Saving/Loading models.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Understanding Deep Learning Simon Prince MIT Press">
+                <div>
+                  <h4 class="resource-title"><a href="https://udlbook.github.io/udlbook/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Understanding Deep Learning</a></h4>
+                  <div class="resource-author">Simon J.D. Prince (MIT Press)</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE THEORY</span><span class="tag-badge book">OPEN ONLINE</span></div>
+                  <p class="resource-desc">The prioritized deep learning book. Clear, pragmatic middle ground between rigorous theory and implementation: loss functions, training, gradients, optimization, regularization, CNNs, transformers.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Dive into Deep Learning D2L PyTorch Textbook">
+                <div>
+                  <h4 class="resource-title"><a href="https://d2l.ai/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Dive into Deep Learning (D2L)</a></h4>
+                  <div class="resource-author">Aston Zhang, Zack C. Lipton, et al.</div>
+                  <div class="resource-meta-tags"><span class="tag-badge ref">REFERENCE</span><span class="tag-badge book">FREE BOOK</span></div>
+                  <p class="resource-desc">Interactive textbook with code implementations. Use the PyTorch sections whenever you want a direct code example of a theoretical concept.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Stanford CS231n Convolutional Neural Networks Computer Vision Backprop">
+                <div>
+                  <h4 class="resource-title"><a href="https://cs231n.github.io/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Stanford CS231n Course Notes</a></h4>
+                  <div class="resource-author">Stanford University</div>
+                  <div class="resource-meta-tags"><span class="tag-badge ref">REFERENCE</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Legendary course notes on backpropagation intuition, gradient checking, neural network architectures, and CNNs.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Hugging Face LLM Course Transformers Tokenizers Datasets">
+                <div>
+                  <h4 class="resource-title"><a href="https://huggingface.co/learn/llm-course/en/chapter1/1?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Hugging Face LLM Course</a></h4>
+                  <div class="resource-author">Hugging Face</div>
+                  <div class="resource-meta-tags"><span class="tag-badge optional">TRANSFORMERS</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Covers Transformers, Datasets, Tokenizers, Accelerate, and modern LLM pipelines. Study <em>after</em> understanding native PyTorch training loops.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- MONTH 8 -->
+      <article class="month-card ml" data-track="ml" data-month="8">
+        <button class="month-head" type="button" aria-expanded="false">
+          <span class="month-index">08</span>
+          <span class="month-main">
+            <span class="kicker">MONTH 8</span>
+            <strong>ML engineering</strong>
+            <small>Make experiments reproducible and inference reliable.</small>
+          </span>
+          <span class="chevron">⌄</span>
+        </button>
+        <div class="month-body" hidden>
+          <div class="study-order-banner">
+            <span class="study-order-label">Study Order</span>
+            <div class="study-order-flow">
+              <span>Rules of ML</span><span class="arrow">→</span>
+              <span>Hidden Technical Debt</span><span class="arrow">→</span>
+              <span>Made With ML</span><span class="arrow">→</span>
+              <span>MLflow Tracking & Registry</span><span class="arrow">→</span>
+              <span>Refactor model into reproducible system</span><span class="arrow">→</span>
+              <span>Chip Huyen</span>
+            </div>
+          </div>
+
+          <div class="card-tabs">
+            <button class="card-tab-btn active" data-target="m8-tasks" type="button">Tasks & Deliverable</button>
+            <button class="card-tab-btn" data-target="m8-resources" type="button">Curated Resources <span class="badge-count">7</span></button>
+          </div>
+
+          <div class="tab-content" id="m8-tasks">
+            <div class="columns">
+              <div>
+                <h3>Learn</h3>
+                <label><input type="checkbox" data-id="m8-repro"> Reproducibility, configs, seeds, data validation</label>
+                <label><input type="checkbox" data-id="m8-serving"> Batch vs online inference, serialization, versioning</label>
+                <label><input type="checkbox" data-id="m8-testing"> Testing ML code and prediction contracts</label>
+                <label><input type="checkbox" data-id="m8-mlflow"> MLflow tracking + model registry</label>
+              </div>
+              <div class="deliverable">
+                <h3>Ship</h3>
+                <p>Create a repeatable training pipeline where every model version is traceable to code commit, config, dataset hash, and metrics.</p>
+                <span>Exit test: reproduce last week's model without relying on human memory.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="m8-resources" style="display: none;">
+            <div class="resource-grid">
+              <div class="resource-card" data-resource-name="Google Rules of Machine Learning Martin Zinkevich">
+                <div>
+                  <h4 class="resource-title"><a href="https://developers.google.com/machine-learning/guides/rules-of-ml?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Google's Rules of Machine Learning</a></h4>
+                  <div class="resource-author">Martin Zinkevich / Google</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Read all 43 rules. Emphasizes robust pipelines, simple models first, metrics monitoring, avoiding training-serving skew, and disciplined iteration.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Hidden Technical Debt in Machine Learning Systems Sculley Google NeurIPS">
+                <div>
+                  <h4 class="resource-title"><a href="https://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Hidden Technical Debt in ML Systems</a></h4>
+                  <div class="resource-author">Sculley et al. (Google / NeurIPS)</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">MANDATORY PAPER</span><span class="tag-badge paper">FREE PDF</span></div>
+                  <p class="resource-desc">One of the most valuable papers in ML engineering: data dependencies, entanglement, glue code, feedback loops, configuration debt, and undeclared consumers.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Made With ML MLOps Course Goku Mohandas Tracking Serving">
+                <div>
+                  <h4 class="resource-title"><a href="https://madewithml.com/courses/mlops/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Made With ML MLOps Course</a></h4>
+                  <div class="resource-author">Goku Mohandas</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE</span><span class="tag-badge free">FREE TEXT COURSE</span></div>
+                  <p class="resource-desc">Prioritize: System Design, Training, Tracking, Serving, Testing, and Reproducibility modules.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="MLflow Tracking Quickstart Experiment Management">
+                <div>
+                  <h4 class="resource-title"><a href="https://mlflow.org/docs/latest/ml/tracking/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">MLflow Tracking Docs</a> & <a href="https://mlflow.org/docs/latest/ml/tracking/quickstart/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Quickstart</a></h4>
+                  <div class="resource-author">MLflow AI Platform</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE</span><span class="tag-badge handson">HANDS-ON</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Track parameters, git commits, metrics, artifacts, and dataset hashes across runs. Deploy your own tracking server on AWS/Postgres/S3.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="MLflow Model Registry Lineage Aliases Lifecycle">
+                <div>
+                  <h4 class="resource-title"><a href="https://mlflow.org/docs/latest/ml/model-registry/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">MLflow Model Registry</a> & <a href="https://mlflow.org/docs/latest/ml/model-registry/tutorial?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Tutorial</a></h4>
+                  <div class="resource-author">MLflow AI Platform</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE</span><span class="tag-badge handson">HANDS-ON</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Learn model versioning, lineage, aliases (<code>champion</code>, <code>challenger</code>), tags, and registry governance lifecycle.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Full Stack Deep Learning FSDL Experiment Management Tooling">
+                <div>
+                  <h4 class="resource-title"><a href="https://fullstackdeeplearning.com/course/2022/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Full Stack Deep Learning (2022)</a></h4>
+                  <div class="resource-author">UC Berkeley / FSDL</div>
+                  <div class="resource-meta-tags"><span class="tag-badge ref">SELECTED REF</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Notes, slides, and labs on Development Infrastructure, Experiment Management, Troubleshooting & Testing, and Data Management.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Designing Machine Learning Systems Chip Huyen OReilly">
+                <div>
+                  <h4 class="resource-title">Designing Machine Learning Systems</h4>
+                  <div class="resource-author">Chip Huyen (O'Reilly)</div>
+                  <div class="resource-meta-tags"><span class="tag-badge book">RECOMMENDED BOOK</span></div>
+                  <p class="resource-desc">The industry bridge from ML modeling to production systems. Read selectively through Month 11.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- MONTH 9 -->
+      <article class="month-card ml" data-track="ml" data-month="9">
+        <button class="month-head" type="button" aria-expanded="false">
+          <span class="month-index">09</span>
+          <span class="month-main">
+            <span class="kicker">MONTH 9</span>
+            <strong>MLOps lifecycle</strong>
+            <small>Automate the path from training to production.</small>
+          </span>
+          <span class="chevron">⌄</span>
+        </button>
+        <div class="month-body" hidden>
+          <div class="study-order-banner">
+            <span class="study-order-label">Study Order</span>
+            <div class="study-order-flow">
+              <span>Google MLOps architecture</span><span class="arrow">→</span>
+              <span>MLOps Principles</span><span class="arrow">→</span>
+              <span>Zoomcamp exercises</span><span class="arrow">→</span>
+              <span>Apply patterns to own system</span><span class="arrow">→</span>
+              <span>Made With ML / FSDL for gaps</span>
+            </div>
+          </div>
+
+          <div class="card-tabs">
+            <button class="card-tab-btn active" data-target="m9-tasks" type="button">Tasks & Deliverable</button>
+            <button class="card-tab-btn" data-target="m9-resources" type="button">Curated Resources <span class="badge-count">5</span></button>
+          </div>
+
+          <div class="tab-content" id="m9-tasks">
+            <div class="columns">
+              <div>
+                <h3>Learn</h3>
+                <label><input type="checkbox" data-id="m9-pipeline"> Data → train → evaluate → validate → register</label>
+                <label><input type="checkbox" data-id="m9-gates"> Quality gates and model promotion rules</label>
+                <label><input type="checkbox" data-id="m9-auto"> Automated model build/deploy workflows</label>
+                <label><input type="checkbox" data-id="m9-lineage"> Lineage, metadata and rollback</label>
+              </div>
+              <div class="deliverable">
+                <h3>Ship</h3>
+                <p>A model meeting validation criteria enters the registry and flows through a controlled deployment pipeline. Design canary/shadow rollout and rollback mechanisms.</p>
+                <span>Exit test: deploy a new model without manually copying artifact files.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="m9-resources" style="display: none;">
+            <div class="resource-grid">
+              <div class="resource-card" data-resource-name="Google MLOps Continuous Delivery Automation Pipelines CI CD CT">
+                <div>
+                  <h4 class="resource-title"><a href="https://docs.cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Google MLOps Architecture Guide</a></h4>
+                  <div class="resource-author">Google Cloud Architecture Center</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Vendor-independent conceptual standard for CI/CD/CT (Continuous Training) maturity levels in machine learning platforms.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="MLOps Principles Continuous Delivery Machine Learning">
+                <div>
+                  <h4 class="resource-title"><a href="https://ml-ops.org/content/mlops-principles?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">MLOps Principles</a></h4>
+                  <div class="resource-author">ml-ops.org</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Covers versioning, testing, automation, reproducibility, deployment patterns, monitoring, and CI/CD/CT governance.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="DataTalksClub MLOps Zoomcamp Alexey Grigorev Orchestration">
+                <div>
+                  <h4 class="resource-title"><a href="https://datatalks.club/docs/courses/mlops-zoomcamp/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">MLOps Zoomcamp</a></h4>
+                  <div class="resource-author">DataTalks.Club / Alexey Grigorev</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE</span><span class="tag-badge handson">HANDS-ON</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Self-paced project instructions covering experiment tracking, orchestration pipelines, model deployment, monitoring, and best practices.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Made With ML Production Services Goku Mohandas">
+                <div>
+                  <h4 class="resource-title"><a href="https://madewithml.com/courses/mlops/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Made With ML (Production Sections)</a></h4>
+                  <div class="resource-author">Goku Mohandas</div>
+                  <div class="resource-meta-tags"><span class="tag-badge ref">REFERENCE</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Study Production, Jobs & Services, CI/CD pipelines, Monitoring, and Data Engineering sections.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Full Stack Deep Learning Continual Learning Deployment">
+                <div>
+                  <h4 class="resource-title"><a href="https://fullstackdeeplearning.com/course/2022/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">FSDL 2022: Deployment & Continual Learning</a></h4>
+                  <div class="resource-author">UC Berkeley / FSDL</div>
+                  <div class="resource-meta-tags"><span class="tag-badge ref">SELECTED REF</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Selected modules on deployment patterns, continual learning, and model performance monitoring.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- MONTH 10 -->
+      <article class="month-card platform" data-track="platform" data-month="10">
+        <button class="month-head" type="button" aria-expanded="false">
+          <span class="month-index">10</span>
+          <span class="month-main">
+            <span class="kicker">MONTH 10 · ONLY NOW</span>
+            <strong>Kubernetes</strong>
+            <small>Orchestration after Linux, networking, Docker, and cloud.</small>
+          </span>
+          <span class="chevron">⌄</span>
+        </button>
+        <div class="month-body" hidden>
+          <div class="study-order-banner">
+            <span class="study-order-label">Study Order</span>
+            <div class="study-order-flow">
+              <span>Official K8s Basics</span><span class="arrow">→</span>
+              <span>Helsinki K8s course</span><span class="arrow">→</span>
+              <span>Local cluster & debug</span><span class="arrow">→</span>
+              <span>Helm</span><span class="arrow">→</span>
+              <span>EKS Workshop</span>
+            </div>
+          </div>
+
+          <div class="card-tabs">
+            <button class="card-tab-btn active" data-target="m10-tasks" type="button">Tasks & Deliverable</button>
+            <button class="card-tab-btn" data-target="m10-resources" type="button">Curated Resources <span class="badge-count">6</span></button>
+          </div>
+
+          <div class="tab-content" id="m10-tasks">
+            <div class="columns">
+              <div>
+                <h3>Learn</h3>
+                <label><input type="checkbox" data-id="m10-core"> Pods, deployments, services, namespaces</label>
+                <label><input type="checkbox" data-id="m10-config"> ConfigMaps, secrets, volumes, ingress</label>
+                <label><input type="checkbox" data-id="m10-health"> Requests/limits, probes, autoscaling</label>
+                <label><input type="checkbox" data-id="m10-helm"> Helm; local cluster first, then EKS</label>
+              </div>
+              <div class="deliverable">
+                <h3>Ship</h3>
+                <p>Run your model/API stack locally on Kubernetes, then deploy relevant services to EKS. Explain service discovery, autoscaling, and failure boundaries.</p>
+                <span>Exit test: debug “pod is running but service is unreachable.”</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="m10-resources" style="display: none;">
+            <div class="resource-grid">
+              <div class="resource-card" data-resource-name="Kubernetes Official Tutorials Basics Pods Services">
+                <div>
+                  <h4 class="resource-title"><a href="https://kubernetes.io/docs/tutorials/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Kubernetes Official Tutorials</a></h4>
+                  <div class="resource-author">Kubernetes Documentation</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Start with Kubernetes Basics. Study: Pods, Deployments, Services, ConfigMaps, Secrets, Volumes, Probes, Resource Requests/Limits, Namespaces.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="DevOps with Kubernetes University of Helsinki MOOC 2026">
+                <div>
+                  <h4 class="resource-title"><a href="https://devopswithkubernetes.com/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">DevOps with Kubernetes (2026)</a></h4>
+                  <div class="resource-author">University of Helsinki</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE</span><span class="tag-badge handson">HANDS-ON</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Main Kubernetes practice curriculum. Build real multi-tier apps on K3s/k3d, wire persistent storage, handle ingress, and automate deployments.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Killercoda Kubernetes Scenarios Disposable Clusters">
+                <div>
+                  <h4 class="resource-title"><a href="https://killercoda.com/kubernetes?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Killercoda Kubernetes Scenarios</a></h4>
+                  <div class="resource-author">Killercoda</div>
+                  <div class="resource-meta-tags"><span class="tag-badge handson">HANDS-ON</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Free disposable browser clusters to break network policies, storage classes, and rollout strategies without local overhead.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Helm 3 Documentation Chart Template Guide Values">
+                <div>
+                  <h4 class="resource-title"><a href="https://helm.sh/docs/v3/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Helm 3 Docs</a> & <a href="https://helm.sh/docs/chart_template_guide/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Chart Template Guide</a></h4>
+                  <div class="resource-author">Helm Community</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Learn package management: <code>Chart.yaml</code>, <code>values.yaml</code>, templates, pipelines/functions, conditionals, loops, named templates, and debugging.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Amazon EKS Workshop Autoscaling Observability Security">
+                <div>
+                  <h4 class="resource-title"><a href="https://www.eksworkshop.com/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Amazon EKS Workshop</a></h4>
+                  <div class="resource-author">AWS EKS Team</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE AWS PRACTICE</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Complete after local cluster mastery: IAM Roles for Service Accounts (IRSA), VPC CNI, Karpenter autoscaling, security, and AWS observability.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Kubernetes Up and Running Kelsey Hightower Brendan Burns Joe Beda">
+                <div>
+                  <h4 class="resource-title">Kubernetes: Up & Running (3rd Ed)</h4>
+                  <div class="resource-author">Hightower, Burns, Beda</div>
+                  <div class="resource-meta-tags"><span class="tag-badge optional">OPTIONAL BOOK</span></div>
+                  <p class="resource-desc">Written by the creators of Kubernetes. Excellent structured conceptual reference.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- MONTH 11 -->
+      <article class="month-card platform" data-track="platform" data-month="11">
+        <button class="month-head" type="button" aria-expanded="false">
+          <span class="month-index">11</span>
+          <span class="month-main">
+            <span class="kicker">MONTH 11</span>
+            <strong>Observability + production</strong>
+            <small>Know when the system is unhealthy before users tell you.</small>
+          </span>
+          <span class="chevron">⌄</span>
+        </button>
+        <div class="month-body" hidden>
+          <div class="study-order-banner">
+            <span class="study-order-label">Study Order</span>
+            <div class="study-order-flow">
+              <span>OpenTelemetry concepts</span><span class="arrow">→</span>
+              <span>Prometheus instrumentation</span><span class="arrow">→</span>
+              <span>Grafana dashboards</span><span class="arrow">→</span>
+              <span>SRE SLO chapters</span><span class="arrow">→</span>
+              <span>Evidently / NannyML</span><span class="arrow">→</span>
+              <span>Induce incident & write postmortem</span>
+            </div>
+          </div>
+
+          <div class="card-tabs">
+            <button class="card-tab-btn active" data-target="m11-tasks" type="button">Tasks & Deliverable</button>
+            <button class="card-tab-btn" data-target="m11-resources" type="button">Curated Resources <span class="badge-count">9</span></button>
+          </div>
+
+          <div class="tab-content" id="m11-tasks">
+            <div class="columns">
+              <div>
+                <h3>Learn</h3>
+                <label><input type="checkbox" data-id="m11-three"> Logs, metrics, traces</label>
+                <label><input type="checkbox" data-id="m11-slo"> SLIs, SLOs, alerts, error budgets</label>
+                <label><input type="checkbox" data-id="m11-perf"> Latency, throughput, CPU/GPU/memory, cost</label>
+                <label><input type="checkbox" data-id="m11-drift"> Data drift, model drift, prediction monitoring</label>
+              </div>
+              <div class="deliverable">
+                <h3>Ship</h3>
+                <p>Production dashboards + actionable alerts + one deliberately induced incident and postmortem. Review the architecture against real failure data.</p>
+                <span>Exit test: answer “what changed?” from evidence, not intuition.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="m11-resources" style="display: none;">
+            <div class="resource-grid">
+              <div class="resource-card" data-resource-name="OpenTelemetry Observability Primer Logs Metrics Traces Spans">
+                <div>
+                  <h4 class="resource-title"><a href="https://opentelemetry.io/docs/concepts/observability-primer/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">OpenTelemetry Observability Primer</a></h4>
+                  <div class="resource-author">OpenTelemetry / CNCF</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Master telemetry distinctions before installing tools: structured logs, dimensional metrics, distributed traces, spans, context propagation.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Prometheus Getting Started Metrics Scraping PromQL">
+                <div>
+                  <h4 class="resource-title"><a href="https://prometheus.io/docs/prometheus/latest/getting_started/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Prometheus Getting Started</a></h4>
+                  <div class="resource-author">Prometheus Community</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE</span><span class="tag-badge handson">HANDS-ON</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Configure metrics scraping, PromQL queries, and alerting rules. Instrument your own FastAPI/ML server with custom counters and histograms.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Grafana Learning Journeys Dashboards Alerts">
+                <div>
+                  <h4 class="resource-title"><a href="https://grafana.com/docs/learning-journeys/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Grafana Learning Journeys</a></h4>
+                  <div class="resource-author">Grafana Labs</div>
+                  <div class="resource-meta-tags"><span class="tag-badge handson">HANDS-ON</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Structured sequences for building production dashboards, alerting channels, and visualizing logs alongside metrics.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Google SRE Books Monitoring Distributed Systems SLI SLO Postmortems">
+                <div>
+                  <h4 class="resource-title"><a href="https://sre.google/books/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Google SRE Books (Monitoring Chapters)</a></h4>
+                  <div class="resource-author">Google SRE</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE</span><span class="tag-badge book">FREE BOOK</span></div>
+                  <p class="resource-desc">Study: monitoring distributed systems, SLI/SLO design, actionable alerting, incident management, blameless postmortems, overload and capacity planning.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Evidently Open-Source ML Observability Course Data Quality Drift">
+                <div>
+                  <h4 class="resource-title"><a href="https://learn.evidentlyai.com/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Evidently ML Observability Course</a></h4>
+                  <div class="resource-author">Evidently AI</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE ML OBS</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">All 40 text lessons: monitoring strategy, data quality, batch vs real-time monitoring, model quality degradation, prediction drift, and data distribution drift.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="NannyML Monitoring Workflow Data Drift Performance Degradation">
+                <div>
+                  <h4 class="resource-title"><a href="https://www.nannyml.com/blog/machine-learning-monitoring-workflow?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">NannyML Monitoring Workflow</a> & <a href="https://www.nannyml.com/blog/when-data-drift-does-not-affect-performance-machine-learning-models?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Drift vs Performance</a></h4>
+                  <div class="resource-author">NannyML</div>
+                  <div class="resource-meta-tags"><span class="tag-badge ref">DEEP ML OBS</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Crucial conceptual correction: <strong>don't build a system where every distribution drift automatically alerts as “model broken.”</strong></p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Systems Performance Brendan Gregg CPU Memory Profiling Linux">
+                <div>
+                  <h4 class="resource-title">Systems Performance (2nd Ed)</h4>
+                  <div class="resource-author">Brendan Gregg</div>
+                  <div class="resource-meta-tags"><span class="tag-badge book">RECOMMENDED BOOK</span></div>
+                  <p class="resource-desc">The industry reference for CPU, memory, disk, network, and kernel profiling and latency diagnosis.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Implementing Service Level Objectives Alex Hidalgo">
+                <div>
+                  <h4 class="resource-title">Implementing Service Level Objectives</h4>
+                  <div class="resource-author">Alex Hidalgo</div>
+                  <div class="resource-meta-tags"><span class="tag-badge optional">OPTIONAL BOOK</span></div>
+                  <p class="resource-desc">Deep practitioner manual for defining reliable SLIs, setting realistic SLOs, and establishing engineering error budgets.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Observability Engineering Charity Majors Liz Fong-Jones">
+                <div>
+                  <h4 class="resource-title">Observability Engineering</h4>
+                  <div class="resource-author">Charity Majors, Liz Fong-Jones, George Miranda</div>
+                  <div class="resource-meta-tags"><span class="tag-badge optional">OPTIONAL BOOK</span></div>
+                  <p class="resource-desc">Modern guide on high-cardinality telemetry, distributed tracing, and debugging unknown-unknown failures in production.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- MONTH 12 -->
+      <article class="month-card ml capstone" data-track="ml" data-month="12">
+        <button class="month-head" type="button" aria-expanded="false">
+          <span class="month-index">12</span>
+          <span class="month-main">
+            <span class="kicker">MONTH 12</span>
+            <strong>Capstone: production ML platform</strong>
+            <small>Stop adding tools. Integrate, harden, document.</small>
+          </span>
+          <span class="chevron">⌄</span>
+        </button>
+        <div class="month-body" hidden>
+          <div class="card-tabs">
+            <button class="card-tab-btn active" data-target="m12-tasks" type="button">Integration & Deliverable</button>
+            <button class="card-tab-btn" data-target="m12-resources" type="button">Review Resources & 15-Point Audit <span class="badge-count">5</span></button>
+          </div>
+
+          <div class="tab-content" id="m12-tasks">
+            <div class="columns">
+              <div>
+                <h3>Integrate</h3>
+                <label><input type="checkbox" data-id="m12-stack"> AWS + Terraform + Docker + Kubernetes</label>
+                <label><input type="checkbox" data-id="m12-ml"> PyTorch + MLflow + model registry</label>
+                <label><input type="checkbox" data-id="m12-app"> FastAPI + database/object storage + CI/CD</label>
+                <label><input type="checkbox" data-id="m12-obs"> Monitoring, rollback, runbooks, cost/security review</label>
+              </div>
+              <div class="deliverable">
+                <h3>Portfolio package</h3>
+                <p>Architecture diagram, system-design document, pristine README, infrastructure code, CI/CD, dashboards, runbook, incident postmortem, load/capacity notes, security and cost analysis.</p>
+                <span>This should look like a high-performing engineering team's platform, not a tutorial repo.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="m12-resources" style="display: none;">
+            <div class="resource-grid">
+              <div class="resource-card" data-resource-name="AWS Well-Architected Framework Audit Review">
+                <div>
+                  <h4 class="resource-title"><a href="https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">AWS Well-Architected Framework</a></h4>
+                  <div class="resource-author">AWS Documentation</div>
+                  <div class="resource-meta-tags"><span class="tag-badge review">MANDATORY REVIEW</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Run your completed system through: Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization, Sustainability.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="AWS Machine Learning Lens Well-Architected">
+                <div>
+                  <h4 class="resource-title"><a href="https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">AWS Machine Learning Lens</a></h4>
+                  <div class="resource-author">AWS Documentation (Nov 2025)</div>
+                  <div class="resource-meta-tags"><span class="tag-badge review">MANDATORY ML REVIEW</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Structured audit methodology specifically tailored for reviewing ML workloads across the entire data, training, and inference lifecycle.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="C4 Model Documentation Context Container Deployment">
+                <div>
+                  <h4 class="resource-title"><a href="https://c4model.com/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">C4 Model Architecture Docs</a></h4>
+                  <div class="resource-author">Simon Brown</div>
+                  <div class="resource-meta-tags"><span class="tag-badge core">CORE ARCH</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Deliver System Context, Container, and Deployment architecture diagrams in your final portfolio.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="OWASP Application Security Verification Standard ASVS">
+                <div>
+                  <h4 class="resource-title"><a href="https://owasp.org/www-project-application-security-verification-standard/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">OWASP ASVS Standard</a></h4>
+                  <div class="resource-author">OWASP Foundation</div>
+                  <div class="resource-meta-tags"><span class="tag-badge review">SECURITY REVIEW</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Use as a security checklist against secrets, APIs, container configurations, and network policies.</p>
+                </div>
+              </div>
+              <div class="resource-card" data-resource-name="Amazon Builders Library Reliability Review">
+                <div>
+                  <h4 class="resource-title"><a href="https://aws.amazon.com/builders-library/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Amazon Builders' Library (Reliability)</a></h4>
+                  <div class="resource-author">AWS Leaders</div>
+                  <div class="resource-meta-tags"><span class="tag-badge review">RELIABILITY REVIEW</span><span class="tag-badge free">FREE</span></div>
+                  <p class="resource-desc">Audit retries, timeouts, backoff with jitter, idempotency, overload protection, and zero-downtime deployment safety.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 15-Point Capstone Portfolio Package Checklist -->
+            <div style="margin-top: 20px; background: #fff; padding: 20px; border-radius: 14px; border: 1px solid var(--line);">
+              <h4 style="margin: 0 0 12px; font-size: 15px; text-transform: uppercase; letter-spacing: .06em; color: var(--rust);">Month 12 Capstone Portfolio Deliverables Checklist</h4>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 8px;">
+                <label><input type="checkbox" data-id="c12-arch"> Architecture / Design Document</label>
+                <label><input type="checkbox" data-id="c12-c4"> C4 Diagrams (Context & Container)</label>
+                <label><input type="checkbox" data-id="c12-tf"> Terraform Modular IaC</label>
+                <label><input type="checkbox" data-id="c12-cicd"> CI/CD & Automated Promotion Pipeline</label>
+                <label><input type="checkbox" data-id="c12-mlflow"> ML Experiment Lineage & Registry</label>
+                <label><input type="checkbox" data-id="c12-deploy"> Model Deployment & Canary Rollout Strategy</label>
+                <label><input type="checkbox" data-id="c12-dash"> Observability Dashboards (Prometheus/Grafana)</label>
+                <label><input type="checkbox" data-id="c12-slo"> Documented SLIs & SLOs</label>
+                <label><input type="checkbox" data-id="c12-runbook"> Operational Runbook</label>
+                <label><input type="checkbox" data-id="c12-rollback"> Automated Rollback Procedure</label>
+                <label><input type="checkbox" data-id="c12-sec"> OWASP Security Audit</label>
+                <label><input type="checkbox" data-id="c12-load"> Load & Capacity Testing Report</label>
+                <label><input type="checkbox" data-id="c12-cost"> Cloud Cost & Efficiency Estimate</label>
+                <label><input type="checkbox" data-id="c12-postmortem"> Deliberate Incident Postmortem</label>
+                <label><input type="checkbox" data-id="c12-lens"> AWS Well-Architected & ML Lens Review</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- THE NON-NEGOTIABLE 13-POINT BACKBONE -->
+    <section class="backbone-section" id="backbone-summary">
+      <div class="kicker">EXECUTIVE SUMMARY</div>
+      <h2>The Non-Negotiable 13-Resource Backbone</h2>
+      <p style="color: var(--muted); margin: 8px 0 0; font-size: 15.5px;">
+        If the entire catalog feels overwhelming, these 13 items form your core intellectual spine. Master these before branching into secondary tools.
+      </p>
+
+      <ul class="backbone-list">
+        <li class="backbone-item">
+          <span class="backbone-num">01</span>
+          <div class="backbone-text"><strong>Foundation:</strong> MIT Missing Semester + OSTEP + Pro Git + MDN HTTP.</div>
+        </li>
+        <li class="backbone-item">
+          <span class="backbone-num">02</span>
+          <div class="backbone-text"><strong>Linux / Networking:</strong> The Linux Command Line + Beej Network Concepts.</div>
+        </li>
+        <li class="backbone-item">
+          <span class="backbone-num">03</span>
+          <div class="backbone-text"><strong>Docker:</strong> University of Helsinki DevOps with Docker + official Docker docs.</div>
+        </li>
+        <li class="backbone-item">
+          <span class="backbone-num">04</span>
+          <div class="backbone-text"><strong>AWS:</strong> Skill Builder + Well-Architected Framework + Builders' Library.</div>
+        </li>
+        <li class="backbone-item">
+          <span class="backbone-num">05</span>
+          <div class="backbone-text"><strong>DevOps:</strong> GitHub Actions + Google SRE books.</div>
+        </li>
+        <li class="backbone-item">
+          <span class="backbone-num">06</span>
+          <div class="backbone-text"><strong>Terraform:</strong> HashiCorp tutorials + live AWS environments.</div>
+        </li>
+        <li class="backbone-item">
+          <span class="backbone-num">07</span>
+          <div class="backbone-text"><strong>Machine Learning:</strong> ISLP + Google MLCC + scikit-learn MOOC.</div>
+        </li>
+        <li class="backbone-item">
+          <span class="backbone-num">08</span>
+          <div class="backbone-text"><strong>Deep Learning:</strong> Official PyTorch tutorials + Understanding Deep Learning.</div>
+        </li>
+        <li class="backbone-item">
+          <span class="backbone-num">09</span>
+          <div class="backbone-text"><strong>ML Engineering:</strong> Rules of ML + Hidden Technical Debt paper + Made With ML + MLflow.</div>
+        </li>
+        <li class="backbone-item">
+          <span class="backbone-num">10</span>
+          <div class="backbone-text"><strong>MLOps:</strong> Google MLOps architecture paper + MLOps Zoomcamp.</div>
+        </li>
+        <li class="backbone-item">
+          <span class="backbone-num">11</span>
+          <div class="backbone-text"><strong>Kubernetes:</strong> Official docs + Helsinki DevOps with Kubernetes + EKS Workshop.</div>
+        </li>
+        <li class="backbone-item">
+          <span class="backbone-num">12</span>
+          <div class="backbone-text"><strong>Observability:</strong> OpenTelemetry + Prometheus + Google SRE + Evidently.</div>
+        </li>
+        <li class="backbone-item" style="grid-column: 1 / -1; border-color: var(--rust);">
+          <span class="backbone-num">13</span>
+          <div class="backbone-text"><strong>System Design (All Year):</strong> <strong>DDIA (2nd Edition) + Microsoft Cloud Design Patterns + Amazon Builders' Library + C4 Model.</strong></div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- WEEKLY SCHEDULE -->
+    <section class="weekly">
+      <div>
+        <div class="kicker">SUSTAINABLE CADENCE</div>
+        <h2>≈ 12–14 focused hours / week</h2>
+      </div>
+      <div class="week-grid">
+        <article><strong>Mon–Thu</strong><span>60–90 min/day</span><small>Official docs + code implementation</small></article>
+        <article><strong>Friday</strong><span>45–60 min</span><small>Architecture notes + weekly synthesis</small></article>
+        <article><strong>Saturday</strong><span>3–4 hours</span><small>Deep uninterrupted build session</small></article>
+        <article><strong>Sunday</strong><span>2–3 hours</span><small>System design loop & retrospective</small></article>
+      </div>
+    </section>
+
+    <!-- TARGET ROLES -->
+    <section class="roles">
+      <div>
+        <div class="kicker">POSITIONING BY YEAR END</div>
+        <h2>Target the high-value intersection, not four fragmented careers.</h2>
+      </div>
+      <div class="role-tags">
+        <span>AI / ML Engineer</span>
+        <span>MLOps Engineer</span>
+        <span>ML Platform Engineer</span>
+        <span>AI Infrastructure Engineer</span>
+        <span>Cloud / Platform Engineer</span>
+        <span>Backend & Distributed Systems Engineer</span>
+      </div>
+    </section>
+
+    <!-- CITATIONS & EXTERNAL REFERENCES FOOTER DRAWER -->
+    <section class="citations-wrapper">
+      <details class="citations-details">
+        <summary>
+          <span>📚 View All 59 External Citations & Primary Sources</span>
+          <span style="font-size: 11px; font-weight: normal; color: var(--muted);">(Official docs, university courses, papers, book publishers)</span>
+        </summary>
+        <div class="citations-grid">
+          <div class="citation-item">[1] <a href="https://www.reddit.com/r/Terraform/comments/1tsjjap/what_is_the_best_way_for_me_to_learn_terraform/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Practitioner Terraform Advice · Reddit</a></div>
+          <div class="citation-item">[2] <a href="https://docs.python.org/3/tutorial/" target="_blank" rel="noopener noreferrer">The Python 3.14 Tutorial · Python Docs</a></div>
+          <div class="citation-item">[3] <a href="https://missing.csail.mit.edu/2026/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Missing Semester 2026 · MIT CSAIL</a></div>
+          <div class="citation-item">[4] <a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener noreferrer">Pro Git Book (Chacon & Straub) · Git SCM</a></div>
+          <div class="citation-item">[5] <a href="https://pages.cs.wisc.edu/~remzi/OSTEP/" target="_blank" rel="noopener noreferrer">Operating Systems: Three Easy Pieces (OSTEP)</a></div>
+          <div class="citation-item">[6] <a href="https://opendatastructures.org/" target="_blank" rel="noopener noreferrer">Open Data Structures · Pat Morin</a></div>
+          <div class="citation-item">[7] <a href="https://www.pgexercises.com/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">PostgreSQL Exercises · PGExercises</a></div>
+          <div class="citation-item">[8] <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Overview of HTTP · MDN Web Docs</a></div>
+          <div class="citation-item">[9] <a href="https://linuxcommand.org/tlcl.php" target="_blank" rel="noopener noreferrer">The Linux Command Line · William Shotts</a></div>
+          <div class="citation-item">[10] <a href="https://overthewire.org/wargames/bandit/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Bandit Wargame · OverTheWire</a></div>
+          <div class="citation-item">[11] <a href="https://beej.us/guide/bgnet0/html/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Beej's Guide to Network Concepts · Beej</a></div>
+          <div class="citation-item">[12] <a href="https://www.helsinki.fi/en/admissions-and-education/open-university/open-university-studies-degree-programme/computer-science?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Open University CS · Univ of Helsinki</a></div>
+          <div class="citation-item">[13] <a href="https://docs.docker.com/build/building/best-practices/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Building Best Practices · Docker Docs</a></div>
+          <div class="citation-item">[14] <a href="https://docs.docker.com/reference/compose-file/networks/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Compose Networks · Docker Docs</a></div>
+          <div class="citation-item">[15] <a href="https://www.reddit.com/r/devops/comments/1s7phdh/what_are_your_thought_on_docker_deep_dive_vs/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Docker Deep Dive Discussion · Reddit</a></div>
+          <div class="citation-item">[16] <a href="https://aws.amazon.com/training/digital/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">AWS Skill Builder · AWS Digital Training</a></div>
+          <div class="citation-item">[17] <a href="https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Well-Architected Framework · AWS Docs</a></div>
+          <div class="citation-item">[18] <a href="https://aws.amazon.com/architecture/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Architecture Examples · AWS Architecture</a></div>
+          <div class="citation-item">[19] <a href="https://aws.amazon.com/builders-library/faqs/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Amazon Builders' Library FAQs · AWS</a></div>
+          <div class="citation-item">[20] <a href="https://docs.github.com/en/actions/get-started/quickstart?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">GitHub Actions Quickstart · GitHub Docs</a></div>
+          <div class="citation-item">[21] <a href="https://www.12factor.net/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">The Twelve-Factor App · 12factor.net</a></div>
+          <div class="citation-item">[22] <a href="https://cheatsheetseries.owasp.org/cheatsheets/CI_CD_Security_Cheat_Sheet.html?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">CI/CD Security Cheat Sheet · OWASP</a></div>
+          <div class="citation-item">[23] <a href="https://sre.google/books/" target="_blank" rel="noopener noreferrer">Google SRE Books · Google SRE</a></div>
+          <div class="citation-item">[24] <a href="https://developer.hashicorp.com/terraform/tutorials/aws-get-started?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Terraform AWS Get Started · HashiCorp</a></div>
+          <div class="citation-item">[25] <a href="https://developer.hashicorp.com/terraform/tutorials/state/state-cli?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Terraform State Management · HashiCorp</a></div>
+          <div class="citation-item">[26] <a href="https://developer.hashicorp.com/terraform/tutorials/modules?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Terraform Modules Tutorial · HashiCorp</a></div>
+          <div class="citation-item">[27] <a href="https://developer.hashicorp.com/terraform/tutorials/configuration-language/test?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Terraform Native Testing · HashiCorp</a></div>
+          <div class="citation-item">[28] <a href="https://developer.hashicorp.com/terraform/tutorials/aws?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">AWS Services Tutorials · HashiCorp</a></div>
+          <div class="citation-item">[29] <a href="https://www.reddit.com/r/learnmachinelearning/comments/1tcszl5/ml_course_in_2026/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">ML Course in 2026 Discussion · Reddit</a></div>
+          <div class="citation-item">[30] <a href="https://developers.google.com/machine-learning/crash-course/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Google ML Crash Course · Google</a></div>
+          <div class="citation-item">[31] <a href="https://docs.pytorch.org/tutorials/beginner/basics/intro?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">PyTorch: Learn the Basics · PyTorch</a></div>
+          <div class="citation-item">[32] <a href="https://mitpress.ublish.com/book/understanding-deep-learning?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Understanding Deep Learning · MIT Press</a></div>
+          <div class="citation-item">[33] <a href="https://huggingface.co/learn/llm-course/en/chapter1/1?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Hugging Face LLM Course · Hugging Face</a></div>
+          <div class="citation-item">[34] <a href="https://developers.google.com/machine-learning/guides/rules-of-ml?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Rules of Machine Learning · Google</a></div>
+          <div class="citation-item">[35] <a href="https://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Hidden Technical Debt in ML · NeurIPS</a></div>
+          <div class="citation-item">[36] <a href="https://madewithml.com/courses/mlops/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Made With ML MLOps Course · Anyscale</a></div>
+          <div class="citation-item">[37] <a href="https://mlflow.org/docs/latest/tracking?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">MLflow Experiment Tracking · MLflow</a></div>
+          <div class="citation-item">[38] <a href="https://mlflow.org/docs/latest/ml/model-registry/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">MLflow Model Registry · MLflow</a></div>
+          <div class="citation-item">[39] <a href="https://fullstackdeeplearning.com/course/2022/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Full Stack Deep Learning · FSDL</a></div>
+          <div class="citation-item">[40] <a href="https://docs.cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">MLOps Continuous Delivery · Google Cloud</a></div>
+          <div class="citation-item">[41] <a href="https://ml-ops.org/content/mlops-principles?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">MLOps Principles · ml-ops.org</a></div>
+          <div class="citation-item">[42] <a href="https://datatalks.club/docs/courses/mlops-zoomcamp/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">MLOps Zoomcamp · DataTalks.Club</a></div>
+          <div class="citation-item">[43] <a href="https://kubernetes.io/docs/tutorials/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Kubernetes Tutorials · Kubernetes.io</a></div>
+          <div class="citation-item">[44] <a href="https://devopswithkubernetes.com/" target="_blank" rel="noopener noreferrer">DevOps with Kubernetes MOOC · Helsinki</a></div>
+          <div class="citation-item">[45] <a href="https://helm.sh/docs/v3/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Helm 3 Documentation · Helm</a></div>
+          <div class="citation-item">[46] <a href="https://www.eksworkshop.com/docs/introduction?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Amazon EKS Workshop · AWS</a></div>
+          <div class="citation-item">[47] <a href="https://opentelemetry.io/docs/concepts/observability-primer/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Observability Primer · OpenTelemetry</a></div>
+          <div class="citation-item">[48] <a href="https://prometheus.io/docs/prometheus/latest/getting_started/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Getting Started · Prometheus</a></div>
+          <div class="citation-item">[49] <a href="https://grafana.com/docs/learning-journeys/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Grafana Learning Journeys · Grafana Labs</a></div>
+          <div class="citation-item">[50] <a href="https://learn.evidentlyai.com/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Open-Source ML Observability · Evidently AI</a></div>
+          <div class="citation-item">[51] <a href="https://www.nannyml.com/blog/when-data-drift-does-not-affect-performance-machine-learning-models?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Data Drift & Performance · NannyML</a></div>
+          <div class="citation-item">[52] <a href="https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">AWS ML Lens · AWS Documentation</a></div>
+          <div class="citation-item">[53] <a href="https://c4model.com/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">The C4 Model for Architecture · Simon Brown</a></div>
+          <div class="citation-item">[54] <a href="https://github.com/donnemartin/system-design-primer?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">System Design Primer · Donne Martin</a></div>
+          <div class="citation-item">[55] <a href="https://www.reddit.com/r/PlacementsPrep/comments/1vo2g3m/what_is_the_best_and_free_resources_to_start/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Free System Design Resources · Reddit</a></div>
+          <div class="citation-item">[56] <a href="https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">DDIA 2nd Edition · O'Reilly Media (2026)</a></div>
+          <div class="citation-item">[57] <a href="https://www.reddit.com/r/softwarearchitecture/comments/1t8xcsk/suggest_some_system_design_resources_please/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">System Design Recommendations · Reddit</a></div>
+          <div class="citation-item">[58] <a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Cloud Design Patterns · Microsoft Learn</a></div>
+          <div class="citation-item">[59] <a href="https://pdos.csail.mit.edu/6.824/schedule.html?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">MIT 6.5840 Distributed Systems (Spring 2026)</a></div>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <script>
+(() => {
+  const STORAGE_KEY = "professional-roadmap-progress-v2";
+  const checks = [...document.querySelectorAll('input[type="checkbox"][data-id]')];
+  const cards = [...document.querySelectorAll(".month-card")];
+  const monthHeads = [...document.querySelectorAll(".month-head")];
+  const filters = [...document.querySelectorAll(".filter")];
+  const viewBtns = [...document.querySelectorAll(".view-mode-btn")];
+  const progressText = document.getElementById("progressText");
+  const progressFill = document.getElementById("progressFill");
+  const progressPercent = document.getElementById("progressPercent");
+  const expandBtn = document.getElementById("expandBtn");
+  const focusBtn = document.getElementById("focusBtn");
+  const resetBtn = document.getElementById("resetBtn");
+  const searchInput = document.getElementById("resourceSearch");
+  const searchClear = document.getElementById("searchClear");
+
+  /* Storage & Progress */
+  const readState = () => {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+    } catch {
+      return {};
+    }
+  };
+
+  const writeState = () => {
+    const state = {};
+    checks.forEach(check => state[check.dataset.id] = check.checked);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  };
+
+  const updateProgress = () => {
+    const done = checks.filter(c => c.checked).length;
+    const total = checks.length;
+    const pct = total ? Math.round((done / total) * 100) : 0;
+    progressText.textContent = `${done} / ${total}`;
+    progressFill.style.width = `${pct}%`;
+    progressPercent.textContent = `${pct}%`;
+  };
+
+  const state = readState();
+  checks.forEach(check => {
+    check.checked = Boolean(state[check.dataset.id]);
+    check.addEventListener("change", () => {
+      writeState();
+      updateProgress();
+    });
+  });
+  updateProgress();
+
+  /* Accordion expand/collapse */
+  monthHeads.forEach(head => {
+    head.addEventListener("click", () => {
+      const body = head.nextElementSibling;
+      const open = head.getAttribute("aria-expanded") === "true";
+      head.setAttribute("aria-expanded", String(!open));
+      body.hidden = open;
+    });
+  });
+
+  let expanded = false;
+  expandBtn.addEventListener("click", () => {
+    expanded = !expanded;
+    monthHeads.forEach(head => {
+      head.setAttribute("aria-expanded", String(expanded));
+      head.nextElementSibling.hidden = !expanded;
+    });
+    expandBtn.textContent = expanded ? "Collapse all" : "Expand all";
+  });
+
+  /* Track Filter */
+  filters.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filters.forEach(x => x.classList.remove("active"));
+      btn.classList.add("active");
+      const track = btn.dataset.track;
+
+      document.querySelectorAll("[data-track]").forEach(section => {
+        if (section.classList.contains("filter")) return;
+        section.classList.toggle("hidden-track", track !== "all" && section.dataset.track !== track);
+      });
+    });
+  });
+
+  /* Card Tabs (Tasks vs Resources) */
+  document.querySelectorAll(".card-tabs").forEach(tabContainer => {
+    const tabBtns = [...tabContainer.querySelectorAll(".card-tab-btn")];
+    const parent = tabContainer.closest(".month-body, .gate, .system-thread");
+    if (!parent) return;
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        tabBtns.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const targetId = btn.dataset.target;
+        const contents = parent.querySelectorAll(".tab-content");
+        contents.forEach(content => {
+          if (content.id === targetId) {
+            content.style.display = "block";
+          } else {
+            content.style.display = "none";
+          }
+        });
+      });
+    });
+  });
+
+  /* Global View Mode Toggle (All, Tasks Only, Resources Only) */
+  viewBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      viewBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const mode = btn.dataset.view;
+
+      document.querySelectorAll(".card-tabs").forEach(tabContainer => {
+        const parent = tabContainer.closest(".month-body, .gate, .system-thread");
+        if (!parent) return;
+        const tabBtns = [...tabContainer.querySelectorAll(".card-tab-btn")];
+        const contents = [...parent.querySelectorAll(".tab-content")];
+
+        if (mode === "tasks") {
+          tabBtns.forEach((b, i) => b.classList.toggle("active", i === 0));
+          contents.forEach((c, i) => c.style.display = i === 0 ? "block" : "none");
+        } else if (mode === "resources") {
+          tabBtns.forEach((b, i) => b.classList.toggle("active", i === 1));
+          contents.forEach((c, i) => c.style.display = i === 1 ? "block" : "none");
+        } else {
+          // both: show first tab as default or current
+          tabBtns.forEach((b, i) => b.classList.toggle("active", i === 0));
+          contents.forEach((c, i) => c.style.display = i === 0 ? "block" : "none");
+        }
+      });
+    });
+  });
+
+  /* Focus next unfinished */
+  focusBtn.addEventListener("click", () => {
+    cards.forEach(c => c.classList.remove("focused"));
+    const next = cards.find(card => {
+      const cardChecks = [...card.querySelectorAll('input[type="checkbox"]')];
+      return cardChecks.some(c => !c.checked);
+    });
+
+    if (!next) {
+      focusBtn.textContent = "Roadmap complete! 🎉";
+      return;
+    }
+
+    const head = next.querySelector(".month-head");
+    const body = next.querySelector(".month-body");
+    head.setAttribute("aria-expanded", "true");
+    body.hidden = false;
+    next.classList.add("focused");
+    next.scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+
+  /* Reset progress */
+  resetBtn.addEventListener("click", () => {
+    const okay = window.confirm("Reset every roadmap and reading checkbox?");
+    if (!okay) return;
+    checks.forEach(c => c.checked = false);
+    writeState();
+    updateProgress();
+    cards.forEach(c => c.classList.remove("focused"));
+  });
+
+  /* Search Functionality */
+  if (searchInput) {
+    const performSearch = () => {
+      const query = searchInput.value.toLowerCase().trim();
+      searchClear.classList.toggle("visible", query.length > 0);
+
+      const resourceCards = document.querySelectorAll(".resource-card");
+      if (!query) {
+        resourceCards.forEach(card => card.style.display = "flex");
+        return;
+      }
+
+      // Switch all cards to resource tab when searching
+      document.querySelectorAll('.card-tab-btn[data-target*="resources"]').forEach(b => b.click());
+      // Expand all month bodies to show search results
+      monthHeads.forEach(head => {
+        head.setAttribute("aria-expanded", "true");
+        head.nextElementSibling.hidden = false;
+      });
+
+      resourceCards.forEach(card => {
+        const text = (card.textContent + " " + (card.dataset.resourceName || "")).toLowerCase();
+        const match = text.includes(query);
+        card.style.display = match ? "flex" : "none";
+      });
+    };
+
+    searchInput.addEventListener("input", performSearch);
+    searchClear.addEventListener("click", () => {
+      searchInput.value = "";
+      performSearch();
+      searchInput.focus();
+    });
+  }
+})();
+  </script>
+</body>
+</html>
