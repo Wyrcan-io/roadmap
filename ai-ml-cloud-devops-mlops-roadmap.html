@@ -326,12 +326,12 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(250, 247, 242, 0.94);
+  background: rgba(250, 247, 242, 0.96);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  padding: 16px 0;
+  padding: 16px 0 12px;
   border-bottom: 1px solid var(--border);
-  margin-bottom: 48px;
+  margin-bottom: 40px;
 }
 
 .controls-inner {
@@ -422,6 +422,15 @@ a:hover {
   color: #ffffff;
   border-color: var(--ink);
   font-weight: 600;
+}
+
+.filter-feedback {
+  width: 100%;
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--terracotta);
+  display: none;
 }
 
 /* CURRICULUM SECTIONS */
@@ -1018,12 +1027,13 @@ a:hover {
         </div>
 
         <div class="track-filters">
-          <button class="filter-btn active" data-track="all" type="button">All Tracks</button>
-          <button class="filter-btn" data-track="foundation" type="button">Foundation</button>
-          <button class="filter-btn" data-track="platform" type="button">Cloud / DevOps</button>
-          <button class="filter-btn" data-track="ml" type="button">ML / MLOps</button>
-          <button class="filter-btn" data-track="system" type="button">System Design</button>
+          <button class="filter-btn active" data-track="all" type="button">All Tracks (14)</button>
+          <button class="filter-btn" data-track="foundation" type="button">Foundation (1)</button>
+          <button class="filter-btn" data-track="platform" type="button">Cloud / DevOps (7)</button>
+          <button class="filter-btn" data-track="ml" type="button">ML / MLOps (5)</button>
+          <button class="filter-btn" data-track="system" type="button">System Design (1)</button>
         </div>
+        <div class="filter-feedback" id="filterStatus"></div>
       </div>
     </div>
 
@@ -2562,19 +2572,19 @@ a:hover {
       </p>
 
       <div class="backbone-grid">
-        <div class="backbone-card"><span class="backbone-index">01</span><div class="backbone-body"><strong>Foundation:</strong> <span>MIT Missing Semester + OSTEP + Pro Git + MDN HTTP</span></div></div>
-        <div class="backbone-card"><span class="backbone-index">02</span><div class="backbone-body"><strong>Linux & Networking:</strong> <span>The Linux Command Line + Beej Network Concepts</span></div></div>
-        <div class="backbone-card"><span class="backbone-index">03</span><div class="backbone-body"><strong>Docker:</strong> <span>Helsinki DevOps with Docker + official build best practices</span></div></div>
-        <div class="backbone-card"><span class="backbone-index">04</span><div class="backbone-body"><strong>AWS:</strong> <span>Skill Builder + Well-Architected Framework + Builders' Library</span></div></div>
-        <div class="backbone-card"><span class="backbone-index">05</span><div class="backbone-body"><strong>DevOps:</strong> <span>GitHub Actions + Google SRE Books</span></div></div>
-        <div class="backbone-card"><span class="backbone-index">06</span><div class="backbone-body"><strong>Terraform:</strong> <span>HashiCorp tutorials + live modular AWS infrastructure</span></div></div>
-        <div class="backbone-card"><span class="backbone-index">07</span><div class="backbone-body"><strong>ML Fundamentals:</strong> <span>ISLP (with Python labs) + Google MLCC + scikit-learn MOOC</span></div></div>
-        <div class="backbone-card"><span class="backbone-index">08</span><div class="backbone-body"><strong>Deep Learning:</strong> <span>PyTorch Basics + Understanding Deep Learning (Prince)</span></div></div>
-        <div class="backbone-card"><span class="backbone-index">09</span><div class="backbone-body"><strong>ML Engineering:</strong> <span>Rules of ML + Hidden Technical Debt paper + MLflow</span></div></div>
-        <div class="backbone-card"><span class="backbone-index">10</span><div class="backbone-body"><strong>MLOps:</strong> <span>Google MLOps CI/CD/CT Guide + MLOps Zoomcamp</span></div></div>
-        <div class="backbone-card"><span class="backbone-index">11</span><div class="backbone-body"><strong>Kubernetes:</strong> <span>Official docs + Helsinki K8s MOOC + Amazon EKS Workshop</span></div></div>
-        <div class="backbone-card"><span class="backbone-index">12</span><div class="backbone-body"><strong>Observability:</strong> <span>OpenTelemetry + Prometheus + Google SRE + Evidently AI</span></div></div>
-        <div class="backbone-card" style="grid-column: 1 / -1; border-color: var(--terracotta);">
+        <div class="backbone-card" data-track="foundation"><span class="backbone-index">01</span><div class="backbone-body"><strong>Foundation:</strong> <span>MIT Missing Semester + OSTEP + Pro Git + MDN HTTP</span></div></div>
+        <div class="backbone-card" data-track="platform"><span class="backbone-index">02</span><div class="backbone-body"><strong>Linux & Networking:</strong> <span>The Linux Command Line + Beej Network Concepts</span></div></div>
+        <div class="backbone-card" data-track="platform"><span class="backbone-index">03</span><div class="backbone-body"><strong>Docker:</strong> <span>Helsinki DevOps with Docker + official build best practices</span></div></div>
+        <div class="backbone-card" data-track="platform"><span class="backbone-index">04</span><div class="backbone-body"><strong>AWS:</strong> <span>Skill Builder + Well-Architected Framework + Builders' Library</span></div></div>
+        <div class="backbone-card" data-track="platform"><span class="backbone-index">05</span><div class="backbone-body"><strong>DevOps:</strong> <span>GitHub Actions + Google SRE Books</span></div></div>
+        <div class="backbone-card" data-track="platform"><span class="backbone-index">06</span><div class="backbone-body"><strong>Terraform:</strong> <span>HashiCorp tutorials + live modular AWS infrastructure</span></div></div>
+        <div class="backbone-card" data-track="ml"><span class="backbone-index">07</span><div class="backbone-body"><strong>ML Fundamentals:</strong> <span>ISLP (with Python labs) + Google MLCC + scikit-learn MOOC</span></div></div>
+        <div class="backbone-card" data-track="ml"><span class="backbone-index">08</span><div class="backbone-body"><strong>Deep Learning:</strong> <span>PyTorch Basics + Understanding Deep Learning (Prince)</span></div></div>
+        <div class="backbone-card" data-track="ml"><span class="backbone-index">09</span><div class="backbone-body"><strong>ML Engineering:</strong> <span>Rules of ML + Hidden Technical Debt paper + MLflow</span></div></div>
+        <div class="backbone-card" data-track="ml"><span class="backbone-index">10</span><div class="backbone-body"><strong>MLOps:</strong> <span>Google MLOps CI/CD/CT Guide + MLOps Zoomcamp</span></div></div>
+        <div class="backbone-card" data-track="platform"><span class="backbone-index">11</span><div class="backbone-body"><strong>Kubernetes:</strong> <span>Official docs + Helsinki K8s MOOC + Amazon EKS Workshop</span></div></div>
+        <div class="backbone-card" data-track="platform"><span class="backbone-index">12</span><div class="backbone-body"><strong>Observability:</strong> <span>OpenTelemetry + Prometheus + Google SRE + Evidently AI</span></div></div>
+        <div class="backbone-card" data-track="system" style="grid-column: 1 / -1; border-color: var(--terracotta);">
           <span class="backbone-index" style="color: var(--terracotta);">13</span>
           <div class="backbone-body"><strong>System Design (All Year):</strong> <span><strong>DDIA 2nd Edition + Microsoft Cloud Design Patterns + Amazon Builders' Library + C4 Model</strong></span></div>
         </div>
@@ -2655,13 +2665,14 @@ a:hover {
 
   <script>
 (() => {
-  const STORAGE_KEY = "roadmap-progress-v3";
+  const STORAGE_KEY = "roadmap-progress-v4";
   const checks = [...document.querySelectorAll('input[type="checkbox"][data-id]')];
   const progressText = document.getElementById("progressText");
   const progressFill = document.getElementById("progressFill");
   const timelineBlocks = [...document.querySelectorAll(".timeline-block")];
   const timelineHeaders = [...document.querySelectorAll(".timeline-header")];
   const filterBtns = [...document.querySelectorAll(".filter-btn")];
+  const filterStatus = document.getElementById("filterStatus");
   const searchInput = document.getElementById("resourceSearch");
   const searchClear = document.getElementById("searchClear");
   const expandBtn = document.getElementById("expandBtn");
@@ -2745,18 +2756,51 @@ a:hover {
     });
   });
 
-  /* TRACK FILTER */
+  /* TRACK FILTER WITH AUTO-EXPAND & SCROLL */
   filterBtns.forEach(btn => {
     btn.addEventListener("click", () => {
       filterBtns.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
       const track = btn.dataset.track;
 
-      document.querySelectorAll("[data-track]").forEach(el => {
-        if (el.classList.contains("filter-btn")) return;
-        const match = track === "all" || el.dataset.track === track;
-        el.style.display = match ? "" : "none";
+      let firstMatch = null;
+      const filterableElements = document.querySelectorAll(
+        "#section-foundation, #section-system-design, .timeline-block, .backbone-card"
+      );
+
+      filterableElements.forEach(el => {
+        const elTrack = el.dataset.track;
+        const match = (track === "all") || (elTrack === track);
+        
+        if (el.classList.contains("backbone-card")) {
+          el.style.display = match ? "flex" : "none";
+        } else {
+          el.style.display = match ? "block" : "none";
+        }
+
+        if (match) {
+          if (!firstMatch && (el.classList.contains("curriculum-section") || el.classList.contains("system-design-card") || el.classList.contains("timeline-block"))) {
+            firstMatch = el;
+          }
+
+          // Auto-expand matched month cards
+          if (track !== "all" && el.classList.contains("timeline-block")) {
+            const head = el.querySelector(".timeline-header");
+            if (head) {
+              head.setAttribute("aria-expanded", "true");
+              head.nextElementSibling.hidden = false;
+            }
+          }
+        }
       });
+
+      // Smooth scroll to the first matching element
+      if (firstMatch && track !== "all") {
+        const controls = document.querySelector(".controls-bar");
+        const offset = controls ? controls.offsetHeight + 24 : 80;
+        const topPos = firstMatch.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: Math.max(0, topPos), behavior: "smooth" });
+      }
     });
   });
 
