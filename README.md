@@ -39,7 +39,7 @@ Mastering 4 canonical textbooks (*ISLP*, *UDL*, *DDIA*, *OSTEP*), 7 major platfo
 
 | Stage | Track | Core Focus | Primary Deliverable | Recommended Pace |
 | :--- | :--- | :--- | :--- | :--- |
-| **00** | **Foundation Reset** | Python Model, Asyncio, OSTEP OS, MDN HTTP, PostgreSQL | Trace web request from DNS to DB query plan | 3–4 Weeks |
+| **00** | **Foundation Reset** | Python Model, Asyncio, OSTEP OS, MDN HTTP, PostgreSQL | Trace web request from DNS to DB query plan | 6–8 Weeks (Fast: 3–4w) |
 | **01** | **Platform** | Linux Internals, CLI Fluency, Networking, systemd | Deploy hardened FastAPI service on Linux VM behind Nginx | 8 Weeks (Fast: 4w) |
 | **02** | **Platform** | Docker Deep Dive, Multi-Stage Builds, OCI, Compose | Production multi-tier compose stack with networking isolation | 8 Weeks (Fast: 4w) |
 | **03** | **Platform** | AWS Architecture, VPC Subnets, IAM, RDS, S3, ALB | Provision AWS multi-tier architecture + System Design Doc | 8 Weeks (Fast: 4w) |
@@ -72,7 +72,7 @@ If the entire catalog feels vast, these 13 items form your core intellectual spi
 10. **MLOps:** [Google Cloud MLOps Guide](https://docs.cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning) + [DataTalksClub MLOps Zoomcamp](https://datatalks.club/docs/courses/mlops-zoomcamp/)
 11. **Kubernetes:** [Kubernetes Official Tutorials](https://kubernetes.io/docs/tutorials/) + [Helsinki K8s MOOC](https://devopswithkubernetes.com/) + [Amazon EKS Workshop](https://www.eksworkshop.com/)
 12. **Observability:** [OpenTelemetry Primer](https://opentelemetry.io/docs/concepts/observability-primer/) + [Prometheus](https://prometheus.io/) + [Evidently AI](https://learn.evidentlyai.com/)
-13. **System Design (All Year):** [Designing Data-Intensive Applications (DDIA 2nd Edition)](https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/) + [Microsoft Cloud Design Patterns](https://learn.microsoft.com/en-us/azure/architecture/patterns/) + [Amazon Builders' Library](https://aws.amazon.com/builders-library/) + [C4 Model](https://c4model.com/)
+13. **System Design (Continuous):** [Designing Data-Intensive Applications (DDIA 2nd Edition)](https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/) + [Microsoft Cloud Design Patterns](https://learn.microsoft.com/en-us/azure/architecture/patterns/) + [Amazon Builders' Library](https://aws.amazon.com/builders-library/) + [C4 Model](https://c4model.com/)
 
 ---
 

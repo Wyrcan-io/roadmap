@@ -657,8 +657,30 @@ a:hover {
   font-size: 14.5px;
   color: var(--muted);
   line-height: 1.55;
-  margin: 0 0 24px;
+  margin: 0 0 16px;
   max-width: 780px;
+}
+
+.pacing-live-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--ink-secondary);
+  margin-bottom: 24px;
+}
+
+.pacing-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--olive);
+  box-shadow: 0 0 0 2px rgba(80, 94, 59, 0.2);
 }
 
 .pacing-grid {
@@ -669,18 +691,32 @@ a:hover {
 
 .track-col {
   background: var(--surface-raised);
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
   border-radius: 8px;
   padding: 24px;
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: border-color 0.2s ease;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
 }
 
-.track-col.recommended {
+.track-col:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.track-col:focus-visible {
+  outline: 2px solid var(--terracotta);
+  outline-offset: 2px;
+}
+
+.track-col.active {
   border-color: var(--terracotta);
   background: linear-gradient(180deg, var(--terracotta-soft) 0%, var(--surface-raised) 25%);
+  box-shadow: 0 4px 18px rgba(168, 66, 30, 0.12);
 }
 
 .track-badge-row {
@@ -739,7 +775,7 @@ a:hover {
   gap: 8px;
 }
 
-.track-col:not(.recommended) .track-duration {
+.track-col:not(.active) .track-duration {
   color: var(--ink-secondary);
 }
 
@@ -766,6 +802,66 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  flex-grow: 1;
+}
+
+.track-action-bar {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.track-select-btn {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  transition: all 0.15s ease;
+}
+
+.track-col.active .track-select-btn {
+  color: var(--terracotta);
+}
+
+.track-col:not(.active) .track-select-btn {
+  color: var(--muted);
+}
+
+.track-radio-circle {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-strong);
+  display: grid;
+  place-content: center;
+  transition: all 0.15s ease;
+  background: var(--surface);
+}
+
+.track-col.active .track-radio-circle {
+  border-color: var(--terracotta);
+  background: var(--terracotta);
+}
+
+.track-col.active .track-radio-circle::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.track-click-hint {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted-light);
 }
 
 .stage-title-wrap {
@@ -799,8 +895,8 @@ a:hover {
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  transition: all 0.2s ease;
 }
-
 
 /* CURRICULUM SECTIONS */
 .curriculum-section {
@@ -1533,17 +1629,21 @@ a:hover {
       <section class="pacing-card" id="section-pacing">
         <div class="pacing-header">
           <div class="pacing-header-titles">
-            <span class="pacing-kicker">Realistic Engineering Timeline</span>
+            <span class="pacing-kicker">Interactive Engineering Pacing</span>
             <h2 class="pacing-title">Choose Your Track (12 vs 24 Months)</h2>
             <p class="pacing-subtitle">
-              Mastering canonical textbooks (ISLP, UDL, DDIA), 7 platform ecosystems, and 110 checkpoints takes deliberate compounding. Choose the pace that respects your career and life.
+              Mastering canonical textbooks (ISLP, UDL, DDIA), 7 platform ecosystems, and 110 checkpoints takes deliberate compounding. Click either card below to adapt the entire curriculum timeline to your schedule.
             </p>
+            <div class="pacing-live-banner">
+              <span class="pacing-live-dot"></span>
+              <span>Active Curriculum Timeline: <strong id="activeTrackBannerText">Working Practitioner Track (24 Months / ~8–10 hrs/wk)</strong></span>
+            </div>
           </div>
         </div>
 
-        <div class="pacing-grid">
+        <div class="pacing-grid" role="radiogroup" aria-label="Roadmap pacing tracks">
           <!-- TRACK A: PRACTITIONER (24 MO) -->
-          <div class="track-col recommended">
+          <div class="track-col active" id="trackPractitioner" role="radio" aria-checked="true" tabindex="0" data-track="practitioner">
             <div class="track-badge-row">
               <span class="track-tag-rec">Recommended Pace</span>
               <span class="track-hours mono">8–10 hrs / week</span>
@@ -1558,10 +1658,17 @@ a:hover {
               <li><strong>Weeks 5–8:</strong> Production deliverable implementation, failure testing & runbook.</li>
               <li><strong>System Design:</strong> 1 DDIA chapter every 6–8 weeks (deep retention).</li>
             </ul>
+            <div class="track-action-bar">
+              <span class="track-select-btn">
+                <span class="track-radio-circle"></span>
+                <span class="track-status-text">Active Track</span>
+              </span>
+              <span class="track-click-hint">Selected (Default)</span>
+            </div>
           </div>
 
           <!-- TRACK B: ACCELERATED (12 MO) -->
-          <div class="track-col">
+          <div class="track-col" id="trackAccelerated" role="radio" aria-checked="false" tabindex="0" data-track="accelerated">
             <div class="track-badge-row">
               <span class="track-tag">Full-Time / Sabbatical</span>
               <span class="track-hours mono">20–25+ hrs / week</span>
@@ -1576,6 +1683,13 @@ a:hover {
               <li><strong>Weeks 3–4:</strong> Architecture provisioning, pipeline build & exit test.</li>
               <li><strong>System Design:</strong> 1 DDIA chapter every 3–4 weeks (high cognitive load).</li>
             </ul>
+            <div class="track-action-bar">
+              <span class="track-select-btn">
+                <span class="track-radio-circle"></span>
+                <span class="track-status-text">Select Track</span>
+              </span>
+              <span class="track-click-hint">Click to activate</span>
+            </div>
           </div>
         </div>
       </section>
@@ -1584,7 +1698,7 @@ a:hover {
       <section class="curriculum-section" id="section-foundation">
         <div class="section-head">
           <h2 class="section-title">0. Foundation Reset</h2>
-          <span class="section-meta">3–4 Weeks · Essential</span>
+          <span class="section-meta" id="foundationMeta">⏱️ 6–8 Weeks · Essential Foundation</span>
         </div>
 
         <div class="study-order-strip">
@@ -1771,7 +1885,7 @@ a:hover {
       <section class="system-design-card" id="section-system-design">
         <div class="section-head" style="border-color: var(--ochre);">
           <h2 class="section-title">System Design Track</h2>
-          <span class="section-meta" style="color: var(--ochre);">Parallel Track · Months 1–12</span>
+          <span class="section-meta" id="systemDesignMeta" style="color: var(--ochre);">Parallel Track · 24-Month Pace (Stages 01–12)</span>
         </div>
         <p class="philosophy-body">
           System design is not a separate topic for the end of the year. It is the reasoning layer connecting cloud infrastructure, backend services, DevOps pipelines, and MLOps platforms.
@@ -1843,11 +1957,11 @@ a:hover {
                 <div><span class="tag tag-core">Core Book</span> <span class="tag tag-book">Must Read</span></div>
               </div>
               <div class="resource-author-line">Martin Kleppmann & Chris Riccomini</div>
-              <p class="resource-details">Read gradually across the year:</p>
+              <p class="resource-details">Read gradually across your curriculum milestones:</p>
               <ul class="resource-focus-list">
-                <li><strong>Months 1–3:</strong> Reliability, scalability, maintainability, data models, storage & retrieval engines</li>
-                <li><strong>Months 4–6:</strong> Encoding and evolution, replication, partitioning</li>
-                <li><strong>Months 7–9:</strong> Transactions, distributed system faults, consistency and consensus</li>
+                <li><strong>Part I (Stages 01–04 · Practitioner: Months 1–6 / Fast: Months 1–3):</strong> Reliability, scalability, maintainability, data models, storage & retrieval engines</li>
+                <li><strong>Part II (Stages 05–08 · Practitioner: Months 7–12 / Fast: Months 4–6):</strong> Encoding and evolution, replication, partitioning</li>
+                <li><strong>Part III (Stages 09–12 · Practitioner: Months 13–24 / Fast: Months 7–12):</strong> Transactions, distributed system faults, consistency and consensus</li>
               </ul>
             </div>
 
@@ -1935,7 +2049,7 @@ a:hover {
                 <div class="stage-title-wrap">
                   <span class="stage-label">Stage 01</span>
                   <h3>Linux & Networking</h3>
-                  <span class="pacing-badge">⏱️ 8 wks (Practitioner) · 4 wks (Fast)</span>
+                  <span class="pacing-badge" data-stage-pacing>⏱️ 8 Weeks · Practitioner Pace</span>
                 </div>
                 <p>Operate a production server before abstracting it away.</p>
               </div>
@@ -2041,7 +2155,7 @@ a:hover {
                 <div class="stage-title-wrap">
                   <span class="stage-label">Stage 02</span>
                   <h3>Docker Deeply</h3>
-                  <span class="pacing-badge">⏱️ 8 wks (Practitioner) · 4 wks (Fast)</span>
+                  <span class="pacing-badge" data-stage-pacing>⏱️ 8 Weeks · Practitioner Pace</span>
                 </div>
                 <p>Understand what the container runtime is hiding.</p>
               </div>
@@ -2139,7 +2253,7 @@ a:hover {
                 <div class="stage-title-wrap">
                   <span class="stage-label">Stage 03</span>
                   <h3>AWS Cloud Engineering</h3>
-                  <span class="pacing-badge">⏱️ 8 wks (Practitioner) · 4 wks (Fast)</span>
+                  <span class="pacing-badge" data-stage-pacing>⏱️ 8 Weeks · Practitioner Pace</span>
                 </div>
                 <p>Learn architecture, not a catalog of individual services.</p>
               </div>
@@ -2237,7 +2351,7 @@ a:hover {
                 <div class="stage-title-wrap">
                   <span class="stage-label">Stage 04</span>
                   <h3>CI/CD & DevOps</h3>
-                  <span class="pacing-badge">⏱️ 8 wks (Practitioner) · 4 wks (Fast)</span>
+                  <span class="pacing-badge" data-stage-pacing>⏱️ 8 Weeks · Practitioner Pace</span>
                 </div>
                 <p>Turn deployment into a repeatable, automated system.</p>
               </div>
@@ -2343,7 +2457,7 @@ a:hover {
                 <div class="stage-title-wrap">
                   <span class="stage-label">Stage 05</span>
                   <h3>Terraform & IaC</h3>
-                  <span class="pacing-badge">⏱️ 8 wks (Practitioner) · 4 wks (Fast)</span>
+                  <span class="pacing-badge" data-stage-pacing>⏱️ 8 Weeks · Practitioner Pace</span>
                 </div>
                 <p>Infrastructure becomes reviewed, versioned code.</p>
               </div>
@@ -2449,7 +2563,7 @@ a:hover {
                 <div class="stage-title-wrap">
                   <span class="stage-label">Stage 06</span>
                   <h3>Machine Learning Fundamentals</h3>
-                  <span class="pacing-badge">⏱️ 8 wks (Practitioner) · 4 wks (Fast)</span>
+                  <span class="pacing-badge" data-stage-pacing>⏱️ 8 Weeks · Practitioner Pace</span>
                 </div>
                 <p>Move beyond calling external model APIs.</p>
               </div>
@@ -2547,7 +2661,7 @@ a:hover {
                 <div class="stage-title-wrap">
                   <span class="stage-label">Stage 07</span>
                   <h3>PyTorch & Deep Learning</h3>
-                  <span class="pacing-badge">⏱️ 8 wks (Practitioner) · 4 wks (Fast)</span>
+                  <span class="pacing-badge" data-stage-pacing>⏱️ 8 Weeks · Practitioner Pace</span>
                 </div>
                 <p>Train, profile, and serve deep neural networks yourself.</p>
               </div>
@@ -2645,7 +2759,7 @@ a:hover {
                 <div class="stage-title-wrap">
                   <span class="stage-label">Stage 08</span>
                   <h3>ML Engineering & MLflow</h3>
-                  <span class="pacing-badge">⏱️ 8 wks (Practitioner) · 4 wks (Fast)</span>
+                  <span class="pacing-badge" data-stage-pacing>⏱️ 8 Weeks · Practitioner Pace</span>
                 </div>
                 <p>Make experiments reproducible and inference reliable.</p>
               </div>
@@ -2759,7 +2873,7 @@ a:hover {
                 <div class="stage-title-wrap">
                   <span class="stage-label">Stage 09</span>
                   <h3>MLOps Lifecycle & Pipelines</h3>
-                  <span class="pacing-badge">⏱️ 8 wks (Practitioner) · 4 wks (Fast)</span>
+                  <span class="pacing-badge" data-stage-pacing>⏱️ 8 Weeks · Practitioner Pace</span>
                 </div>
                 <p>Automate the path from training to deployment.</p>
               </div>
@@ -2857,7 +2971,7 @@ a:hover {
                 <div class="stage-title-wrap">
                   <span class="stage-label">Stage 10</span>
                   <h3>Kubernetes & EKS</h3>
-                  <span class="pacing-badge">⏱️ 8 wks (Practitioner) · 4 wks (Fast)</span>
+                  <span class="pacing-badge" data-stage-pacing>⏱️ 8 Weeks · Practitioner Pace</span>
                 </div>
                 <p>Orchestration after Linux, networking, Docker, and cloud.</p>
               </div>
@@ -2963,7 +3077,7 @@ a:hover {
                 <div class="stage-title-wrap">
                   <span class="stage-label">Stage 11</span>
                   <h3>Observability & Production Engineering</h3>
-                  <span class="pacing-badge">⏱️ 8 wks (Practitioner) · 4 wks (Fast)</span>
+                  <span class="pacing-badge" data-stage-pacing>⏱️ 8 Weeks · Practitioner Pace</span>
                 </div>
                 <p>Know when the system is unhealthy before users tell you.</p>
               </div>
@@ -3094,7 +3208,7 @@ a:hover {
                 <div class="stage-title-wrap">
                   <span class="stage-label">Stage 12</span>
                   <h3>Capstone Platform & Hardening</h3>
-                  <span class="pacing-badge">⏱️ 8 wks (Practitioner) · 4 wks (Fast)</span>
+                  <span class="pacing-badge" data-stage-pacing>⏱️ 8 Weeks · Practitioner Pace</span>
                 </div>
                 <p>Stop adding new tools. Integrate, harden, document, and review.</p>
               </div>
@@ -3226,7 +3340,7 @@ a:hover {
           <div class="backbone-card"><span class="backbone-index">12</span><div class="backbone-body"><strong>Observability:</strong> <span>OpenTelemetry + Prometheus + Google SRE + Evidently AI</span></div></div>
           <div class="backbone-card" style="grid-column: 1 / -1; border-color: var(--terracotta);">
             <span class="backbone-index" style="color: var(--terracotta);">13</span>
-            <div class="backbone-body"><strong>System Design (All Year):</strong> <span><strong>DDIA 2nd Edition + Microsoft Cloud Design Patterns + Amazon Builders' Library + C4 Model</strong></span></div>
+            <div class="backbone-body"><strong>System Design (Continuous):</strong> <span><strong>DDIA 2nd Edition + Microsoft Cloud Design Patterns + Amazon Builders' Library + C4 Model</strong></span></div>
           </div>
         </div>
       </section>
@@ -3509,8 +3623,14 @@ a:hover {
   /* EXPORT PROGRESS AS MARKDOWN */
   if (exportBtn) {
     exportBtn.addEventListener("click", () => {
+      const currentTrack = localStorage.getItem(TRACK_STORAGE_KEY) || "practitioner";
+      const trackName = currentTrack === "accelerated" 
+        ? "Accelerated Sprint Track (12 Months / ~20–25 hrs/wk)" 
+        : "Working Practitioner Track (24 Months / ~8–10 hrs/wk)";
+
       let md = `# AI/ML × Cloud × DevOps × MLOps — Progress Tracker\n`;
       md += `Curriculum: 12-Stage Practitioner Roadmap (12–24 Months)\n`;
+      md += `Active Track: ${trackName}\n`;
       md += `Generated from: https://wyrcan-io.github.io/roadmap/\n\n`;
 
       const allItems = [...document.querySelectorAll(".check-item")];
@@ -3538,6 +3658,74 @@ a:hover {
     writeState();
     updateProgress();
   });
+
+    /* DUAL-TRACK INTERACTIVE SWITCHER */
+  const trackCards = document.querySelectorAll(".track-col");
+  const pacingBadges = document.querySelectorAll("[data-stage-pacing]");
+  const foundationMeta = document.getElementById("foundationMeta");
+  const systemDesignMeta = document.getElementById("systemDesignMeta");
+  const activeTrackBannerText = document.getElementById("activeTrackBannerText");
+  const TRACK_STORAGE_KEY = "wyrcan_selected_track";
+
+  function applyTrack(track, persist = true) {
+    const isAccelerated = (track === "accelerated");
+
+    trackCards.forEach(card => {
+      const isCardActive = (card.dataset.track === track);
+      card.classList.toggle("active", isCardActive);
+      card.setAttribute("aria-checked", isCardActive ? "true" : "false");
+
+      const statusText = card.querySelector(".track-status-text");
+      const hint = card.querySelector(".track-click-hint");
+      if (statusText) statusText.textContent = isCardActive ? "Active Track" : "Select Track";
+      if (hint) hint.textContent = isCardActive ? "Active" : "Click to activate";
+    });
+
+    if (activeTrackBannerText) {
+      activeTrackBannerText.textContent = isAccelerated 
+        ? "Accelerated Sprint Track (12 Months / ~20–25 hrs/wk)" 
+        : "Working Practitioner Track (24 Months / ~8–10 hrs/wk)";
+    }
+
+    if (foundationMeta) {
+      foundationMeta.textContent = isAccelerated 
+        ? "⚡ 3–4 Weeks · Accelerated Sprint" 
+        : "⏱️ 6–8 Weeks · Essential Foundation";
+    }
+
+    if (systemDesignMeta) {
+      systemDesignMeta.textContent = isAccelerated 
+        ? "Parallel Track · 12-Month Sprint (Stages 01–12)" 
+        : "Parallel Track · 24-Month Pace (Stages 01–12)";
+    }
+
+    pacingBadges.forEach(badge => {
+      badge.innerHTML = isAccelerated 
+        ? "⚡ 4 Weeks · Accelerated Sprint" 
+        : "⏱️ 8 Weeks · Practitioner Pace";
+    });
+
+    if (persist) {
+      try {
+        localStorage.setItem(TRACK_STORAGE_KEY, track);
+      } catch (err) {}
+    }
+  }
+
+  trackCards.forEach(card => {
+    card.addEventListener("click", () => {
+      applyTrack(card.dataset.track);
+    });
+    card.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        applyTrack(card.dataset.track);
+      }
+    });
+  });
+
+  const savedTrack = localStorage.getItem(TRACK_STORAGE_KEY) || "practitioner";
+  applyTrack(savedTrack, false);
 
   /* SEARCH FUNCTIONALITY */
   if (searchInput) {
