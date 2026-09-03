@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI/ML + Cloud + DevOps + MLOps — 12-Month Engineering Roadmap</title>
-  <meta name="description" content="A practitioner-verified, text-first 12-month engineering curriculum with curated official documentation, open textbooks, papers, and production deliverables." />
+  <title>AI/ML + Cloud + DevOps + MLOps — 12-Stage Practitioner Roadmap (12–24 Months)</title>
+  <meta name="description" content="A practitioner-verified, text-first 12-stage engineering curriculum (12–24 Months) with curated official documentation, open textbooks, papers, and production deliverables." />
   
   <!-- Open Graph / Meta -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="AI/ML × Cloud × DevOps × MLOps — 12-Month Engineering Roadmap" />
-  <meta property="og:description" content="A text-first, practitioner-verified engineering roadmap grounded in official documentation and canonical books. Maintained by Wyrcan." />
+  <meta property="og:title" content="AI/ML × Cloud × DevOps × MLOps — 12-Stage Practitioner Roadmap (12–24 Months)" />
+  <meta property="og:description" content="A text-first, practitioner-verified 12-stage engineering roadmap (12–24 Months) grounded in official documentation and canonical books. Maintained by Wyrcan." />
   <meta property="og:url" content="https://wyrcan-io.github.io/roadmap/" />
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -624,6 +624,184 @@ a:hover {
 .tag-free { background: var(--bg-subtle); color: var(--ink-secondary); border: 1px solid var(--border); }
 .tag-paper { background: var(--burgundy-soft); color: var(--burgundy); border: 1px solid var(--border); }
 
+/* DUAL-TRACK PACING CARD */
+.pacing-card {
+  margin: 36px 0;
+  padding: 28px 32px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.pacing-kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--terracotta);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.pacing-title {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  line-height: 1.2;
+  margin: 0 0 8px;
+  color: var(--ink);
+}
+
+.pacing-subtitle {
+  font-size: 14.5px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0 0 24px;
+  max-width: 780px;
+}
+
+.pacing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.track-col {
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: border-color 0.2s ease;
+}
+
+.track-col.recommended {
+  border-color: var(--terracotta);
+  background: linear-gradient(180deg, var(--terracotta-soft) 0%, var(--surface-raised) 25%);
+}
+
+.track-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.track-tag-rec {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  background: var(--terracotta);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.track-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.track-hours {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--ink-secondary);
+}
+
+.track-name {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  margin: 0 0 4px;
+  color: var(--ink);
+}
+
+.track-duration {
+  font-size: 20px;
+  color: var(--terracotta);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.track-col:not(.recommended) .track-duration {
+  color: var(--ink-secondary);
+}
+
+.track-subduration {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.track-desc {
+  font-size: 13.5px;
+  color: var(--ink-secondary);
+  line-height: 1.5;
+  margin: 0 0 16px;
+}
+
+.track-breakdown {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+  color: var(--ink-secondary);
+  line-height: 1.55;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stage-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.stage-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--terracotta);
+  background: var(--terracotta-soft);
+  padding: 1px 7px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+.pacing-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border-subtle);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+
 /* CURRICULUM SECTIONS */
 .curriculum-section {
   margin-top: 48px;
@@ -1194,7 +1372,7 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-  .principles-strip, .checklist-grid, .backbone-grid {
+  .principles-strip, .checklist-grid, .backbone-grid, .pacing-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -1249,12 +1427,13 @@ a:hover {
       <nav class="outline-nav">
         <div class="outline-group-title">Overview</div>
         <a href="#section-principles" class="outline-link"><span class="outline-num">✦</span> Principles & Philosophy</a>
+        <a href="#section-pacing" class="outline-link"><span class="outline-num">⏱</span> Dual-Track Pacing</a>
 
         <div class="outline-group-title">Core Tracks</div>
         <a href="#section-foundation" class="outline-link"><span class="outline-num">00</span> Foundation Reset</a>
         <a href="#section-system-design" class="outline-link"><span class="outline-num">☵</span> System Design Track</a>
 
-        <div class="outline-group-title">12-Month Timeline</div>
+        <div class="outline-group-title">12 Core Milestones (12–24 Mo)</div>
         <a href="#m1" class="outline-link"><span class="outline-num">01</span> Linux & Networking</a>
         <a href="#m2" class="outline-link"><span class="outline-num">02</span> Docker Deeply</a>
         <a href="#m3" class="outline-link"><span class="outline-num">03</span> AWS Cloud Engineering</a>
@@ -1281,7 +1460,7 @@ a:hover {
         <div class="badge-kicker">Curriculum & Resource Stack</div>
         <h1 class="main-title">AI/ML × Cloud × DevOps × MLOps</h1>
         <p class="main-subtitle">
-          A text-first 12-month transformation curriculum. Grounded entirely in official vendor documentation, university courses, foundational books, and working code. Zero tutorial fluff.
+          A text-first, 12-stage practitioner curriculum (12–24 months). Grounded entirely in official vendor documentation, university courses, foundational books, and working code. Zero tutorial fluff.
         </p>
 
         <div class="header-toolbar">
@@ -1320,7 +1499,7 @@ a:hover {
         <div class="principle-col">
           <span class="principle-num">02</span>
           <h2 class="principle-title">One System</h2>
-          <p class="principle-desc">Evolve a single production-grade AI platform over 12 months rather than hoarding disconnected toy repos.</p>
+          <p class="principle-desc">Evolve a single production-grade AI platform across your 12 milestones rather than hoarding disconnected toy repos.</p>
         </div>
         <div class="principle-col">
           <span class="principle-num">03</span>
@@ -1347,6 +1526,57 @@ a:hover {
           <span class="tag tag-paper">Paper</span> Fundamental research
           <span class="tag tag-ref">Reference</span> Consult when needed
           <span class="tag tag-free">Free</span> Openly accessible
+        </div>
+      </section>
+
+      <!-- DUAL-TRACK PACING GUIDE -->
+      <section class="pacing-card" id="section-pacing">
+        <div class="pacing-header">
+          <div class="pacing-header-titles">
+            <span class="pacing-kicker">Realistic Engineering Timeline</span>
+            <h2 class="pacing-title">Choose Your Track (12 vs 24 Months)</h2>
+            <p class="pacing-subtitle">
+              Mastering canonical textbooks (ISLP, UDL, DDIA), 7 platform ecosystems, and 110 checkpoints takes deliberate compounding. Choose the pace that respects your career and life.
+            </p>
+          </div>
+        </div>
+
+        <div class="pacing-grid">
+          <!-- TRACK A: PRACTITIONER (24 MO) -->
+          <div class="track-col recommended">
+            <div class="track-badge-row">
+              <span class="track-tag-rec">Recommended Pace</span>
+              <span class="track-hours mono">8–10 hrs / week</span>
+            </div>
+            <h3 class="track-name">Working Practitioner Track</h3>
+            <div class="track-duration serif">24 Months <span class="track-subduration">(~8 weeks / stage)</span></div>
+            <p class="track-desc">
+              Built for working engineers, full-time professionals, and university students. Eliminates burnout while ensuring concepts convert into permanent engineering instincts.
+            </p>
+            <ul class="track-breakdown">
+              <li><strong>Weeks 1–4:</strong> Deep textbook reading, official documentation & lab exercises.</li>
+              <li><strong>Weeks 5–8:</strong> Production deliverable implementation, failure testing & runbook.</li>
+              <li><strong>System Design:</strong> 1 DDIA chapter every 6–8 weeks (deep retention).</li>
+            </ul>
+          </div>
+
+          <!-- TRACK B: ACCELERATED (12 MO) -->
+          <div class="track-col">
+            <div class="track-badge-row">
+              <span class="track-tag">Full-Time / Sabbatical</span>
+              <span class="track-hours mono">20–25+ hrs / week</span>
+            </div>
+            <h3 class="track-name">Accelerated Sprint Track</h3>
+            <div class="track-duration serif">12 Months <span class="track-subduration">(~4 weeks / stage)</span></div>
+            <p class="track-desc">
+              For engineers on dedicated career sabbaticals or full-time self-learners who can treat this curriculum as their primary daily job (4–5 hours every day).
+            </p>
+            <ul class="track-breakdown">
+              <li><strong>Weeks 1–2:</strong> Rapid reading & lab problem sets.</li>
+              <li><strong>Weeks 3–4:</strong> Architecture provisioning, pipeline build & exit test.</li>
+              <li><strong>System Design:</strong> 1 DDIA chapter every 3–4 weeks (high cognitive load).</li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -1694,15 +1924,19 @@ a:hover {
         </div>
       </section>
 
-      <!-- 12-MONTH TIMELINE -->
+      <!-- 12 CORE MILESTONES -->
       <div id="months-container" style="margin-top: 48px;">
-        <!-- MONTH 1 -->
+        <!-- STAGE 1 -->
         <article class="timeline-block" id="m1" data-month="1">
           <button class="timeline-header" type="button" aria-expanded="true">
             <div class="timeline-header-left">
               <span class="month-num">01</span>
               <div class="month-header-titles">
-                <h3>Linux & Networking</h3>
+                <div class="stage-title-wrap">
+                  <span class="stage-label">Stage 01</span>
+                  <h3>Linux & Networking</h3>
+                  <span class="pacing-badge">⏱️ 8 wks (Practitioner) · 4 wks (Fast)</span>
+                </div>
                 <p>Operate a production server before abstracting it away.</p>
               </div>
             </div>
@@ -1798,13 +2032,17 @@ a:hover {
           </div>
         </article>
 
-        <!-- MONTH 2 -->
+        <!-- STAGE 2 -->
         <article class="timeline-block" id="m2" data-month="2">
           <button class="timeline-header" type="button" aria-expanded="false">
             <div class="timeline-header-left">
               <span class="month-num">02</span>
               <div class="month-header-titles">
-                <h3>Docker Deeply</h3>
+                <div class="stage-title-wrap">
+                  <span class="stage-label">Stage 02</span>
+                  <h3>Docker Deeply</h3>
+                  <span class="pacing-badge">⏱️ 8 wks (Practitioner) · 4 wks (Fast)</span>
+                </div>
                 <p>Understand what the container runtime is hiding.</p>
               </div>
             </div>
@@ -1853,7 +2091,7 @@ a:hover {
                     <div><span class="tag tag-core">Core</span> <span class="tag tag-handson">Hands-On</span></div>
                   </div>
                   <div class="resource-author-line">University of Helsinki MOOC</div>
-                  <p class="resource-details">Main curriculum for Month 2. Build, run, configure, and orchestrate containerized services with Docker and Docker Compose.</p>
+                  <p class="resource-details">Main curriculum for Stage 2. Build, run, configure, and orchestrate containerized services with Docker and Docker Compose.</p>
                 </div>
                 <div class="resource-entry" data-search="docker build best practices multi stage cache">
                   <div class="resource-top">
@@ -1892,13 +2130,17 @@ a:hover {
           </div>
         </article>
 
-        <!-- MONTH 3 -->
+        <!-- STAGE 3 -->
         <article class="timeline-block" id="m3" data-month="3">
           <button class="timeline-header" type="button" aria-expanded="false">
             <div class="timeline-header-left">
               <span class="month-num">03</span>
               <div class="month-header-titles">
-                <h3>AWS Cloud Engineering</h3>
+                <div class="stage-title-wrap">
+                  <span class="stage-label">Stage 03</span>
+                  <h3>AWS Cloud Engineering</h3>
+                  <span class="pacing-badge">⏱️ 8 wks (Practitioner) · 4 wks (Fast)</span>
+                </div>
                 <p>Learn architecture, not a catalog of individual services.</p>
               </div>
             </div>
@@ -1930,7 +2172,7 @@ a:hover {
                 </div>
                 <div class="checklist-col">
                   <h4 class="col-heading">Production Deliverable</h4>
-                  <p class="deliverable-body">Manually provision and deploy the Month 2 multi-tier stack on AWS. Write a detailed system design document justifying every public/private boundary, traffic path, and failure domain.</p>
+                  <p class="deliverable-body">Manually provision and deploy the Stage 2 multi-tier stack on AWS. Write a detailed system design document justifying every public/private boundary, traffic path, and failure domain.</p>
                   <div class="exit-test">
                     <span class="exit-test-label">Exit Test:</span>
                     <span>Explain exactly where data, credentials, application logs, and network traffic traverse at every hop.</span>
@@ -1986,13 +2228,17 @@ a:hover {
           </div>
         </article>
 
-        <!-- MONTH 4 -->
+        <!-- STAGE 4 -->
         <article class="timeline-block" id="m4" data-month="4">
           <button class="timeline-header" type="button" aria-expanded="false">
             <div class="timeline-header-left">
               <span class="month-num">04</span>
               <div class="month-header-titles">
-                <h3>CI/CD & DevOps</h3>
+                <div class="stage-title-wrap">
+                  <span class="stage-label">Stage 04</span>
+                  <h3>CI/CD & DevOps</h3>
+                  <span class="pacing-badge">⏱️ 8 wks (Practitioner) · 4 wks (Fast)</span>
+                </div>
                 <p>Turn deployment into a repeatable, automated system.</p>
               </div>
             </div>
@@ -2088,13 +2334,17 @@ a:hover {
           </div>
         </article>
 
-        <!-- MONTH 5 -->
+        <!-- STAGE 5 -->
         <article class="timeline-block" id="m5" data-month="5">
           <button class="timeline-header" type="button" aria-expanded="false">
             <div class="timeline-header-left">
               <span class="month-num">05</span>
               <div class="month-header-titles">
-                <h3>Terraform & IaC</h3>
+                <div class="stage-title-wrap">
+                  <span class="stage-label">Stage 05</span>
+                  <h3>Terraform & IaC</h3>
+                  <span class="pacing-badge">⏱️ 8 wks (Practitioner) · 4 wks (Fast)</span>
+                </div>
                 <p>Infrastructure becomes reviewed, versioned code.</p>
               </div>
             </div>
@@ -2190,13 +2440,17 @@ a:hover {
           </div>
         </article>
 
-        <!-- MONTH 6 -->
+        <!-- STAGE 6 -->
         <article class="timeline-block" id="m6" data-month="6">
           <button class="timeline-header" type="button" aria-expanded="false">
             <div class="timeline-header-left">
               <span class="month-num">06</span>
               <div class="month-header-titles">
-                <h3>Machine Learning Fundamentals</h3>
+                <div class="stage-title-wrap">
+                  <span class="stage-label">Stage 06</span>
+                  <h3>Machine Learning Fundamentals</h3>
+                  <span class="pacing-badge">⏱️ 8 wks (Practitioner) · 4 wks (Fast)</span>
+                </div>
                 <p>Move beyond calling external model APIs.</p>
               </div>
             </div>
@@ -2284,13 +2538,17 @@ a:hover {
           </div>
         </article>
 
-        <!-- MONTH 7 -->
+        <!-- STAGE 7 -->
         <article class="timeline-block" id="m7" data-month="7">
           <button class="timeline-header" type="button" aria-expanded="false">
             <div class="timeline-header-left">
               <span class="month-num">07</span>
               <div class="month-header-titles">
-                <h3>PyTorch & Deep Learning</h3>
+                <div class="stage-title-wrap">
+                  <span class="stage-label">Stage 07</span>
+                  <h3>PyTorch & Deep Learning</h3>
+                  <span class="pacing-badge">⏱️ 8 wks (Practitioner) · 4 wks (Fast)</span>
+                </div>
                 <p>Train, profile, and serve deep neural networks yourself.</p>
               </div>
             </div>
@@ -2378,13 +2636,17 @@ a:hover {
           </div>
         </article>
 
-        <!-- MONTH 8 -->
+        <!-- STAGE 8 -->
         <article class="timeline-block" id="m8" data-month="8">
           <button class="timeline-header" type="button" aria-expanded="false">
             <div class="timeline-header-left">
               <span class="month-num">08</span>
               <div class="month-header-titles">
-                <h3>ML Engineering & MLflow</h3>
+                <div class="stage-title-wrap">
+                  <span class="stage-label">Stage 08</span>
+                  <h3>ML Engineering & MLflow</h3>
+                  <span class="pacing-badge">⏱️ 8 wks (Practitioner) · 4 wks (Fast)</span>
+                </div>
                 <p>Make experiments reproducible and inference reliable.</p>
               </div>
             </div>
@@ -2488,13 +2750,17 @@ a:hover {
           </div>
         </article>
 
-        <!-- MONTH 9 -->
+        <!-- STAGE 9 -->
         <article class="timeline-block" id="m9" data-month="9">
           <button class="timeline-header" type="button" aria-expanded="false">
             <div class="timeline-header-left">
               <span class="month-num">09</span>
               <div class="month-header-titles">
-                <h3>MLOps Lifecycle & Pipelines</h3>
+                <div class="stage-title-wrap">
+                  <span class="stage-label">Stage 09</span>
+                  <h3>MLOps Lifecycle & Pipelines</h3>
+                  <span class="pacing-badge">⏱️ 8 wks (Practitioner) · 4 wks (Fast)</span>
+                </div>
                 <p>Automate the path from training to deployment.</p>
               </div>
             </div>
@@ -2582,13 +2848,17 @@ a:hover {
           </div>
         </article>
 
-        <!-- MONTH 10 -->
+        <!-- STAGE 10 -->
         <article class="timeline-block" id="m10" data-month="10">
           <button class="timeline-header" type="button" aria-expanded="false">
             <div class="timeline-header-left">
               <span class="month-num">10</span>
               <div class="month-header-titles">
-                <h3>Kubernetes & EKS</h3>
+                <div class="stage-title-wrap">
+                  <span class="stage-label">Stage 10</span>
+                  <h3>Kubernetes & EKS</h3>
+                  <span class="pacing-badge">⏱️ 8 wks (Practitioner) · 4 wks (Fast)</span>
+                </div>
                 <p>Orchestration after Linux, networking, Docker, and cloud.</p>
               </div>
             </div>
@@ -2684,13 +2954,17 @@ a:hover {
           </div>
         </article>
 
-        <!-- MONTH 11 -->
+        <!-- STAGE 11 -->
         <article class="timeline-block" id="m11" data-month="11">
           <button class="timeline-header" type="button" aria-expanded="false">
             <div class="timeline-header-left">
               <span class="month-num">11</span>
               <div class="month-header-titles">
-                <h3>Observability & Production Engineering</h3>
+                <div class="stage-title-wrap">
+                  <span class="stage-label">Stage 11</span>
+                  <h3>Observability & Production Engineering</h3>
+                  <span class="pacing-badge">⏱️ 8 wks (Practitioner) · 4 wks (Fast)</span>
+                </div>
                 <p>Know when the system is unhealthy before users tell you.</p>
               </div>
             </div>
@@ -2811,13 +3085,17 @@ a:hover {
           </div>
         </article>
 
-        <!-- MONTH 12 -->
+        <!-- STAGE 12 -->
         <article class="timeline-block" id="m12" data-month="12">
           <button class="timeline-header" type="button" aria-expanded="false">
             <div class="timeline-header-left">
               <span class="month-num">12</span>
               <div class="month-header-titles">
-                <h3>Capstone Platform & Hardening</h3>
+                <div class="stage-title-wrap">
+                  <span class="stage-label">Stage 12</span>
+                  <h3>Capstone Platform & Hardening</h3>
+                  <span class="pacing-badge">⏱️ 8 wks (Practitioner) · 4 wks (Fast)</span>
+                </div>
                 <p>Stop adding new tools. Integrate, harden, document, and review.</p>
               </div>
             </div>
@@ -3174,7 +3452,7 @@ a:hover {
 
   /* GOOGLE DOCS SCROLLSPY (INTERSECTION OBSERVER) */
   const sectionsToTrack = document.querySelectorAll(
-    "#section-principles, #section-foundation, #section-system-design, .timeline-block, #section-backbone, #section-citations"
+    "#section-principles, #section-pacing, #section-foundation, #section-system-design, .timeline-block, #section-backbone, #section-citations"
   );
 
   const observer = new IntersectionObserver((entries) => {
@@ -3232,6 +3510,7 @@ a:hover {
   if (exportBtn) {
     exportBtn.addEventListener("click", () => {
       let md = `# AI/ML × Cloud × DevOps × MLOps — Progress Tracker\n`;
+      md += `Curriculum: 12-Stage Practitioner Roadmap (12–24 Months)\n`;
       md += `Generated from: https://wyrcan-io.github.io/roadmap/\n\n`;
 
       const allItems = [...document.querySelectorAll(".check-item")];

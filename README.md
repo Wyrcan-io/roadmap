@@ -1,6 +1,6 @@
-# AI/ML × Cloud × DevOps × MLOps — 12-Month Engineering Roadmap
+# AI/ML × Cloud × DevOps × MLOps — 12-Stage Practitioner Roadmap (12–24 Months)
 
-> **A practitioner-verified, text-first engineering curriculum grounded entirely in official vendor documentation, university courses, foundational textbooks, and working code. Zero video tutorial fluff.**
+> **A practitioner-verified, text-first engineering curriculum (12–24 Months) grounded entirely in official vendor documentation, university courses, foundational textbooks, and working code. Zero video tutorial fluff.**
 
 🌐 **Live Interactive Checklist & Curriculum:** **[https://wyrcan-io.github.io/roadmap/](https://wyrcan-io.github.io/roadmap/)**
 
@@ -14,30 +14,45 @@ Most online roadmaps fall into one of two traps:
 
 This roadmap is built on **4 non-negotiable principles**:
 1. **70% Building**: Use books and official docs to unblock real implementations. Building is the actual curriculum.
-2. **One Evolving System**: Build and evolve a single production-grade AI platform over 12 months.
+2. **One Evolving System**: Build and evolve a single production-grade AI platform across your 12 milestones.
 3. **Break Things**: Deliberately induce failures, trace errors through telemetry, fix them, and write postmortems.
 4. **Design First**: Reason methodically about traffic, consistency, latency, cost, and failure modes before writing code.
 
 ---
 
-## 🗺️ The 12-Month Curriculum Overview
+## ⏱️ Dual-Track Pacing Guide (12 vs 24 Months)
 
-| Unit | Track | Core Focus | Primary Deliverable |
-| :--- | :--- | :--- | :--- |
-| **00** | **Foundation Reset** | Python Model, Asyncio, OSTEP OS, MDN HTTP, PostgreSQL | Trace web request from DNS to DB query plan |
-| **01** | **Platform** | Linux Internals, CLI Fluency, Networking, systemd | Deploy hardened FastAPI service on Linux VM behind Nginx |
-| **02** | **Platform** | Docker Deep Dive, Multi-Stage Builds, OCI, Compose | Production multi-tier compose stack with networking isolation |
-| **03** | **Platform** | AWS Architecture, VPC Subnets, IAM, RDS, S3, ALB | Provision AWS multi-tier architecture + System Design Doc |
-| **04** | **Platform** | GitHub Actions, CI/CD, 12-Factor App, OWASP Security | Automated CI/CD pipeline with Trivy scans & zero-downtime rollback |
-| **05** | **Platform** | Terraform IaC, Remote State S3/DynamoDB, Reusable Modules | Spin up and tear down staging cloud environments via Terraform |
-| **06** | **AI / ML** | ML Fundamentals, ISLP Python Labs, scikit-learn MOOC | Classical tabular ML pipeline service exposed via FastAPI |
-| **07** | **AI / ML** | PyTorch, Autograd, Custom Training Loops, UDL Book | Train PyTorch model from scratch + GPU inference API |
-| **08** | **MLOps** | Rules of ML, MLflow Tracking, Model Registry, Lineage | Reproducible ML training pipeline with versioned artifacts |
-| **09** | **MLOps** | Continuous Training (CT), Automated Quality Gates | Automated model promotion with canary deployment routing |
-| **10** | **Platform** | Kubernetes (EKS / K3s), Pods, Ingress, Helm Charts | Package and orchestrate application in Helm across Kubernetes |
-| **11** | **Production** | OpenTelemetry, Prometheus, Grafana, Drift & SLOs | Telemetry dashboards + induced failure incident postmortem |
-| **12** | **Capstone** | Architecture Hardening, C4 Diagrams, Well-Architected Review | Production portfolio platform package & security audit |
-| **☵** | **System Design** | DDIA 2nd Edition, Microsoft Cloud Patterns, Builders' Library | Parallel weekly architecture loop (Months 1–12) |
+Mastering 4 canonical textbooks (*ISLP*, *UDL*, *DDIA*, *OSTEP*), 7 major platform stacks, and 110 checkpoints is cognitively intense. Rather than pretending this is a quick 6-month bootcamp, we provide two explicit, realistic tracks:
+
+| Dimension | 🛠️ Working Practitioner Track (**Recommended**) | ⚡ Accelerated Sprint Track |
+| :--- | :--- | :--- |
+| **Total Duration** | **24 Months (2 Years)** | **12 Months (1 Year)** |
+| **Weekly Commitment** | **8–10 hours / week** (1 hr/day + weekend build block) | **20–25+ hours / week** (full-time daily commitment) |
+| **Pace per Milestone** | **~8 weeks / 2 months** per stage | **~4 weeks / 1 month** per stage |
+| **Target Audience** | Working engineers, full-time professionals, students | Dedicated career sabbaticals / full-time bootcampers |
+| **Pedagogical Balance** | 4 weeks reading & labs + 4 weeks building, failure testing & runbooks | 2 weeks reading/labs + 2 weeks architecture provisioning & exit test |
+| **System Design (*DDIA*)** | 1 chapter every 6–8 weeks (deep retention & synthesis) | 1 chapter every 3–4 weeks (high cognitive load) |
+
+---
+
+## 🗺️ The 12-Stage Curriculum Overview
+
+| Stage | Track | Core Focus | Primary Deliverable | Recommended Pace |
+| :--- | :--- | :--- | :--- | :--- |
+| **00** | **Foundation Reset** | Python Model, Asyncio, OSTEP OS, MDN HTTP, PostgreSQL | Trace web request from DNS to DB query plan | 3–4 Weeks |
+| **01** | **Platform** | Linux Internals, CLI Fluency, Networking, systemd | Deploy hardened FastAPI service on Linux VM behind Nginx | 8 Weeks (Fast: 4w) |
+| **02** | **Platform** | Docker Deep Dive, Multi-Stage Builds, OCI, Compose | Production multi-tier compose stack with networking isolation | 8 Weeks (Fast: 4w) |
+| **03** | **Platform** | AWS Architecture, VPC Subnets, IAM, RDS, S3, ALB | Provision AWS multi-tier architecture + System Design Doc | 8 Weeks (Fast: 4w) |
+| **04** | **Platform** | GitHub Actions, CI/CD, 12-Factor App, OWASP Security | Automated CI/CD pipeline with Trivy scans & zero-downtime rollback | 8 Weeks (Fast: 4w) |
+| **05** | **Platform** | Terraform IaC, Remote State S3/DynamoDB, Reusable Modules | Spin up and tear down staging cloud environments via Terraform | 8 Weeks (Fast: 4w) |
+| **06** | **AI / ML** | ML Fundamentals, ISLP Python Labs, scikit-learn MOOC | Classical tabular ML pipeline service exposed via FastAPI | 8 Weeks (Fast: 4w) |
+| **07** | **AI / ML** | PyTorch, Autograd, Custom Training Loops, UDL Book | Train PyTorch model from scratch + GPU inference API | 8 Weeks (Fast: 4w) |
+| **08** | **MLOps** | Rules of ML, MLflow Tracking, Model Registry, Lineage | Reproducible ML training pipeline with versioned artifacts | 8 Weeks (Fast: 4w) |
+| **09** | **MLOps** | Continuous Training (CT), Automated Quality Gates | Automated model promotion with canary deployment routing | 8 Weeks (Fast: 4w) |
+| **10** | **Platform** | Kubernetes (EKS / K3s), Pods, Ingress, Helm Charts | Package and orchestrate application in Helm across Kubernetes | 8 Weeks (Fast: 4w) |
+| **11** | **Production** | OpenTelemetry, Prometheus, Grafana, Drift & SLOs | Telemetry dashboards + induced failure incident postmortem | 8 Weeks (Fast: 4w) |
+| **12** | **Capstone** | Architecture Hardening, C4 Diagrams, Well-Architected Review | Production portfolio platform package & security audit | 8 Weeks (Fast: 4w) |
+| **☵** | **System Design** | DDIA 2nd Edition, Microsoft Cloud Patterns, Builders' Library | Parallel continuous architecture loop (Stages 01–12) | Continuous |
 
 ---
 
