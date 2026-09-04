@@ -4,6 +4,12 @@
 
 🌐 **Live Interactive Checklist & Curriculum:** **[https://wyrcan-io.github.io/roadmap/](https://wyrcan-io.github.io/roadmap/)**
 
+<p align="center">
+  <a href="https://wyrcan-io.github.io/roadmap/">
+    <img src="./social_preview.png" alt="Wyrcan Roadmap Preview" width="100%">
+  </a>
+</p>
+
 ---
 
 ## 🎯 Why This Roadmap Exists
