@@ -2,7 +2,7 @@
 
 > **A practitioner-verified, text-first engineering curriculum (12–24 Months) grounded entirely in official vendor documentation, university courses, foundational textbooks, and working code. Zero video tutorial fluff.**
 
-🌐 **Live Interactive Checklist & Curriculum:** **[https://wyrcan-io.github.io/roadmap/](https://wyrcan-io.github.io/roadmap/)**
+**Live Interactive Checklist & Curriculum:** **[https://wyrcan-io.github.io/roadmap/](https://wyrcan-io.github.io/roadmap/)**
 
 <p align="center">
   <a href="https://wyrcan-io.github.io/roadmap/">
@@ -12,7 +12,7 @@
 
 ---
 
-## 🎯 Why This Roadmap Exists
+## Why This Roadmap Exists
 
 Most online roadmaps fall into one of two traps:
 1. **Tutorial Hell**: A list of 40-hour video playlists where you copy code without building real mental models.
@@ -26,11 +26,11 @@ This roadmap is built on **4 non-negotiable principles**:
 
 ---
 
-## ⏱️ Dual-Track Pacing Guide (12 vs 24 Months)
+## Dual-Track Pacing Guide (12 vs 24 Months)
 
 Mastering 4 canonical textbooks (*ISLP*, *UDL*, *DDIA*, *OSTEP*), 7 major platform stacks, and 110 checkpoints is cognitively intense. Rather than pretending this is a quick 6-month bootcamp, we provide two explicit, realistic tracks:
 
-| Dimension | 🛠️ Working Practitioner Track (**Recommended**) | ⚡ Accelerated Sprint Track |
+| Dimension | Working Practitioner Track (**Recommended**) | Accelerated Sprint Track |
 | :--- | :--- | :--- |
 | **Total Duration** | **24 Months (2 Years)** | **12 Months (1 Year)** |
 | **Weekly Commitment** | **8–10 hours / week** (1 hr/day + weekend build block) | **20–25+ hours / week** (full-time daily commitment) |
@@ -41,7 +41,7 @@ Mastering 4 canonical textbooks (*ISLP*, *UDL*, *DDIA*, *OSTEP*), 7 major platfo
 
 ---
 
-## 🗺️ The 12-Stage Curriculum Overview
+## The 12-Stage Curriculum Overview
 
 | Stage | Track | Core Focus | Primary Deliverable | Recommended Pace |
 | :--- | :--- | :--- | :--- | :--- |
@@ -58,11 +58,11 @@ Mastering 4 canonical textbooks (*ISLP*, *UDL*, *DDIA*, *OSTEP*), 7 major platfo
 | **10** | **Platform** | Kubernetes (EKS / K3s), Pods, Ingress, Helm Charts | Package and orchestrate application in Helm across Kubernetes | 8 Weeks (Fast: 4w) |
 | **11** | **Production** | OpenTelemetry, Prometheus, Grafana, Drift & SLOs | Telemetry dashboards + induced failure incident postmortem | 8 Weeks (Fast: 4w) |
 | **12** | **Capstone** | Architecture Hardening, C4 Diagrams, Well-Architected Review | Production portfolio platform package & security audit | 8 Weeks (Fast: 4w) |
-| **☵** | **System Design** | DDIA 2nd Edition, Microsoft Cloud Patterns, Builders' Library | Parallel continuous architecture loop (Stages 01–12) | Continuous |
+| **--** | **System Design** | DDIA 2nd Edition, Microsoft Cloud Patterns, Builders' Library | Parallel continuous architecture loop (Stages 01–12) | Continuous |
 
 ---
 
-## ⚡ The Non-Negotiable 13-Pillar Backbone
+## The Non-Negotiable 13-Pillar Backbone
 
 If the entire catalog feels vast, these 13 items form your core intellectual spine:
 
@@ -82,7 +82,7 @@ If the entire catalog feels vast, these 13 items form your core intellectual spi
 
 ---
 
-## 🛠️ Interactive Features on the Live Site
+## Interactive Features on the Live Site
 
 The [live interactive site](https://wyrcan-io.github.io/roadmap/) includes:
 - **Google Docs-style live Outline panel** with scrollspy tracking.
@@ -93,6 +93,6 @@ The [live interactive site](https://wyrcan-io.github.io/roadmap/) includes:
 
 ---
 
-## 🏛️ Maintained By
+## Maintained By
 
 Maintained with care by **[Wyrcan](https://github.com/Wyrcan-io)** as a 100% free and open public resource for engineers worldwide.
