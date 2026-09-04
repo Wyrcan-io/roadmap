@@ -3,6 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    (() => {
+      try {
+        const saved = localStorage.getItem("roadmap-theme-pref") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", saved);
+      } catch (e) {}
+    })();
+  </script>
   <title>AI/ML + Cloud + DevOps + MLOps — 12-Stage Practitioner Roadmap (12–24 Months)</title>
   <meta name="description" content="A practitioner-verified, text-first 12-stage engineering curriculum (12–24 Months) with curated official documentation, open textbooks, papers, and production deliverables." />
   
@@ -1484,9 +1492,9 @@ a:hover {
       <span class="mono" style="font-size: 11.5px; color: var(--muted);">Open Engineering Roadmap</span>
     </div>
     <div class="brand-right">
-      <button class="theme-toggle-btn" id="themeToggleBtn" type="button" title="Toggle Theme">
-        <span id="themeIcon">☀️</span>
-        <span id="themeText" class="mono" style="font-size: 11px;">Light</span>
+      <button class="theme-toggle-btn" id="themeToggleBtn" type="button" title="Switch to Dark theme" aria-label="Switch to Dark theme">
+        <span id="themeIcon">🌙</span>
+        <span id="themeText" class="mono" style="font-size: 11px;">Dark</span>
       </button>
       <a href="https://github.com/Wyrcan-io/roadmap" target="_blank" rel="noopener noreferrer" class="gh-star-link">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
@@ -3447,8 +3455,12 @@ a:hover {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem(THEME_KEY, theme);
     if (themeIcon && themeText) {
-      themeIcon.textContent = theme === "dark" ? "🌙" : "☀️";
-      themeText.textContent = theme === "dark" ? "Dark" : "Light";
+      themeIcon.textContent = theme === "dark" ? "☀️" : "🌙";
+      themeText.textContent = theme === "dark" ? "Light" : "Dark";
+    }
+    if (themeToggleBtn) {
+      themeToggleBtn.setAttribute("title", theme === "dark" ? "Switch to Light theme" : "Switch to Dark theme");
+      themeToggleBtn.setAttribute("aria-label", theme === "dark" ? "Switch to Light theme" : "Switch to Dark theme");
     }
   };
 
