@@ -196,16 +196,21 @@ Submit Pull Requests to list Wyrcan under the appropriate sections. **Crucial No
 | 3 | [visenger/awesome-mlops](https://github.com/visenger/awesome-mlops) | 14.1k | MLOps Courses | [PR #195](https://github.com/visenger/awesome-mlops/pull/195) (OPEN) |
 | 4 | [dastergon/awesome-sre](https://github.com/dastergon/awesome-sre) | 13.4k | Education | [PR #322](https://github.com/dastergon/awesome-sre/pull/322) (OPEN) |
 | 5 | [madd86/awesome-system-design](https://github.com/madd86/awesome-system-design) | 12.4k | Introduction / Interviews | [PR #41](https://github.com/madd86/awesome-system-design/pull/41) (OPEN) |
-| 6 | [liuchong/awesome-roadmaps](https://github.com/liuchong/awesome-roadmaps) | 7.3k | Infrastructure / Operations | [PR #34](https://github.com/liuchong/awesome-roadmaps/pull/34) (OPEN) |
-| 7 | [lauragift21/awesome-learning-resources](https://github.com/lauragift21/awesome-learning-resources) | 5.7k | DevOps | [PR #239](https://github.com/lauragift21/awesome-learning-resources/pull/239) (OPEN) |
-| 8 | [kelvins/awesome-mlops](https://github.com/kelvins/awesome-mlops) | 5.2k | Websites | [PR #256](https://github.com/kelvins/awesome-mlops/pull/256) (OPEN) |
-| 9 | [wmariuss/awesome-devops](https://github.com/wmariuss/awesome-devops) | 4.3k | DevOps Roadmap | [PR #548](https://github.com/wmariuss/awesome-devops/pull/548) (OPEN) |
-| 10 | [simonaronsson/awesome-software-architecture](https://github.com/simonaronsson/awesome-software-architecture) | 2.8k | Bonus Roadmaps | [PR #25](https://github.com/simonaronsson/awesome-software-architecture/pull/25) (OPEN) |
-| 11 | [rootsongjc/awesome-cloud-native](https://github.com/rootsongjc/awesome-cloud-native) | 2.4k | Tutorials & Learning | [PR #160](https://github.com/rootsongjc/awesome-cloud-native/pull/160) (OPEN) |
-| 12 | [orsanawwad/awesome-roadmaps](https://github.com/orsanawwad/awesome-roadmaps) | 1.9k | Roadmaps | [PR #19](https://github.com/orsanawwad/awesome-roadmaps/pull/19) (OPEN) |
-| 13 | [SquadcastHub/awesome-sre-tools](https://github.com/SquadcastHub/awesome-sre-tools) | 1.5k | Related Lists | [PR #179](https://github.com/SquadcastHub/awesome-sre-tools/pull/179) (OPEN) |
-| 14 | [fuzzylabs/awesome-open-mlops](https://github.com/fuzzylabs/awesome-open-mlops) | 480+ | More resources | [PR #36](https://github.com/fuzzylabs/awesome-open-mlops/pull/36) (OPEN) |
-| 15 | [Pythondeveloper6/Awesome-MLOPS](https://github.com/Pythondeveloper6/Awesome-MLOPS) | 380+ | Roadmaps | [PR #10](https://github.com/Pythondeveloper6/Awesome-MLOPS/pull/10) (OPEN) |
+| 6 | [theanalyst/awesome-distributed-systems](https://github.com/theanalyst/awesome-distributed-systems) | 12.3k | Courses | [PR #70](https://github.com/theanalyst/awesome-distributed-systems/pull/70) (OPEN) |
+| 7 | [liuchong/awesome-roadmaps](https://github.com/liuchong/awesome-roadmaps) | 7.3k | Infrastructure / Operations | [PR #34](https://github.com/liuchong/awesome-roadmaps/pull/34) (OPEN) |
+| 8 | [lauragift21/awesome-learning-resources](https://github.com/lauragift21/awesome-learning-resources) | 5.7k | DevOps | [PR #239](https://github.com/lauragift21/awesome-learning-resources/pull/239) (OPEN) |
+| 9 | [kelvins/awesome-mlops](https://github.com/kelvins/awesome-mlops) | 5.2k | Websites | [PR #256](https://github.com/kelvins/awesome-mlops/pull/256) (OPEN) |
+| 10 | [wmariuss/awesome-devops](https://github.com/wmariuss/awesome-devops) | 4.3k | DevOps Roadmap | [PR #548](https://github.com/wmariuss/awesome-devops/pull/548) (OPEN) |
+| 11 | [simonaronsson/awesome-software-architecture](https://github.com/simonaronsson/awesome-software-architecture) | 2.8k | Bonus Roadmaps | [PR #25](https://github.com/simonaronsson/awesome-software-architecture/pull/25) (OPEN) |
+| 12 | [rootsongjc/awesome-cloud-native](https://github.com/rootsongjc/awesome-cloud-native) | 2.4k | Tutorials & Learning | [PR #160](https://github.com/rootsongjc/awesome-cloud-native/pull/160) (OPEN) |
+| 13 | [orsanawwad/awesome-roadmaps](https://github.com/orsanawwad/awesome-roadmaps) | 1.9k | Roadmaps | [PR #19](https://github.com/orsanawwad/awesome-roadmaps/pull/19) (OPEN) |
+| 14 | [rShetty/awesome-distributed-systems](https://github.com/rShetty/awesome-distributed-systems) | 1.6k | Courses | [PR #12](https://github.com/rShetty/awesome-distributed-systems/pull/12) (OPEN) |
+| 15 | [SquadcastHub/awesome-sre-tools](https://github.com/SquadcastHub/awesome-sre-tools) | 1.5k | Related Lists | [PR #179](https://github.com/SquadcastHub/awesome-sre-tools/pull/179) (OPEN) |
+| 16 | [Alliedium/awesome-software-engineering](https://github.com/Alliedium/awesome-software-engineering) | 630+ | DevOps | [PR #27](https://github.com/Alliedium/awesome-software-engineering/pull/27) (OPEN) |
+| 17 | [shospodarets/awesome-platform-engineering](https://github.com/shospodarets/awesome-platform-engineering) | 520+ | Miscellaneous and Related | [PR #66](https://github.com/shospodarets/awesome-platform-engineering/pull/66) (OPEN) |
+| 18 | [fuzzylabs/awesome-open-mlops](https://github.com/fuzzylabs/awesome-open-mlops) | 480+ | More resources | [PR #36](https://github.com/fuzzylabs/awesome-open-mlops/pull/36) (OPEN) |
+| 19 | [Pythondeveloper6/Awesome-MLOPS](https://github.com/Pythondeveloper6/Awesome-MLOPS) | 380+ | Roadmaps | [PR #10](https://github.com/Pythondeveloper6/Awesome-MLOPS/pull/10) (OPEN) |
+| 20 | [linnykoleh/awesome-system-design](https://github.com/linnykoleh/awesome-system-design) | 290+ | Courses | [PR #3](https://github.com/linnykoleh/awesome-system-design/pull/3) (OPEN) |
 
 ---
 
