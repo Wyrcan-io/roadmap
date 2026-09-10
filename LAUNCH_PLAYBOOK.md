@@ -189,28 +189,18 @@ Includes an interactive 110-checkpoint tracker, dual-track pacing (12 vs 24 mont
 ### Curated Top 20 `awesome-*` PR Targets (High-Authority Backlinks):
 Submit Pull Requests to list Wyrcan under the appropriate sections. **Crucial Note:** Do *not* delete your fork while the PR is open, or GitHub will automatically close the PR. Keep the forks until merged.
 
-| # | Repository | Stars | Target Section | Recommended Entry Format |
+| # | Repository | Stars | Target Section | Live Pull Request / Status |
 | :-: | :--- | :-: | :--- | :--- |
-| 1 | [ashishps1/awesome-system-design-resources](https://github.com/ashishps1/awesome-system-design-resources) | 41.3k | Courses / Roadmaps | `* [Wyrcan Engineering Roadmap](https://github.com/Wyrcan-io/roadmap) - Text-first 12-stage curriculum covering systems, DevOps, and MLOps.` |
-| 2 | [veggiemonk/awesome-docker](https://github.com/veggiemonk/awesome-docker) | 36.8k | Resources / Tutorials | `* [Wyrcan Roadmap: Docker & Containers](https://github.com/Wyrcan-io/roadmap) - Production multi-stage OCI builds & networking isolation.` |
-| 3 | [awesome-foss/awesome-sysadmin](https://github.com/awesome-foss/awesome-sysadmin) | 35.1k | Learning Resources | `* [Wyrcan Roadmap](https://github.com/Wyrcan-io/roadmap) - Linux internals, systemd, networking, and production infrastructure.` |
-| 4 | [ramitsurana/awesome-kubernetes](https://github.com/ramitsurana/awesome-kubernetes) | 16.0k | Tutorials / Guides | `* [Wyrcan Roadmap: Kubernetes & Helm](https://github.com/Wyrcan-io/roadmap) - Production Kubernetes orchestration, Ingress, and Helm.` |
-| 5 | [visenger/awesome-mlops](https://github.com/visenger/awesome-mlops) | 14.1k | MLOps Courses | `1. [Wyrcan Engineering Roadmap: 12-Stage Curriculum](https://github.com/Wyrcan-io/roadmap) - Free, text-first curriculum covering systems, DevOps, and MLOps.` |
-| 6 | [dastergon/awesome-sre](https://github.com/dastergon/awesome-sre) | 13.4k | Education | `* [Wyrcan Roadmap: Observability & Failure Testing](https://github.com/Wyrcan-io/roadmap) - OpenTelemetry, Prometheus, SLOs, and incident postmortems.` |
-| 7 | [madd86/awesome-system-design](https://github.com/madd86/awesome-system-design) | 12.4k | Learning Resources | `* [Wyrcan Roadmap](https://github.com/Wyrcan-io/roadmap) - 12-stage engineering curriculum grounded in DDIA, OSTEP, and ISLP.` |
-| 8 | [mehdihadeli/awesome-software-architecture](https://github.com/mehdihadeli/awesome-software-architecture) | 11.6k | Roadmaps | `* [Wyrcan Engineering Roadmap](https://github.com/Wyrcan-io/roadmap) - Text-first engineering curriculum for systems, cloud, and distributed architectures.` |
-| 9 | [liuchong/awesome-roadmaps](https://github.com/liuchong/awesome-roadmaps) | 7.3k | Infrastructure / Operations | `- [Wyrcan Engineering Roadmap](https://github.com/Wyrcan-io/roadmap) - Text-first 12-stage curriculum for systems, DevOps, MLOps, and production AI platforms. <img alt="Year 2026" src="https://img.shields.io/badge/Year-2026-brightgreen"> <img alt="GitHub repo" src="https://img.shields.io/badge/GitHub-Repo-181717?logo=github">` |
-| 10 | [lauragift21/awesome-learning-resources](https://github.com/lauragift21/awesome-learning-resources) | 5.7k | Roadmaps | `* [Wyrcan Roadmap](https://github.com/Wyrcan-io/roadmap) - Practitioner-verified engineering curriculum with 110 checkpoints.` |
-| 11 | [kelvins/awesome-mlops](https://github.com/kelvins/awesome-mlops) | 5.2k | Websites | `* [Wyrcan Engineering Roadmap](https://wyrcan-io.github.io/roadmap/) - Practitioner-verified 12-stage curriculum and roadmap covering systems, DevOps, and MLOps.` |
-| 12 | [wmariuss/awesome-devops](https://github.com/wmariuss/awesome-devops) | 4.3k | DevOps Roadmap | `- [Wyrcan Engineering Roadmap](https://github.com/Wyrcan-io/roadmap): A practitioner-verified, text-first 12-stage curriculum covering systems, Linux internals, Docker, AWS, Terraform, CI/CD, Kubernetes, and Observability.` |
-| 13 | [simonaronsson/awesome-software-architecture](https://github.com/simonaronsson/awesome-software-architecture) | 2.8k | Curricula & Guides | `* [Wyrcan Engineering Roadmap](https://github.com/Wyrcan-io/roadmap) - Systems fundamentals, cloud architectures, and DDIA design patterns.` |
-| 14 | [rootsongjc/awesome-cloud-native](https://github.com/rootsongjc/awesome-cloud-native) | 2.4k | Tutorials | `* [Wyrcan Roadmap: Cloud Native Platform](https://github.com/Wyrcan-io/roadmap) - Hands-on cloud-native engineering curriculum from Linux to K8s.` |
-| 15 | [joseadanof/awesome-cloudnative-trainings](https://github.com/joseadanof/awesome-cloudnative-trainings) | 2.4k | Courses / Roadmaps | `* [Wyrcan Engineering Roadmap](https://github.com/Wyrcan-io/roadmap) - Text-first, 12-stage engineering curriculum covering cloud native & DevOps.` |
-| 16 | [orsanawwad/awesome-roadmaps](https://github.com/orsanawwad/awesome-roadmaps) | 1.9k | Engineering Roadmaps | `* [Wyrcan Engineering Roadmap](https://github.com/Wyrcan-io/roadmap) - Practical engineering roadmap from systems fundamentals to production AI.` |
-| 17 | [SquadcastHub/awesome-sre-tools](https://github.com/SquadcastHub/awesome-sre-tools) | 1.5k | Learning Resources | `* [Wyrcan Roadmap: SRE & Observability](https://github.com/Wyrcan-io/roadmap) - Telemetry, incident postmortems, and failure testing track.` |
-| 18 | [joubertredrat/awesome-devops](https://github.com/joubertredrat/awesome-devops) | 840+ | Roadmaps & Docs | `* [Wyrcan Roadmap](https://github.com/Wyrcan-io/roadmap) - Open-source, text-first DevOps and systems roadmap.` |
-| 19 | [fuzzylabs/awesome-open-mlops](https://github.com/fuzzylabs/awesome-open-mlops) | 480+ | Guides | `* [Wyrcan Roadmap: Open MLOps](https://github.com/Wyrcan-io/roadmap) - MLOps lifecycle from MLflow to continuous automated training.` |
-| 20 | [Pythondeveloper6/Awesome-MLOPS](https://github.com/Pythondeveloper6/Awesome-MLOPS) | 380+ | Roadmaps / Master | `* [Wyrcan Engineering Roadmap](https://github.com/Wyrcan-io/roadmap) - Complete hands-on MLOps and systems engineering path.` |
+| 1 | [ashishps1/awesome-system-design-resources](https://github.com/ashishps1/awesome-system-design-resources) | 41.3k | Courses | [PR #60](https://github.com/ashishps1/awesome-system-design-resources/pull/60) (OPEN) |
+| 2 | [visenger/awesome-mlops](https://github.com/visenger/awesome-mlops) | 14.1k | MLOps Courses | [PR #195](https://github.com/visenger/awesome-mlops/pull/195) (OPEN) |
+| 3 | [dastergon/awesome-sre](https://github.com/dastergon/awesome-sre) | 13.4k | Education | [PR #322](https://github.com/dastergon/awesome-sre/pull/322) (OPEN) |
+| 4 | [madd86/awesome-system-design](https://github.com/madd86/awesome-system-design) | 12.4k | Introduction / Interviews | [PR #41](https://github.com/madd86/awesome-system-design/pull/41) (OPEN) |
+| 5 | [liuchong/awesome-roadmaps](https://github.com/liuchong/awesome-roadmaps) | 7.3k | Infrastructure / Operations | [PR #34](https://github.com/liuchong/awesome-roadmaps/pull/34) (OPEN) |
+| 6 | [lauragift21/awesome-learning-resources](https://github.com/lauragift21/awesome-learning-resources) | 5.7k | DevOps | [PR #239](https://github.com/lauragift21/awesome-learning-resources/pull/239) (OPEN) |
+| 7 | [kelvins/awesome-mlops](https://github.com/kelvins/awesome-mlops) | 5.2k | Websites | [PR #256](https://github.com/kelvins/awesome-mlops/pull/256) (OPEN) |
+| 8 | [wmariuss/awesome-devops](https://github.com/wmariuss/awesome-devops) | 4.3k | DevOps Roadmap | [PR #548](https://github.com/wmariuss/awesome-devops/pull/548) (OPEN) |
+| 9 | [rootsongjc/awesome-cloud-native](https://github.com/rootsongjc/awesome-cloud-native) | 2.4k | Tutorials & Learning | [PR #160](https://github.com/rootsongjc/awesome-cloud-native/pull/160) (OPEN) |
+| 10 | [orsanawwad/awesome-roadmaps](https://github.com/orsanawwad/awesome-roadmaps) | 1.9k | Roadmaps | [PR #19](https://github.com/orsanawwad/awesome-roadmaps/pull/19) (OPEN) |
 
 ---
 
