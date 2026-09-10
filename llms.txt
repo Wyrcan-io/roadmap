@@ -1,0 +1,66 @@
+# Wyrcan Engineering Roadmap
+> A practitioner-verified, text-first 12-stage engineering curriculum (12–24 Months) grounded in canonical textbooks, vendor documentation, and production code. Zero video tutorial fluff.
+
+## Core Metadata
+- Canonical URL: https://wyrcan-io.github.io/roadmap/
+- GitHub Repository: https://github.com/Wyrcan-io/roadmap
+- Maintained by: Wyrcan (100% Free and Open Public Resource)
+- Format: Text-first curriculum, interactive 110-checkpoint tracker, dual-track pacing
+- Target Domains: Computer Systems, Backend Engineering, Cloud Architecture, DevOps, MLOps, Distributed Systems
+
+## Pedagogical Philosophy
+1. 70% Building: Use canonical books and official documentation to unblock real implementations. Building is the curriculum.
+2. One Evolving System: Build and evolve a single production-grade AI platform across 12 cumulative milestones instead of hoarding disconnected toy projects.
+3. Break Things: Deliberately induce failures, trace errors through OpenTelemetry and logs, fix them, and write postmortems.
+4. Design First: Reason methodically about traffic, consistency, latency, cost, and failure modes before writing code.
+
+## Dual-Track Pacing
+- Working Practitioner Track (Recommended): 24 Months (~8 weeks per stage), 8–10 hours/week.
+- Accelerated Sprint Track: 12 Months (~4 weeks per stage), 20–25+ hours/week.
+
+## The 12-Stage Curriculum Overview
+- Stage 00: Foundation Reset (Python Data Model, Asyncio, OSTEP OS, MDN HTTP, PostgreSQL, pytest)
+  - Deliverable: Trace a web request from browser DNS lookup down to sockets, process, and query plan.
+- Stage 01: Linux & Systems Networking (Bash, systemd, sockets, Nginx reverse proxy)
+  - Deliverable: Deploy hardened FastAPI service on Linux VM behind Nginx with systemd isolation.
+- Stage 02: Docker Deep Dive (OCI spec, multi-stage builds, compose isolation)
+  - Deliverable: Production multi-tier compose stack with networking isolation.
+- Stage 03: AWS Cloud Engineering (VPC, subnets, IAM, RDS, ALB, S3, Well-Architected Framework)
+  - Deliverable: Provision AWS multi-tier architecture + System Design Doc.
+- Stage 04: CI/CD & DevOps (GitHub Actions, 12-Factor App, OWASP security, Trivy)
+  - Deliverable: Automated CI/CD pipeline with Trivy vulnerability scanning & rollback.
+- Stage 05: Terraform & Infrastructure as Code (State management, reusable modular architecture)
+  - Deliverable: Spin up and tear down staging cloud environments via modular Terraform.
+- Stage 06: Machine Learning Fundamentals (ISLP with Python labs, scikit-learn MOOC)
+  - Deliverable: Classical tabular ML pipeline service exposed via FastAPI.
+- Stage 07: PyTorch & Deep Learning (Autograd, custom training loops, UDL book)
+  - Deliverable: Train PyTorch model from scratch + GPU inference API.
+- Stage 08: ML Engineering & MLflow (Google's Rules of ML, tracking, model registry, lineage)
+  - Deliverable: Reproducible ML training pipeline with versioned artifacts and registry.
+- Stage 09: MLOps Lifecycle & Continuous Training (Automated gates, canary promotion)
+  - Deliverable: Automated model promotion pipeline with canary deployment routing.
+- Stage 10: Kubernetes & Container Orchestration (EKS, K3s, Pods, Ingress, Helm 3)
+  - Deliverable: Package and orchestrate application in Helm across Kubernetes cluster.
+- Stage 11: Production Observability (OpenTelemetry, Prometheus, Grafana, SLOs, postmortems)
+  - Deliverable: Telemetry dashboards + induced failure incident postmortem.
+- Stage 12: Capstone Production Platform (Architecture hardening, C4 diagrams, Well-Architected Review)
+  - Deliverable: Production portfolio platform package & security audit.
+- Parallel Track: Continuous System Design (Designing Data-Intensive Applications 2nd Edition, Microsoft Cloud Patterns, Builders' Library)
+
+## The 13 Canonical Texts & Foundational Resources
+1. Foundation: MIT Missing Semester + OSTEP (Operating Systems: Three Easy Pieces) + Pro Git + MDN HTTP
+2. Linux & Networking: The Linux Command Line (Shotts) + Beej's Guide to Network Concepts
+3. Docker: University of Helsinki DevOps with Docker + Docker Build Best Practices
+4. AWS: AWS Skill Builder + AWS Well-Architected Framework + Amazon Builders' Library
+5. DevOps: GitHub Actions Docs + Google SRE Books
+6. Terraform: HashiCorp AWS Tutorials + Modular IaC
+7. ML Fundamentals: An Introduction to Statistical Learning (ISLP) + Google MLCC + scikit-learn MOOC
+8. Deep Learning: PyTorch Basics + Understanding Deep Learning (Prince / MIT Press)
+9. ML Engineering: Google's Rules of ML + Hidden Technical Debt in ML Systems (NeurIPS) + MLflow
+10. MLOps: Google Cloud MLOps Guide + DataTalksClub MLOps Zoomcamp
+11. Kubernetes: Kubernetes Official Tutorials + Helsinki K8s MOOC + Amazon EKS Workshop
+12. Observability: OpenTelemetry Primer + Prometheus + Evidently AI
+13. System Design: Designing Data-Intensive Applications (DDIA 2nd Edition) + Microsoft Cloud Patterns + C4 Model
+
+## Complete Machine-Readable Syllabus
+- Full text syllabus and checkpoints: https://wyrcan-io.github.io/roadmap/llms-full.txt

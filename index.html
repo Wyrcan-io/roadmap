@@ -11,14 +11,139 @@
       } catch (e) {}
     })();
   </script>
-  <title>AI/ML + Cloud + DevOps + MLOps — 12-Stage Practitioner Roadmap (12–24 Months)</title>
-  <meta name="description" content="A practitioner-verified, text-first 12-stage engineering curriculum (12–24 Months) with curated official documentation, open textbooks, papers, and production deliverables." />
-  
-  <!-- Open Graph / Meta -->
+  <title>Engineering Roadmap — From Fundamentals to Production (AI/ML, Cloud, DevOps, MLOps)</title>
+  <meta name="description" content="A practical, text-first engineering roadmap covering computer systems, backend, DevOps, cloud architecture, MLOps, and production AI platforms. 12 stages, 110 checkpoints." />
+  <meta name="keywords" content="engineering roadmap, software engineering roadmap, systems engineering, backend roadmap, devops roadmap, mlops roadmap, cloud architecture, distributed systems, system design, linux, docker, kubernetes, terraform, aws, pytorch" />
+  <meta name="author" content="Wyrcan" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://wyrcan-io.github.io/roadmap/" />
+
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Theme Color for Browsers -->
+  <meta name="theme-color" content="#faf7f2" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#13110f" media="(prefers-color-scheme: dark)" />
+
+  <!-- Open Graph / Social Preview -->
+  <meta property="og:site_name" content="Wyrcan Engineering Roadmap" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="AI/ML × Cloud × DevOps × MLOps — 12-Stage Practitioner Roadmap (12–24 Months)" />
-  <meta property="og:description" content="A text-first, practitioner-verified 12-stage engineering roadmap (12–24 Months) grounded in official documentation and canonical books. Maintained by Wyrcan." />
+  <meta property="og:title" content="Engineering Roadmap — From Fundamentals to Production" />
+  <meta property="og:description" content="A text-first, practitioner-verified engineering roadmap (12–24 Months) grounded in canonical books, vendor docs, and production platform deliverables." />
   <meta property="og:url" content="https://wyrcan-io.github.io/roadmap/" />
+  <meta property="og:image" content="https://wyrcan-io.github.io/roadmap/social_preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt" content="Wyrcan Engineering Roadmap Preview" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Engineering Roadmap — From Fundamentals to Production" />
+  <meta name="twitter:description" content="A text-first engineering roadmap covering systems, backend, DevOps, cloud, MLOps, and production platforms." />
+  <meta name="twitter:image" content="https://wyrcan-io.github.io/roadmap/social_preview.png" />
+  <meta name="twitter:url" content="https://wyrcan-io.github.io/roadmap/" />
+
+  <!-- Schema.org JSON-LD Structured Data for Google & AI Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://wyrcan-io.github.io/roadmap/#website",
+        "name": "Wyrcan Engineering Roadmap",
+        "url": "https://wyrcan-io.github.io/roadmap/",
+        "description": "A practical, text-first engineering roadmap covering computer systems, backend, DevOps, cloud architecture, MLOps, and production AI platforms.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Wyrcan",
+          "url": "https://github.com/Wyrcan-io"
+        }
+      },
+      {
+        "@type": "Course",
+        "@id": "https://wyrcan-io.github.io/roadmap/#course",
+        "name": "Engineering Roadmap: From Fundamentals to Production Systems",
+        "description": "A comprehensive 12-stage practitioner curriculum spanning computer systems, Linux internals, Docker, AWS cloud architecture, CI/CD, Terraform, machine learning, PyTorch, MLOps, Kubernetes, observability, and distributed system design.",
+        "provider": {
+          "@type": "Organization",
+          "name": "Wyrcan",
+          "sameAs": "https://github.com/Wyrcan-io"
+        },
+        "isAccessibleForFree": true,
+        "inLanguage": "en",
+        "timeRequired": "P12M/P24M",
+        "educationalLevel": "Beginner to Production Engineer",
+        "teaches": [
+          "Operating Systems & Linux Internals",
+          "Computer Networking & Protocols (TCP/IP, DNS, HTTP)",
+          "Containerization & Docker Deep Dive",
+          "Cloud Architecture & AWS Infrastructure",
+          "Continuous Integration & Continuous Deployment (CI/CD)",
+          "Infrastructure as Code with Terraform",
+          "Machine Learning Fundamentals & Statistical Learning",
+          "Deep Learning with PyTorch",
+          "ML Engineering & Experiment Tracking with MLflow",
+          "Continuous Training & Automated MLOps Gates",
+          "Container Orchestration with Kubernetes & EKS",
+          "Production Observability (OpenTelemetry, Prometheus, Grafana)",
+          "Distributed Systems Design (DDIA)"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://wyrcan-io.github.io/roadmap/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What should I learn before distributed systems and system design?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Before studying distributed systems, build a solid mental model of Operating Systems (processes, threads, memory hierarchy, sockets via OSTEP), Computer Networking (TCP/IP handshake, DNS, packet routing via Beej's Guide), and relational database storage engines (indexes, transactions, query execution plans in PostgreSQL). Trying to design distributed systems without understanding single-node bottlenecks leads to shallow buzzword memorization."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is this roadmap text-first rather than based on video tutorials?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Text-first resources—official vendor documentation, university lecture notes, canonical RFCs, and peer-reviewed textbooks (ISLP, UDL, DDIA, OSTEP)—offer 5 to 10 times the information density of video playlists. They allow rapid non-linear lookup, reflect how senior engineers debug and build on the job, and prevent passive 'tutorial hell' by forcing hands-on code synthesis."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is this roadmap different from roadmap.sh or developer bootcamps?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most bootcamps and roadmaps focus narrowly on UI frameworks (HTML -> React -> Next.js) or generate disconnected 'Hello World' repos. The Wyrcan Roadmap is systems-first and platform-centric: you evolve a single production-grade AI platform across 12 cumulative milestones, deliberately induce failures, monitor telemetry with OpenTelemetry and Prometheus, and harden real cloud infrastructure with Terraform and Kubernetes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I follow this engineering roadmap while working a full-time job?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The curriculum features a dedicated Working Practitioner Track designed specifically for 8–10 hours per week over 24 months (~8 weeks per milestone). This allocates 4 weeks to reading canonical texts and completing exercises, and 4 weeks to shipping production deliverables and runbooks without burning out."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the core technical deliverables built across the curriculum?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Deliverables include a hardened Linux service behind Nginx, multi-stage Docker container stacks, multi-tier AWS cloud infrastructure provisioned via modular Terraform, automated GitHub Actions CI/CD pipelines with vulnerability scanning, custom PyTorch neural networks, reproducible MLflow model registries, automated continuous training pipelines, an EKS Kubernetes deployment with Helm, and full OpenTelemetry telemetry dashboards with incident postmortems."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1376,6 +1501,113 @@ a:hover {
   font-size: 13.5px;
 }
 
+/* FAQ SECTION */
+.faq-section {
+  margin-top: 56px;
+  padding-top: 36px;
+  border-top: 1px solid var(--border);
+  scroll-margin-top: 24px;
+}
+
+.faq-header-kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--terracotta);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.faq-title {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  line-height: 1.2;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+
+.faq-subtitle {
+  font-size: 14.5px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0 0 24px;
+  max-width: 780px;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faq-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.15s ease;
+}
+
+.faq-card:hover {
+  border-color: var(--border-strong);
+}
+
+.faq-card summary {
+  padding: 18px 22px;
+  font-family: var(--font-sans);
+  font-size: 15.5px;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  user-select: none;
+}
+
+.faq-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-card summary::after {
+  content: "+";
+  font-family: var(--font-mono);
+  font-size: 18px;
+  color: var(--terracotta);
+  font-weight: 700;
+  transition: transform 0.2s ease;
+}
+
+.faq-card[open] summary::after {
+  content: "−";
+  transform: rotate(180deg);
+}
+
+.faq-body {
+  padding: 0 22px 20px 22px;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--ink-secondary);
+  border-top: 1px solid var(--border-subtle);
+  background: var(--surface-raised);
+}
+
+.faq-body p {
+  margin: 14px 0 0;
+}
+
+.faq-body ul {
+  margin: 10px 0 0 20px;
+  padding: 0;
+}
+
+.faq-body li {
+  margin-bottom: 6px;
+}
+
 /* CITATIONS DRAWER */
 .citations-section {
   padding: 32px 0;
@@ -1553,6 +1785,7 @@ a:hover {
 
         <div class="outline-group-title">Reference</div>
         <a href="#section-backbone" class="outline-link"><span class="outline-num">✦</span> 13-Pillar Backbone</a>
+        <a href="#section-faq" class="outline-link"><span class="outline-num">?</span> FAQ & Strategy</a>
         <a href="#section-citations" class="outline-link"><span class="outline-num">⎘</span> All 59 Citations</a>
       </nav>
     </aside>
@@ -1562,9 +1795,9 @@ a:hover {
       <!-- SITE HEADER -->
       <header class="site-header">
         <div class="badge-kicker">Curriculum & Resource Stack</div>
-        <h1 class="main-title">AI/ML × Cloud × DevOps × MLOps</h1>
+        <h1 class="main-title">Engineering Roadmap: Fundamentals to Production</h1>
         <p class="main-subtitle">
-          A text-first, 12-stage practitioner curriculum (12–24 months). Grounded entirely in official vendor documentation, university courses, foundational books, and working code. Zero tutorial fluff.
+          A text-first, 12-stage practitioner curriculum (12–24 months) spanning AI/ML, Cloud, DevOps, MLOps, and Systems. Grounded entirely in official vendor documentation, university courses, foundational books, and working code. Zero tutorial fluff.
         </p>
 
         <div class="header-toolbar">
@@ -3353,6 +3586,84 @@ a:hover {
         </div>
       </section>
 
+      <!-- FAQ & ARCHITECTURAL STRATEGY -->
+      <section class="faq-section" id="section-faq">
+        <span class="faq-header-kicker">Frequently Asked Questions & Strategy</span>
+        <h2 class="faq-title">Engineering Pedagogy & Architecture FAQ</h2>
+        <p class="faq-subtitle">
+          Direct answers to foundational questions about curriculum sequencing, systems prerequisites, textbook selection, and real-world engineering trade-offs.
+        </p>
+
+        <div class="faq-list">
+          <details class="faq-card" open>
+            <summary>What should I learn before distributed systems and system design?</summary>
+            <div class="faq-body">
+              <p>
+                Before diving into distributed consensus, partitioning, and replication, build an uncompromising foundation in <strong>Operating Systems internals</strong> (processes, threads, virtual memory, synchronization primitives, file systems, and socket calls via <em>OSTEP</em>) and <strong>Computer Networking</strong> (TCP flow control, 3-way handshake, DNS propagation, HTTP semantics via <em>Beej's Guide</em>).
+              </p>
+              <p>
+                Distributed systems are essentially collections of single-node operating systems communicating across unreliable networks. If you cannot explain how a single PostgreSQL process coordinates WAL flushes with fsync or how kernel socket buffers behave under load, analyzing distributed consensus algorithms becomes superficial memorization.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-card">
+            <summary>Why is this roadmap text-first rather than based on video playlists?</summary>
+            <div class="faq-body">
+              <p>
+                Text-based official documentation, RFC specifications, and canonical textbooks (such as <em>ISLP</em>, <em>UDL</em>, <em>DDIA</em>, and <em>OSTEP</em>) offer 5 to 10 times the information density of video tutorials. Text enables non-linear reference, rapid semantic search, and forces active mental model synthesis.
+              </p>
+              <p>
+                Video tutorials often induce a passive "illusion of competence" where students mimic typing code without developing debugging and architectural reasoning instincts. Professional software engineers spend their careers reading documentation and RFCs; learning to extract answers from dense text is itself an essential engineering skill.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-card">
+            <summary>How does this roadmap differ from roadmap.sh or generic bootcamps?</summary>
+            <div class="faq-body">
+              <p>
+                Most bootcamps and roadmap diagrams focus on frontend framework-chasing (HTML → React → Next.js) or generate dozens of disconnected "Hello World" repositories that leave learners unprepared for production environments.
+              </p>
+              <p>
+                The Wyrcan roadmap is built on <strong>One Evolving System</strong> and <strong>deliberate failure testing</strong>. Across the 12 stages, you incrementally architect, deploy, containerize, monitor, and scale a single production-grade AI platform. You deliberately inject faults (network latency, OOM crashes, data drift), trace them using OpenTelemetry and Prometheus, and document resolution in blameless postmortems.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-card">
+            <summary>Can I follow this engineering roadmap while working a full-time job?</summary>
+            <div class="faq-body">
+              <p>
+                Yes. We explicitly reject the fiction that comprehensive systems engineering can be mastered in an 8-week crash course. The curriculum provides an interactive <strong>Working Practitioner Track</strong> calibrated for <strong>8–10 hours per week over 24 months</strong> (~8 weeks per milestone).
+              </p>
+              <p>
+                Each milestone divides neatly into 4 weeks of reading and lab problem sets, followed by 4 weeks of hands-on platform implementation and runbook authoring. For engineers on dedicated career sabbaticals, the <strong>Accelerated Sprint Track</strong> covers the identical scope in 12 months at 20–25 hours per week.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-card">
+            <summary>What concrete deliverables will I have in my portfolio by Stage 12?</summary>
+            <div class="faq-body">
+              <p>
+                By completing the curriculum, you will have built:
+              </p>
+              <ul>
+                <li>A hardened Linux microservice deployed behind Nginx with systemd service sandboxing.</li>
+                <li>Production multi-stage Docker containers with minimal distroless attack surfaces and isolated bridge networks.</li>
+                <li>Multi-tier AWS cloud infrastructure provisioned entirely with modular, remote-state locked Terraform.</li>
+                <li>Automated GitHub Actions CI/CD pipelines incorporating Trivy vulnerability scanning and zero-downtime deployments.</li>
+                <li>A custom-trained PyTorch neural network accompanied by MLflow experiment tracking and model registry lineage.</li>
+                <li>An automated continuous training (CT) promotion pipeline with canary routing gates and evidently-backed drift alarms.</li>
+                <li>A Kubernetes deployment orchestrated via Helm charts on AWS EKS or K3s.</li>
+                <li>Comprehensive OpenTelemetry distributed tracing, Prometheus metrics dashboards, and a simulated production incident postmortem.</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </section>
+
       <!-- CITATIONS FOOTER -->
       <footer class="citations-section" id="section-citations">
         <details class="citations-details">
@@ -3538,16 +3849,26 @@ a:hover {
 
   /* TAB SWITCHER */
   document.querySelectorAll(".nav-tabs").forEach(tabContainer => {
+    tabContainer.setAttribute("role", "tablist");
     const tabBtns = [...tabContainer.querySelectorAll(".nav-tab-btn")];
     const parent = tabContainer.parentElement;
 
-    tabBtns.forEach(btn => {
-      btn.addEventListener("click", () => {
-        tabBtns.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
+    tabBtns.forEach((btn) => {
+      btn.setAttribute("role", "tab");
+      btn.setAttribute("aria-selected", btn.classList.contains("active") ? "true" : "false");
+      const targetId = btn.dataset.target;
+      if (targetId) btn.setAttribute("aria-controls", targetId);
 
-        const targetId = btn.dataset.target;
+      btn.addEventListener("click", () => {
+        tabBtns.forEach(b => {
+          b.classList.remove("active");
+          b.setAttribute("aria-selected", "false");
+        });
+        btn.classList.add("active");
+        btn.setAttribute("aria-selected", "true");
+
         parent.querySelectorAll(".tab-pane").forEach(pane => {
+          pane.setAttribute("role", "tabpanel");
           pane.style.display = pane.id === targetId ? "block" : "none";
         });
       });
@@ -3578,7 +3899,7 @@ a:hover {
 
   /* GOOGLE DOCS SCROLLSPY (INTERSECTION OBSERVER) */
   const sectionsToTrack = document.querySelectorAll(
-    "#section-principles, #section-pacing, #section-foundation, #section-system-design, .timeline-block, #section-backbone, #section-citations"
+    "#section-principles, #section-pacing, #section-foundation, #section-system-design, .timeline-block, #section-backbone, #section-faq, #section-citations"
   );
 
   const observer = new IntersectionObserver((entries) => {
