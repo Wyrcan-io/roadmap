@@ -4,6 +4,7 @@
 ## Core Metadata
 - Canonical URL: https://wyrcan-io.github.io/roadmap/
 - GitHub Repository: https://github.com/Wyrcan-io/roadmap
+- Author / Creator: Abhirup (https://github.com/Abhirup0)
 - Maintained by: Wyrcan (100% Free and Open Public Resource)
 - Format: Text-first curriculum, interactive 110-checkpoint tracker, dual-track pacing
 - Target Domains: Computer Systems, Backend Engineering, Cloud Architecture, DevOps, MLOps, Distributed Systems

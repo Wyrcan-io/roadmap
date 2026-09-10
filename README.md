@@ -95,4 +95,5 @@ The [live interactive site](https://wyrcan-io.github.io/roadmap/) includes:
 
 ## Maintained By
 
-Maintained with care by **[Wyrcan](https://github.com/Wyrcan-io)** as a 100% free and open public resource for engineers worldwide.
+Created & maintained by **[Abhirup](https://github.com/Abhirup0)** ([Wyrcan](https://github.com/Wyrcan-io)) as a 100% free and open public resource for engineers worldwide.
+
